@@ -1,0 +1,508 @@
+{% extends "basew.html" %}
+
+{% load humanize %}
+{% load django_bootstrap_breadcrumbs %}
+
+
+{% block breadcrumbs %}
+    <!-- Breadcrumbs -->
+    {{ block.super }}
+    {% breadcrumb "Inicio" "/" %}
+    {% breadcrumb "Glosario" "glosario" %}
+    {% render_breadcrumbs %}
+
+    <!-- End Breadcrumbs -->
+{% endblock breadcrumbs %}
+
+{% block content %}
+    <!-- Help - Content -->
+    <div class="container g-pt-10 g-pb-70">
+        <div class="g-mb-40">
+            <h2 class="mb-0">Glosario</h2>
+        </div>
+
+        <div class="row">
+            <div class="col-md-9 col-lg-6 g-mb-30">
+                <div id="accordion-07" class="u-accordion u-accordion-color-primary" role="tablist" aria-multiselectable="true">
+
+
+                    <!-- Card -->
+                    <div class="card rounded-0 g-brd-none">
+                        <div id="accordion-07-heading-01" class="u-accordion__header g-pa-0" role="tab">
+                            <h5 class="mb-0 g-font-size-default g-font-weight-600 g-pa-20a mb-0">
+                                <a class="collapsed d-flex g-color-main g-text-underline--none--hover" href="#accordion-07-body-01" data-toggle="collapse" data-parent="#accordion-07" aria-expanded="true" aria-controls="accordion-07-body-01">
+                                    <span class="u-accordion__control-icon g-brd-right g-brd-gray-light-v4 g-color-primary text-center g-pa-20">
+                                        <i class="fa fa-plus"></i>
+                                        <i class="fa fa-minus"></i>
+                                    </span>
+                                    <span class="g-pa-20">
+                                    Patriarcado
+                                    </span>
+                                </a>
+                            </h5>
+                        </div>
+                        <div id="accordion-07-body-01" class="collapse" role="tabpanel" aria-labelledby="accordion-07-heading-01" data-parent="#accordion-07">
+                            <div class="u-accordion__body g-bg-gray-light-v5 g-px-50 g-py-30 text-justify">
+                                <p>El patriarcado es la transformación de complementariedad entre los sexos a una radical asimetría, que aumento la distancia entre mujeres y hombres, impuso el poder de dominio de uno sobre el otro, llevándolos a la negación de lo que tenían de semejantes y en común: su pertenencia a la humanidad. (Judith Astelarra).</p>
+                                <p>Ideología de poder que por medio de estructuras socio-políticas, mantiene y reproduce la opresión y la discriminación de las mujeres.</p>
+                                <p>Es entonces una repartición y distribución del poder que favorece a los hombres en lo político, lo sagrado -religioso, lo simbólico, lo económico, etc.</p>
+                                <p>El patriarcado es naturalizado, reproducido y difundido por medio de la cultura.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Card -->
+
+
+                    <!-- Card -->
+                    <div class="card rounded-0 g-brd-none">
+                        <div id="accordion-07-heading-02" class="u-accordion__header g-pa-0" role="tab">
+                            <h5 class="mb-0 g-font-size-default g-font-weight-600 g-pa-20a mb-0">
+                                <a class="collapsed d-flex g-color-main g-text-underline--none--hover" href="#accordion-07-body-02" data-toggle="collapse" data-parent="#accordion-07" aria-expanded="true" aria-controls="accordion-07-body-02">
+                                    <span class="u-accordion__control-icon g-brd-right g-brd-gray-light-v4 g-color-primary text-center g-pa-20">
+                                        <i class="fa fa-plus"></i>
+                                        <i class="fa fa-minus"></i>
+                                    </span>
+                                    <span class="g-pa-20">
+                                    Sexo
+                                    </span>
+                                </a>
+                            </h5>
+                        </div>
+                        <div id="accordion-07-body-02" class="collapse" role="tabpanel" aria-labelledby="accordion-07-heading-02" data-parent="#accordion-07">
+                            <div class="u-accordion__body g-bg-gray-light-v5 g-px-50 g-py-30 text-justify">
+                                <p>Es la primera evidencia del cuerpo.</p>
+                                <p>Es el conjunto de características anatómico fisiológicas que identifican y diferencian a hembra y macho, a mujer y hombre.</p>
+                                <p>El sexo es una categoría de orden biológico.</p>
+                                <p>“Sexo no es lo que hacemos, sexo es lo que somos”.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Card -->
+
+                    <!-- Card -->
+                    <div class="card rounded-0 g-brd-none">
+                        <div id="accordion-07-heading-03" class="u-accordion__header g-pa-0" role="tab">
+                            <h5 class="mb-0 g-font-size-default g-font-weight-600 g-pa-20a mb-0">
+                                <a class="collapsed d-flex g-color-main g-text-underline--none--hover" href="#accordion-07-body-03" data-toggle="collapse" data-parent="#accordion-07" aria-expanded="true" aria-controls="accordion-07-body-03">
+                                    <span class="u-accordion__control-icon g-brd-right g-brd-gray-light-v4 g-color-primary text-center g-pa-20">
+                                        <i class="fa fa-plus"></i>
+                                        <i class="fa fa-minus"></i>
+                                    </span>
+                                    <span class="g-pa-20">
+                                    Género
+                                    </span>
+                                </a>
+                            </h5>
+                        </div>
+                        <div id="accordion-07-body-03" class="collapse" role="tabpanel" aria-labelledby="accordion-07-heading-03" data-parent="#accordion-07">
+                            <div class="u-accordion__body g-bg-gray-light-v5 g-px-50 g-py-30 text-justify">
+                                <p>Conjunto de características asignadas culturalmente a mujeres y hombres en razón de su sexo.</p>
+                                <p>Este concepto implica construcciones, elaboraciones y representaciones culturales de tal coherencia y solidez que se vuelven tan determinantes y reales que parecen naturales.</p>
+                                <p>El género, no es una característica apriorística de las personas, sino, por el contrario, un efecto de poder. Efecto de un cierto modo de organización social que tiene consecuencias sobre la manera en que se relacionan las personas y sobre la configuración de sus capacidades, habilidades, expectativas, modos de estar y hacer en el mundo, y se apuntala en diferencias anatómicas y fisiológicas, que funcionan a modo de marca que permite identificar a las personas, y por ello facilitar su inscripción social. (Instituto de la Mujer, España).</p>
+                                <p>El género determina lo que es esperado, permitido y valorado en una mujer o en un hombre en un contexto determinado.</p>
+                                <p>Por ser una construcción sociocultural, es específico de cada cultura y cambia a lo lardo del tiempo (PNUD).</p>
+                                <p>Es un elemento constitutivo de las relaciones sociales basados en las diferencias que distinguen los sexos. Es una forma primaria de poder.<br>
+                                    Se distinguen los siguientes elementos:<br>
+                                    • Los símbolos y mitos culturalmente disponibles;<br>
+                                    • Lo conceptos normativos surgidos de los símbolos;<br>
+                                    • Las instituciones y organizaciones sociales de las relaciones de genero (La identidad. J. Scott).
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Card -->
+
+                    <!-- Card -->
+                    <div class="card rounded-0 g-brd-none">
+                        <div id="accordion-07-heading-04" class="u-accordion__header g-pa-0" role="tab">
+                            <h5 class="mb-0 g-font-size-default g-font-weight-600 g-pa-20a mb-0">
+                                <a class="collapsed d-flex g-color-main g-text-underline--none--hover" href="#accordion-07-body-04" data-toggle="collapse" data-parent="#accordion-07" aria-expanded="true" aria-controls="accordion-07-body-04">
+                                    <span class="u-accordion__control-icon g-brd-right g-brd-gray-light-v4 g-color-primary text-center g-pa-20">
+                                        <i class="fa fa-plus"></i>
+                                        <i class="fa fa-minus"></i>
+                                    </span>
+                                    <span class="g-pa-20">
+                                    Rol de Género
+                                    </span>
+                                </a>
+                            </h5>
+                        </div>
+                        <div id="accordion-07-body-04" class="collapse" role="tabpanel" aria-labelledby="accordion-07-heading-04" data-parent="#accordion-07">
+                            <div class="u-accordion__body g-bg-gray-light-v5 g-px-50 g-py-30 text-justify">
+                                <p>Conjunto de papeles y oficios asignados culturalmente a mujeres y hombres en razón a su género.</p>
+                                <p>El rol es aprendido casi de forma obligatoria.</p>
+                                <p>Socialmente existen prejuicios y estereotipos de género.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Card -->
+
+                    <!-- Card -->
+                    <div class="card rounded-0 g-brd-none">
+                        <div id="accordion-07-heading-05" class="u-accordion__header g-pa-0" role="tab">
+                            <h5 class="mb-0 g-font-size-default g-font-weight-600 g-pa-20a mb-0">
+                                <a class="collapsed d-flex g-color-main g-text-underline--none--hover" href="#accordion-07-body-05" data-toggle="collapse" data-parent="#accordion-07" aria-expanded="true" aria-controls="accordion-07-body-05">
+                                    <span class="u-accordion__control-icon g-brd-right g-brd-gray-light-v4 g-color-primary text-center g-pa-20">
+                                        <i class="fa fa-plus"></i>
+                                        <i class="fa fa-minus"></i>
+                                    </span>
+                                    <span class="g-pa-20">
+                                    Relaciones de Género
+                                    </span>
+                                </a>
+                            </h5>
+                        </div>
+                        <div id="accordion-07-body-05" class="collapse" role="tabpanel" aria-labelledby="accordion-07-heading-05" data-parent="#accordion-07">
+                            <div class="u-accordion__body g-bg-gray-light-v5 g-px-50 g-py-30 text-justify">
+                                <p>El género no se refiere solo a hombres y a las mujeres, sino también a las relaciones sociales que se establecen entre ellos.</p>
+                                <p>Como interactúan hombres y mujeres en cada sociedad especifica; determinan el acceso a las mujeres y hombres al poder y a los recursos materiales o una terminada posición en la sociedad.</p>
+                                <p>En la mayoría de las sociedades el sistema sexo – genero ha desarrollado relaciones de desigualdad, exclusión y discriminación en contra de las mujeres en la mayoría de las esferas de la vida humana, pública y privada.</p>
+                                <p>Esto se traduce en menores oportunidades, acceso y control de los recursos para las mujeres y una menor valoración y reconocimiento a sus actividades y a sí mismas como seres humanos. (PNUD).</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Card -->
+
+                    <!-- Card -->
+                    <div class="card rounded-0 g-brd-none">
+                        <div id="accordion-07-heading-06" class="u-accordion__header g-pa-0" role="tab">
+                            <h5 class="mb-0 g-font-size-default g-font-weight-600 g-pa-20a mb-0">
+                                <a class="collapsed d-flex g-color-main g-text-underline--none--hover" href="#accordion-07-body-06" data-toggle="collapse" data-parent="#accordion-07" aria-expanded="true" aria-controls="accordion-07-body-06">
+                                    <span class="u-accordion__control-icon g-brd-right g-brd-gray-light-v4 g-color-primary text-center g-pa-20">
+                                        <i class="fa fa-plus"></i>
+                                        <i class="fa fa-minus"></i>
+                                    </span>
+                                    <span class="g-pa-20">
+                                    Categoría Género
+                                    </span>
+                                </a>
+                            </h5>
+                        </div>
+                        <div id="accordion-07-body-06" class="collapse" role="tabpanel" aria-labelledby="accordion-07-heading-06" data-parent="#accordion-07">
+                            <div class="u-accordion__body g-bg-gray-light-v5 g-px-50 g-py-30 text-justify">
+                                <p>Categoría de orden social que permite estudiar el género como una diferencia positiva.</p>
+                                <p>La categoría devela los prejuicios sexistas existentes en los esquemas conceptuales o en cualquier otra materia objeto de estudio.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Card -->
+
+                    <!-- Card -->
+                    <div class="card rounded-0 g-brd-none">
+                        <div id="accordion-07-heading-07" class="u-accordion__header g-pa-0" role="tab">
+                            <h5 class="mb-0 g-font-size-default g-font-weight-600 g-pa-20a mb-0">
+                                <a class="collapsed d-flex g-color-main g-text-underline--none--hover" href="#accordion-07-body-07" data-toggle="collapse" data-parent="#accordion-07" aria-expanded="true" aria-controls="accordion-07-body-07">
+                                    <span class="u-accordion__control-icon g-brd-right g-brd-gray-light-v4 g-color-primary text-center g-pa-20">
+                                        <i class="fa fa-plus"></i>
+                                        <i class="fa fa-minus"></i>
+                                    </span>
+                                    <span class="g-pa-20">
+                                    Análisis de Género
+                                    </span>
+                                </a>
+                            </h5>
+                        </div>
+                        <div id="accordion-07-body-07" class="collapse" role="tabpanel" aria-labelledby="accordion-07-heading-07" data-parent="#accordion-07">
+                            <div class="u-accordion__body g-bg-gray-light-v5 g-px-50 g-py-30 text-justify">
+                                <p>El análisis de género nos permite visualizar dentro de un sistema las relaciones entre el género femenino y masculino como relaciones de poder.</p>
+                                <p>El análisis de género nos evidencia que actualmente la construcción social nos adjudica:<br>
+                                    • ROLES diferentes para cada sexo;<br>
+                                    • ESPACIOS diferentes para cada sexo y<br>
+                                    • ATRIBUTOS diferentes para cada sexo.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Card -->
+
+                    <!-- Card -->
+                    <div class="card rounded-0 g-brd-none">
+                        <div id="accordion-07-heading-08" class="u-accordion__header g-pa-0" role="tab">
+                            <h5 class="mb-0 g-font-size-default g-font-weight-600 g-pa-20a mb-0">
+                                <a class="collapsed d-flex g-color-main g-text-underline--none--hover" href="#accordion-07-body-08" data-toggle="collapse" data-parent="#accordion-07" aria-expanded="true" aria-controls="accordion-07-body-08">
+                                    <span class="u-accordion__control-icon g-brd-right g-brd-gray-light-v4 g-color-primary text-center g-pa-20">
+                                        <i class="fa fa-plus"></i>
+                                        <i class="fa fa-minus"></i>
+                                    </span>
+                                    <span class="g-pa-20">
+                                    Perspectiva de Género
+                                    </span>
+                                </a>
+                            </h5>
+                        </div>
+                        <div id="accordion-07-body-08" class="collapse" role="tabpanel" aria-labelledby="accordion-07-heading-08" data-parent="#accordion-07">
+                            <div class="u-accordion__body g-bg-gray-light-v5 g-px-50 g-py-30 text-justify">
+                                <p>Las perspectivas androcéntricas han resultado en la invisibilización de las violaciones cotidianas a los derechos humanos de las mujeres, así como en la infravaloración de sus necesidades como humanas, y por ende en una construcción de la igualdad que tiene como referente al hombre.</p>
+                                <p>Una mirada que reconoce que el mundo es mixto.</p>
+                                <p>Es tomar las medidas para reducir las inequidades por medio de acciones positivas, de políticas de Estado, de cambios legislativos y por medio de un trabajo constante sobre la cultura.</p>
+                                <p>Es construir espacios de convivencia, de deseos, de saberes, de derechos y de maneras de ser diferentes.</p>
+                                <p>Las perspectivas de género sensitivas o “perspectiva de género”, son pues, aquellas que visibilizan los distintos efectos de la construcción social del género y ponen en descubierto como el hombre y lo masculino son el referente en la mayoría de las explicaciones de la realidad en detrimento de las mujeres.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Card -->
+
+                    <!-- Card -->
+                    <div class="card rounded-0 g-brd-none">
+                        <div id="accordion-07-heading-09" class="u-accordion__header g-pa-0" role="tab">
+                            <h5 class="mb-0 g-font-size-default g-font-weight-600 g-pa-20a mb-0">
+                                <a class="collapsed d-flex g-color-main g-text-underline--none--hover" href="#accordion-07-body-09" data-toggle="collapse" data-parent="#accordion-07" aria-expanded="true" aria-controls="accordion-07-body-09">
+                                    <span class="u-accordion__control-icon g-brd-right g-brd-gray-light-v4 g-color-primary text-center g-pa-20">
+                                        <i class="fa fa-plus"></i>
+                                        <i class="fa fa-minus"></i>
+                                    </span>
+                                    <span class="g-pa-20">
+                                    Los Sexismos
+                                    </span>
+                                </a>
+                            </h5>
+                        </div>
+                        <div id="accordion-07-body-09" class="collapse" role="tabpanel" aria-labelledby="accordion-07-heading-09" data-parent="#accordion-07">
+                            <div class="u-accordion__body g-bg-gray-light-v5 g-px-50 g-py-30 text-justify">
+                                <p>Es la creencia – fundamentada en una serie de mitos y mistificaciones – que declara la superioridad del sexo masculino.</p>
+                                <p>Resulta en una serie de privilegios para ese sexo que se considera superior.</p>
+                                <p>Estos privilegios mantienen al sexo femenino al servicio del sexo masculino.</p>
+                                <p>Se logra haciendo creer al sexo subordinado que esa es su función “natural” y única.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Card -->
+                </div>
+            </div>
+
+            <div class="col-md-9 col-lg-6 g-mb-30">
+                <div id="accordion-08" class="u-accordion u-accordion-color-primary" role="tablist" aria-multiselectable="true">
+                    <!-- Card -->
+                    <div class="card rounded-0 g-brd-none">
+                        <div id="accordion-08-heading-10" class="u-accordion__header g-pa-0" role="tab">
+                            <h5 class="mb-0 g-font-size-default g-font-weight-600 g-pa-20a mb-0">
+                                <a class="collapsed d-flex g-color-main g-text-underline--none--hover" href="#accordion-08-body-10" data-toggle="collapse" data-parent="#accordion-08" aria-expanded="true" aria-controls="accordion-08-body-10">
+                                    <span class="u-accordion__control-icon g-brd-right g-brd-gray-light-v4 g-color-primary text-center g-pa-20">
+                                        <i class="fa fa-plus"></i>
+                                        <i class="fa fa-minus"></i>
+                                    </span>
+                                    <span class="g-pa-20">
+                                    Manifestaciones de Sexismo
+                                    </span>
+                                </a>
+                            </h5>
+                        </div>
+                        <div id="accordion-08-body-10" class="collapse" role="tabpanel" aria-labelledby="accordion-08-heading-10" data-parent="#accordion-08">
+                            <div class="u-accordion__body g-bg-gray-light-v5 g-px-50 g-py-30 text-justify">
+                                <p> • Androcentrismo. <br>
+                                    • Sobregeneralización y/o sobreespecificidad.<br>
+                                    • Insensibilidad al género.<br>
+                                    • Doble parámetro.<br>
+                                    • Deber ser de cada sexo.<br>
+                                    • Dicotomismo sexual.<br>
+                                    • Familismo.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Card -->
+
+                    <!-- Card -->
+                    <div class="card rounded-0 g-brd-none">
+                        <div id="accordion-08-heading-11" class="u-accordion__header g-pa-0" role="tab">
+                            <h5 class="mb-0 g-font-size-default g-font-weight-600 g-pa-20a mb-0">
+                                <a class="collapsed d-flex g-color-main g-text-underline--none--hover" href="#accordion-08-body-11" data-toggle="collapse" data-parent="#accordion-08" aria-expanded="true" aria-controls="accordion-08-body-11">
+                                    <span class="u-accordion__control-icon g-brd-right g-brd-gray-light-v4 g-color-primary text-center g-pa-20">
+                                        <i class="fa fa-plus"></i>
+                                        <i class="fa fa-minus"></i>
+                                    </span>
+                                    <span class="g-pa-20">
+                                    Androcentrismo
+                                    </span>
+                                </a>
+                            </h5>
+                        </div>
+                        <div id="accordion-08-body-11" class="collapse" role="tabpanel" aria-labelledby="accordion-08-heading-11" data-parent="#accordion-08">
+                            <div class="u-accordion__body g-bg-gray-light-v5 g-px-50 g-py-30 text-justify">
+                                <p>Presenta la experiencia masculina como central a la experiencia humana y por ende como la única relevante.</p>
+                                <p>Ve al mundo desde la perspectiva de los masculino, tomando al varón de la especie como parámetro o modelo de lo humano.</p>
+                                <p>Dos formas extremas de androcentrismo son:<br>
+                                    • La <strong>Ginopía</strong>: imposibilidad de ver lo femenino o la invisibilización de la experiencia femenina.<br>
+                                    • La <strong>Misoginia</strong>: el repudio u odio a lo femenino.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Card -->
+
+                    <!-- Card -->
+                    <div class="card rounded-0 g-brd-none">
+                        <div id="accordion-08-heading-12" class="u-accordion__header g-pa-0" role="tab">
+                            <h5 class="mb-0 g-font-size-default g-font-weight-600 g-pa-20a mb-0">
+                                <a class="collapsed d-flex g-color-main g-text-underline--none--hover" href="#accordion-08-body-12" data-toggle="collapse" data-parent="#accordion-08" aria-expanded="true" aria-controls="accordion-08-body-12">
+                                    <span class="u-accordion__control-icon g-brd-right g-brd-gray-light-v4 g-color-primary text-center g-pa-20">
+                                        <i class="fa fa-plus"></i>
+                                        <i class="fa fa-minus"></i>
+                                    </span>
+                                    <span class="g-pa-20">
+                                    Sobregeneralización
+                                    </span>
+                                </a>
+                            </h5>
+                        </div>
+                        <div id="accordion-08-body-12" class="collapse" role="tabpanel" aria-labelledby="accordion-08-heading-12" data-parent="#accordion-08">
+                            <div class="u-accordion__body g-bg-gray-light-v5 g-px-50 g-py-30 text-justify">
+                                <p>Se da cuando un estudio, teoría o texto solo analiza la conducta del sexo masculino, pero presenta los resultados, el análisis o el mensaje como válidos para ambos sexos.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Card -->
+
+                    <!-- Card -->
+                    <div class="card rounded-0 g-brd-none">
+                        <div id="accordion-08-heading-13" class="u-accordion__header g-pa-0" role="tab">
+                            <h5 class="mb-0 g-font-size-default g-font-weight-600 g-pa-20a mb-0">
+                                <a class="collapsed d-flex g-color-main g-text-underline--none--hover" href="#accordion-08-body-13" data-toggle="collapse" data-parent="#accordion-08" aria-expanded="true" aria-controls="accordion-08-body-13">
+                                    <span class="u-accordion__control-icon g-brd-right g-brd-gray-light-v4 g-color-primary text-center g-pa-20">
+                                        <i class="fa fa-plus"></i>
+                                        <i class="fa fa-minus"></i>
+                                    </span>
+                                    <span class="g-pa-20">
+                                    Sobreespecificidad
+                                    </span>
+                                </a>
+                            </h5>
+                        </div>
+                        <div id="accordion-08-body-13" class="collapse" role="tabpanel" aria-labelledby="accordion-08-heading-13" data-parent="#accordion-08">
+                            <div class="u-accordion__body g-bg-gray-light-v5 g-px-50 g-py-30 text-justify">
+                                <p>Consiste en presentar como especifico de un sexo ciertas necesidades, actitudes e intereses que en realidad son de ambos sexos.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Card -->
+
+                    <!-- Card -->
+                    <div class="card rounded-0 g-brd-none">
+                        <div id="accordion-08-heading-14" class="u-accordion__header g-pa-0" role="tab">
+                            <h5 class="mb-0 g-font-size-default g-font-weight-600 g-pa-20a mb-0">
+                                <a class="collapsed d-flex g-color-main g-text-underline--none--hover" href="#accordion-08-body-14" data-toggle="collapse" data-parent="#accordion-08" aria-expanded="true" aria-controls="accordion-08-body-14">
+                                    <span class="u-accordion__control-icon g-brd-right g-brd-gray-light-v4 g-color-primary text-center g-pa-20">
+                                        <i class="fa fa-plus"></i>
+                                        <i class="fa fa-minus"></i>
+                                    </span>
+                                    <span class="g-pa-20">
+                                    Insensibilidad al Género
+                                    </span>
+                                </a>
+                            </h5>
+                        </div>
+                        <div id="accordion-08-body-14" class="collapse" role="tabpanel" aria-labelledby="accordion-08-heading-14" data-parent="#accordion-08">
+                            <div class="u-accordion__body g-bg-gray-light-v5 g-px-50 g-py-30 text-justify">
+                                <p>Se ignora la variable género como una variable socialmente importante y válida.</p>
+                                <p>No se toman en cuenta los distintos lugares que ocupan los hombres y mujeres en la estructura social, el mayor o menor poder que detentan por ser hombres o mujeres.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Card -->
+
+                    <!-- Card -->
+                    <div class="card rounded-0 g-brd-none">
+                        <div id="accordion-08-heading-15" class="u-accordion__header g-pa-0" role="tab">
+                            <h5 class="mb-0 g-font-size-default g-font-weight-600 g-pa-20a mb-0">
+                                <a class="collapsed d-flex g-color-main g-text-underline--none--hover" href="#accordion-08-body-15" data-toggle="collapse" data-parent="#accordion-08" aria-expanded="true" aria-controls="accordion-08-body-15">
+                                    <span class="u-accordion__control-icon g-brd-right g-brd-gray-light-v4 g-color-primary text-center g-pa-20">
+                                        <i class="fa fa-plus"></i>
+                                        <i class="fa fa-minus"></i>
+                                    </span>
+                                    <span class="g-pa-20">
+                                    Dicotomismo Sexual
+                                    </span>
+                                </a>
+                            </h5>
+                        </div>
+                        <div id="accordion-08-body-15" class="collapse" role="tabpanel" aria-labelledby="accordion-08-heading-15" data-parent="#accordion-08">
+                            <div class="u-accordion__body g-bg-gray-light-v5 g-px-50 g-py-30 text-justify">
+                                <p>Consiste en tratar a los sexos como diametralmente opuestos y no con características semejantes.</p>
+                                <p>En Psicología: fenómeno de la diversa conformación sexual del ser humano deriva en la determinación, incluso, de las facetas de la personalidad, que muestran esta diversa estructura personalística:<br>
+                                    • El hombre se siente impulsado a la actividad, la mujer busca seguridad;<br>
+                                    • El hombre tendencia a la abstracción, la mujer se inclina al concretismo;<br>
+                                    • El hombre busca el prestigio, mujer prefiere el bienestar; <br>
+                                    • El hombre adopta una actitud sadista, mujer muestra una tendencia masoquista;<br>
+                                    • El hombre utiliza los juicios de forma, la mujer suele emplear los de valor;<br>
+                                    • El hombre posee un conocimiento lógico, en la mujer predomina el conocimiento intuitivo. (Alfonso Reyes Echandía).
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Card -->
+
+                    <!-- Card -->
+                    <div class="card rounded-0 g-brd-none">
+                        <div id="accordion-08-heading-16" class="u-accordion__header g-pa-0" role="tab">
+                            <h5 class="mb-0 g-font-size-default g-font-weight-600 g-pa-20a mb-0">
+                                <a class="collapsed d-flex g-color-main g-text-underline--none--hover" href="#accordion-08-body-16" data-toggle="collapse" data-parent="#accordion-08" aria-expanded="true" aria-controls="accordion-08-body-16">
+                                    <span class="u-accordion__control-icon g-brd-right g-brd-gray-light-v4 g-color-primary text-center g-pa-20">
+                                        <i class="fa fa-plus"></i>
+                                        <i class="fa fa-minus"></i>
+                                    </span>
+                                    <span class="g-pa-20">
+                                    Doble Parámetro
+                                    </span>
+                                </a>
+                            </h5>
+                        </div>
+                        <div id="accordion-08-body-16" class="collapse" role="tabpanel" aria-labelledby="accordion-08-heading-16" data-parent="#accordion-08">
+                            <div class="u-accordion__body g-bg-gray-light-v5 g-px-50 g-py-30 text-justify">
+                                <p>Se da cuando la misma conducta, una situación idéntica y/o características humanas son valoradas o evaluadas con distintos parámetros o distintos instrumentos para uno y otro sexo.</p>
+                                <p>Es similar a lo que conocemos como doble moral.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Card -->
+
+                    <!-- Card -->
+                    <div class="card rounded-0 g-brd-none">
+                        <div id="accordion-08-heading-17" class="u-accordion__header g-pa-0" role="tab">
+                            <h5 class="mb-0 g-font-size-default g-font-weight-600 g-pa-20a mb-0">
+                                <a class="collapsed d-flex g-color-main g-text-underline--none--hover" href="#accordion-08-body-17" data-toggle="collapse" data-parent="#accordion-08" aria-expanded="true" aria-controls="accordion-08-body-17">
+                                    <span class="u-accordion__control-icon g-brd-right g-brd-gray-light-v4 g-color-primary text-center g-pa-20">
+                                        <i class="fa fa-plus"></i>
+                                        <i class="fa fa-minus"></i>
+                                    </span>
+                                    <span class="g-pa-20">
+                                    Debe ser para cada sexo
+                                    </span>
+                                </a>
+                            </h5>
+                        </div>
+                        <div id="accordion-08-body-17" class="collapse" role="tabpanel" aria-labelledby="accordion-08-heading-17" data-parent="#accordion-08">
+                            <div class="u-accordion__body g-bg-gray-light-v5 g-px-50 g-py-30 text-justify">
+                                <p>Identificación de la mujer – persona como mujer – familia.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Card -->
+
+                    <!-- Card -->
+                    <div class="card rounded-0 g-brd-none">
+                        <div id="accordion-08-heading-18" class="u-accordion__header g-pa-0" role="tab">
+                            <h5 class="mb-0 g-font-size-default g-font-weight-600 g-pa-20a mb-0">
+                                <a class="collapsed d-flex g-color-main g-text-underline--none--hover" href="#accordion-08-body-18" data-toggle="collapse" data-parent="#accordion-08" aria-expanded="true" aria-controls="accordion-08-body-18">
+                                    <span class="u-accordion__control-icon g-brd-right g-brd-gray-light-v4 g-color-primary text-center g-pa-20">
+                                        <i class="fa fa-plus"></i>
+                                        <i class="fa fa-minus"></i>
+                                    </span>
+                                    <span class="g-pa-20">
+                                    Familismo
+                                    </span>
+                                </a>
+                            </h5>
+                        </div>
+                        <div id="accordion-08-body-18" class="collapse" role="tabpanel" aria-labelledby="accordion-08-heading-18" data-parent="#accordion-08">
+                            <div class="u-accordion__body g-bg-gray-light-v5 g-px-50 g-py-30 text-justify">
+                                <p>Identificación de la mujer – persona como mujer – familia.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Card -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

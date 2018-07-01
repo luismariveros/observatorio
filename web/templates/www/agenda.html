@@ -1,0 +1,39 @@
+{% extends "basew.html" %}
+
+{% load humanize %}
+{% load django_bootstrap_breadcrumbs %}
+
+{% block breadcrumbs %}
+    <!-- Breadcrumbs -->
+    {{ block.super }}
+    {% breadcrumb "Inicio" "/" %}
+    {% breadcrumb "Agenda Institucional" "" %}
+
+
+    <!-- End Breadcrumbs -->
+{% endblock breadcrumbs %}
+
+{% block content %}
+    {% render_breadcrumbs %}
+
+    <div class="container g-pt-10 g-pb-70">
+        <div class="g-mb-40">
+            <h2 class="mb-0">Agenda Institucional</h2>
+        </div>
+
+        <div class="row justify-content-between">
+            <div class="col-lg-9 g-mb-30 text-justify">
+                <iframe src="https://calendar.google.com/calendar/embed?showPrint=0&amp;showCalendars=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=cv3gfq1mn4e141jrjhpkc3e820%40group.calendar.google.com&amp;color=%23AB8B00&amp;ctz=America%2FAsuncion" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+            </div>
+
+            <div class="col-lg-3 g-brd-left--lg g-brd-gray-light-v4 g-mb-20">
+                <div class="g-pl-20--lg">
+
+                    {% include 'enlaces.html' %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

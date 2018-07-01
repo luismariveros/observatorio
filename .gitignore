@@ -1,6 +1,9 @@
 # Carpeta datos
 datos/
 .idea/
+env35/
+media/
+migrations/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

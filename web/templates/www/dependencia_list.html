@@ -1,0 +1,86 @@
+{% extends "basew.html" %}
+
+{% load static %}
+{% load humanize %}
+{% load django_bootstrap_breadcrumbs %}
+
+{% block extrastyle %}
+
+{% endblock %}
+
+{% block breadcrumbs %}
+    <!-- Breadcrumbs -->
+    {{ block.super }}
+
+    {% breadcrumb "Inicio" "/" %}
+    {% breadcrumb "Dependencias" "" %}
+    <!-- End Breadcrumbs -->
+{% endblock breadcrumbs %}
+
+
+
+{% block content %}
+    {% render_breadcrumbs %}
+
+    <div class="container g-pt-10 g-pb-70">
+        <div class="g-mb-40">
+            <h2 class="mb-0">Dependencias a nivel país</h2>
+        </div>
+
+        <div class="row justify-content-between">
+            <div class="col-lg-8 g-mb-30 text-justify">
+                <div class="row">
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Nombre</th>
+                                <th>Departamento</th>
+                                <th>Ciudad</th>
+                                <th>Teléfono</th>
+                                <th>Teléfono</th>
+                                <th>Dirección</th>
+                                <th>Email</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                {% for dependencia in dependencias %}
+                                    <tr>
+                                        <td>{{ forloop.counter }}</td>
+                                        <td>{{ dependencia.nombre }}</td>
+                                        <td>{{ dependencia.departamento }}</td>
+                                        <td>{{ dependencia.ciudad }}</td>
+                                        <td><a href="href=tel:{{ dependencia.telefono1 }}" class="g-color-gray-dark-v4 g-color-gray-dark-v4--hover g-text-underline--none--hover">{{ dependencia.telefono1 }}</a></td>
+                                        <td><a href="href=tel:{{ dependencia.telefono2 }}" class="g-color-gray-dark-v4 g-color-gray-dark-v4--hover g-text-underline--none--hover">{{ dependencia.telefono2 }}</a></td>
+                                        <td>{{ dependencia.direccion }}</td>
+                                        <td>
+                                            {% if dependencia.email %}
+                                                <a href="mailt:{{ dependencia.email }}">{{ dependencia.email }}</a>
+                                            {% else %}
+                                                Sin información
+                                            {% endif %}
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 g-brd-left--lg g-brd-gray-light-v4 g-mb-20">
+                <div class="g-pl-20--lg">
+
+                    {% include 'enlaces.html' %}
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
+
+{% block extrascript %}
+
+{% endblock %}

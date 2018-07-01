@@ -1,0 +1,509 @@
+[
+{
+    "model": "backend.categoria",
+    "pk": 1,
+    "fields": {
+        "nombre": "Marco Normativo",
+        "slug": "marco-normativo",
+        "parent": null,
+        "lft": 1,
+        "rght": 36,
+        "tree_id": 1,
+        "level": 0
+    }
+},
+{
+    "model": "backend.categoria",
+    "pk": 2,
+    "fields": {
+        "nombre": "Internacional",
+        "slug": "internacional",
+        "parent": 1,
+        "lft": 2,
+        "rght": 15,
+        "tree_id": 1,
+        "level": 1
+    }
+},
+{
+    "model": "backend.categoria",
+    "pk": 3,
+    "fields": {
+        "nombre": "Tratados",
+        "slug": "tratados",
+        "parent": 2,
+        "lft": 3,
+        "rght": 4,
+        "tree_id": 1,
+        "level": 2
+    }
+},
+{
+    "model": "backend.categoria",
+    "pk": 4,
+    "fields": {
+        "nombre": "Nacional",
+        "slug": "nacional",
+        "parent": 1,
+        "lft": 16,
+        "rght": 27,
+        "tree_id": 1,
+        "level": 1
+    }
+},
+{
+    "model": "backend.categoria",
+    "pk": 5,
+    "fields": {
+        "nombre": "Constituci\u00f3n Nacional de la Rep\u00fablica del Paraguay",
+        "slug": "constitucion-nacional-de-la-republica-del-paraguay",
+        "parent": 4,
+        "lft": 17,
+        "rght": 18,
+        "tree_id": 1,
+        "level": 2
+    }
+},
+{
+    "model": "backend.categoria",
+    "pk": 6,
+    "fields": {
+        "nombre": "Leyes",
+        "slug": "leyes",
+        "parent": 4,
+        "lft": 19,
+        "rght": 20,
+        "tree_id": 1,
+        "level": 2
+    }
+},
+{
+    "model": "backend.categoria",
+    "pk": 7,
+    "fields": {
+        "nombre": "Institucional",
+        "slug": "institucional",
+        "parent": 1,
+        "lft": 28,
+        "rght": 35,
+        "tree_id": 1,
+        "level": 1
+    }
+},
+{
+    "model": "backend.categoria",
+    "pk": 8,
+    "fields": {
+        "nombre": "Ley",
+        "slug": "ley",
+        "parent": 7,
+        "lft": 29,
+        "rght": 30,
+        "tree_id": 1,
+        "level": 2
+    }
+},
+{
+    "model": "backend.categoria",
+    "pk": 9,
+    "fields": {
+        "nombre": "Acordadas",
+        "slug": "acordadas",
+        "parent": 7,
+        "lft": 31,
+        "rght": 32,
+        "tree_id": 1,
+        "level": 2
+    }
+},
+{
+    "model": "backend.categoria",
+    "pk": 10,
+    "fields": {
+        "nombre": "Protocolos",
+        "slug": "protocolos",
+        "parent": 2,
+        "lft": 5,
+        "rght": 6,
+        "tree_id": 1,
+        "level": 2
+    }
+},
+{
+    "model": "backend.categoria",
+    "pk": 11,
+    "fields": {
+        "nombre": "Jurisprudencias",
+        "slug": "jurisprudencias",
+        "parent": null,
+        "lft": 1,
+        "rght": 16,
+        "tree_id": 2,
+        "level": 0
+    }
+},
+{
+    "model": "backend.categoria",
+    "pk": 12,
+    "fields": {
+        "nombre": "Estad\u00edsticas",
+        "slug": "estadisticas",
+        "parent": null,
+        "lft": 1,
+        "rght": 8,
+        "tree_id": 3,
+        "level": 0
+    }
+},
+{
+    "model": "backend.categoria",
+    "pk": 13,
+    "fields": {
+        "nombre": "Materiales de Consulta",
+        "slug": "materiales-de-consulta",
+        "parent": null,
+        "lft": 1,
+        "rght": 10,
+        "tree_id": 4,
+        "level": 0
+    }
+},
+{
+    "model": "backend.categoria",
+    "pk": 14,
+    "fields": {
+        "nombre": "Noticias",
+        "slug": "noticias",
+        "parent": null,
+        "lft": 1,
+        "rght": 8,
+        "tree_id": 5,
+        "level": 0
+    }
+},
+{
+    "model": "backend.categoria",
+    "pk": 15,
+    "fields": {
+        "nombre": "Biblioteca",
+        "slug": "biblioteca",
+        "parent": 13,
+        "lft": 2,
+        "rght": 3,
+        "tree_id": 4,
+        "level": 1
+    }
+},
+{
+    "model": "backend.categoria",
+    "pk": 16,
+    "fields": {
+        "nombre": "Videoteca",
+        "slug": "videoteca",
+        "parent": 13,
+        "lft": 4,
+        "rght": 5,
+        "tree_id": 4,
+        "level": 1
+    }
+},
+{
+    "model": "backend.categoria",
+    "pk": 17,
+    "fields": {
+        "nombre": "Protocolos Facultativos",
+        "slug": "protocolos-facultativos",
+        "parent": 2,
+        "lft": 7,
+        "rght": 8,
+        "tree_id": 1,
+        "level": 2
+    }
+},
+{
+    "model": "backend.categoria",
+    "pk": 18,
+    "fields": {
+        "nombre": "Recomendaciones Generales de los \u00d3rganos de Tratados",
+        "slug": "recomendaciones-generales-de-los-organos-de-tratad",
+        "parent": 2,
+        "lft": 9,
+        "rght": 10,
+        "tree_id": 1,
+        "level": 2
+    }
+},
+{
+    "model": "backend.categoria",
+    "pk": 19,
+    "fields": {
+        "nombre": "Recomendaciones al Estado Paraguayo",
+        "slug": "recomendaciones-al-estado-paraguayo",
+        "parent": 2,
+        "lft": 11,
+        "rght": 12,
+        "tree_id": 1,
+        "level": 2
+    }
+},
+{
+    "model": "backend.categoria",
+    "pk": 20,
+    "fields": {
+        "nombre": "Opiniones consultivas de la Corte Interamericana de Derechos Humanos",
+        "slug": "opiniones-consultivas-de-la-corte-interamericana-d",
+        "parent": 2,
+        "lft": 13,
+        "rght": 14,
+        "tree_id": 1,
+        "level": 2
+    }
+},
+{
+    "model": "backend.categoria",
+    "pk": 21,
+    "fields": {
+        "nombre": "Decretos",
+        "slug": "decretos",
+        "parent": 4,
+        "lft": 21,
+        "rght": 22,
+        "tree_id": 1,
+        "level": 2
+    }
+},
+{
+    "model": "backend.categoria",
+    "pk": 22,
+    "fields": {
+        "nombre": "Resoluciones",
+        "slug": "resoluciones-nacional",
+        "parent": 4,
+        "lft": 23,
+        "rght": 24,
+        "tree_id": 1,
+        "level": 2
+    }
+},
+{
+    "model": "backend.categoria",
+    "pk": 23,
+    "fields": {
+        "nombre": "Resoluciones",
+        "slug": "resoluciones-institucional",
+        "parent": 7,
+        "lft": 33,
+        "rght": 34,
+        "tree_id": 1,
+        "level": 2
+    }
+},
+{
+    "model": "backend.categoria",
+    "pk": 24,
+    "fields": {
+        "nombre": "Circulares",
+        "slug": "circulares",
+        "parent": 4,
+        "lft": 25,
+        "rght": 26,
+        "tree_id": 1,
+        "level": 2
+    }
+},
+{
+    "model": "backend.categoria",
+    "pk": 25,
+    "fields": {
+        "nombre": "Internacionales",
+        "slug": "internacionales-jurisprudencias",
+        "parent": 11,
+        "lft": 2,
+        "rght": 3,
+        "tree_id": 2,
+        "level": 1
+    }
+},
+{
+    "model": "backend.categoria",
+    "pk": 26,
+    "fields": {
+        "nombre": "Nacionales",
+        "slug": "nacionales-jurisprudencias",
+        "parent": 11,
+        "lft": 4,
+        "rght": 15,
+        "tree_id": 2,
+        "level": 1
+    }
+},
+{
+    "model": "backend.categoria",
+    "pk": 27,
+    "fields": {
+        "nombre": "Civil",
+        "slug": "civil",
+        "parent": 26,
+        "lft": 5,
+        "rght": 6,
+        "tree_id": 2,
+        "level": 2
+    }
+},
+{
+    "model": "backend.categoria",
+    "pk": 28,
+    "fields": {
+        "nombre": "Penal",
+        "slug": "penal",
+        "parent": 26,
+        "lft": 7,
+        "rght": 8,
+        "tree_id": 2,
+        "level": 2
+    }
+},
+{
+    "model": "backend.categoria",
+    "pk": 29,
+    "fields": {
+        "nombre": "Laboral",
+        "slug": "laboral",
+        "parent": 26,
+        "lft": 9,
+        "rght": 10,
+        "tree_id": 2,
+        "level": 2
+    }
+},
+{
+    "model": "backend.categoria",
+    "pk": 30,
+    "fields": {
+        "nombre": "Ni\u00f1ez y Adolescencia",
+        "slug": "ninez-y-adolescencia",
+        "parent": 26,
+        "lft": 11,
+        "rght": 12,
+        "tree_id": 2,
+        "level": 2
+    }
+},
+{
+    "model": "backend.categoria",
+    "pk": 31,
+    "fields": {
+        "nombre": "Administrativa",
+        "slug": "administrativa",
+        "parent": 26,
+        "lft": 13,
+        "rght": 14,
+        "tree_id": 2,
+        "level": 2
+    }
+},
+{
+    "model": "backend.categoria",
+    "pk": 32,
+    "fields": {
+        "nombre": "Violencia contra las Mujeres basada en asimetr\u00edas de G\u00e9nero",
+        "slug": "violencia-contra-las-mujeres-basada-en-asimetrias-",
+        "parent": 12,
+        "lft": 2,
+        "rght": 3,
+        "tree_id": 3,
+        "level": 1
+    }
+},
+{
+    "model": "backend.categoria",
+    "pk": 33,
+    "fields": {
+        "nombre": "Indicadores de G\u00e9nero",
+        "slug": "indicadores-de-genero",
+        "parent": 12,
+        "lft": 4,
+        "rght": 5,
+        "tree_id": 3,
+        "level": 1
+    }
+},
+{
+    "model": "backend.categoria",
+    "pk": 34,
+    "fields": {
+        "nombre": "Monitoreo de Resoluciones Judiciales",
+        "slug": "monitoreo-de-resoluciones-judiciales",
+        "parent": 12,
+        "lft": 6,
+        "rght": 7,
+        "tree_id": 3,
+        "level": 1
+    }
+},
+{
+    "model": "backend.categoria",
+    "pk": 35,
+    "fields": {
+        "nombre": "Hemeroteca",
+        "slug": "hemeroteca",
+        "parent": 13,
+        "lft": 6,
+        "rght": 7,
+        "tree_id": 4,
+        "level": 1
+    }
+},
+{
+    "model": "backend.categoria",
+    "pk": 36,
+    "fields": {
+        "nombre": "Otros Materiales",
+        "slug": "otros-materiales",
+        "parent": 13,
+        "lft": 8,
+        "rght": 9,
+        "tree_id": 4,
+        "level": 1
+    }
+},
+{
+    "model": "backend.categoria",
+    "pk": 37,
+    "fields": {
+        "nombre": "Institucionales",
+        "slug": "institucionales",
+        "parent": 14,
+        "lft": 2,
+        "rght": 3,
+        "tree_id": 5,
+        "level": 1
+    }
+},
+{
+    "model": "backend.categoria",
+    "pk": 38,
+    "fields": {
+        "nombre": "Nacionales",
+        "slug": "nacionales-noticias",
+        "parent": 14,
+        "lft": 4,
+        "rght": 5,
+        "tree_id": 5,
+        "level": 1
+    }
+},
+{
+    "model": "backend.categoria",
+    "pk": 39,
+    "fields": {
+        "nombre": "Internacionales",
+        "slug": "internacionales-noticias",
+        "parent": 14,
+        "lft": 6,
+        "rght": 7,
+        "tree_id": 5,
+        "level": 1
+    }
+}
+]

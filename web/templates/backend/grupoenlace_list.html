@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+
+{% block content-header %}
+    <a href="{% url 'backend:grupoenlace_new' %}" class="btn btn-primary btn-lg link" role="button">Nuevo Grupo de Enlace</a>
+    <a href="{% url 'backend:enlace_list' %}" class="btn btn-warning btn-lg link" role="button">Lista de Enlace</a>
+{% endblock %}
+
+{% block content %}
+    <div class="box">
+        <div class="box-header">
+            <h4 class="box-title">Lista de Grupos de Enlaces</h4>
+        </div>
+
+        <div class="box-body">
+            <table id="Listado" class="table table-bordered table-hover" width="100%">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th style="width: 30%;">Opciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for enlace in grupoenlaces %}
+                        <tr>
+                            <td>{{ enlace.nombre }}</td>
+                            <td>
+                                <a href="{% url 'backend:grupoenlace_edit' enlace.id %}" class="btn btn-default link"><i class="fa fa-pencil fa-fw"></i> Editar</a>
+                                <a href="{% url 'backend:grupoenlace_delete' enlace.id %}" class="btn btn-danger link"><i class="fa fa-trash fa-fw"></i> Eliminar</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

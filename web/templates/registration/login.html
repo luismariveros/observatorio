@@ -1,0 +1,91 @@
+{% load bootstrap3 %}
+{% load staticfiles %}
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ingresar al Sistema</title>
+    <meta name="description" content=""/>
+    <meta name="author" content="OpenMind">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+
+    <!-- Custom CSS -->
+    <link href="{% static 'AdminLTE/dist/css/AdminLTE.min.css' %}" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="{% static 'fontawesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="login-page">
+    <div class="login-box">
+        <!-- /.login-logo -->
+        <div class="login-logo">
+            <p><b>Sistema</b>CMS</p>
+        </div>
+        {% if form.errors %}
+            <div class="row">
+                <div class="alert alert-danger alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <i class="icon fa fa-ban"></i> Usuario y contraseña no coinciden.
+                </div>
+            </div>
+        {% endif %}
+        <div class="login-box-body">
+            <p class="login-box-msg">Iniciar sesión para ingresar al Sistema</p>
+
+            <form action="{% url 'login' %}" method="post" role="form">
+                {% csrf_token %}
+
+                <div class="form-group has-feedback">
+                    <input type="text" name="username" class="form-control" placeholder="Usuario">
+                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                </div>
+                <div class="form-group has-feedback">
+                    <input type="password" name="password" class="form-control" placeholder="Contraseña">
+                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 controls">
+                        <button class="btn btn-primary btn-block btn-flat" type="submit">Ingresar</button>
+                        <input type="hidden" name="next" value="{{ next }}" />
+                    </div>
+
+                </div>
+            </form>
+
+            <div class="row" style="margin-top: 25px">
+                <div class="col-sm-12 controls">
+                    <a href="{% url 'password_reset' %}">Contraseña olvidada?</a>
+                </div>
+            </div>
+        </div>
+        <!-- /.login-box-body -->
+    </div>
+    <!-- /.login-box -->
+
+
+
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'plugins/jQuery/jQuery-2.1.4.min.js' %}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="{% static 'dist/js/sb-admin-2.js' %}"></script>
+</body>
+</html>

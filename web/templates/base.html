@@ -1,0 +1,247 @@
+{% load static %}
+{% load bootstrap3 %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta name="csrf-token" content="k4HjohC1vNbGkQJMlemxFmJYq8RlncRvb8p0zC4L" />
+    <title>{% block title %}SGPJ - CMS{% endblock %}</title>
+    <link rel="shortcut icon" href="{% static 'img/favicon.png' %}" type="image/x-icon">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <!-- Bootstrap 3.3.5 -->
+    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" />
+    <!-- Font Awesome -->
+    <link href="{% static 'fontawesome/css/font-awesome.min.css' %}" rel="stylesheet" />
+
+    <!-- DataTables -->
+    <link href="{% static 'plugins/datatables/DataTables/css/dataTables.bootstrap.css' %}" rel="stylesheet" >
+    <!-- DataTables Responsive -->
+    <link href="{% static 'plugins/datatables/Responsive/css/responsive.dataTables.css' %}" rel="stylesheet" >
+    <!-- Theme style -->
+    <link href="{% static 'AdminLTE/dist/css/AdminLTE.css' %}" rel="stylesheet" type="text/css" />
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <link href="{% static 'AdminLTE/dist/css/skins/skin-blue.min.css' %}" rel="stylesheet" type="text/css" />
+    <!-- Select2 -->
+    <link href="{% static 'plugins/select2/select2.min.css' %}" rel="stylesheet"/>
+    <!-- Date Picker -->
+    <link href="{% static 'plugins/datepicker/datepicker3.css' %}" rel="stylesheet" type="text/css" />
+    <!-- Cropper Style-->
+{#    <link rel="stylesheet" href="http://sgpj.tk/plugins/cropper/dist/cropper.css">#}
+    <!-- css auxiliar para elementos no contemplados en el AdminLTE -->
+    <link href="{% static 'css/auxiliar.css' %}" rel="stylesheet" type="text/css"/>
+    <!-- css auxiliar para subir archivos -->
+    <link href="{% static 'css/file-upload.css' %}" rel="stylesheet" type="text/css"/>
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+    <header class="main-header">
+        <a href="{% url 'backend:index' %}" class="logo">
+            <span class="logo-mini"><b>SGPJ</b></span>
+            <span class="logo-lg"><b>CMS</b>SGPJ</span>
+        </a>
+        <nav class="navbar navbar-static-top" role="navigation">
+            <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                <span class="sr-only">Toggle navigation</span>
+            </a>
+            <div class="navbar-custom-menu">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-user"></i>
+                            <span> {{ user }} </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'logout' %}">
+                            <i class="fa fa-sign-out"></i>
+                            <span> Cerrar Sesión </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+
+    <aside class="main-sidebar">
+        <section class="sidebar">
+            <ul class="sidebar-menu tree" data-widget="tree">
+                <li class="header">MENU PRINCIPAL</li>
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-cogs text-white"></i>
+                        <span>Definiciones</span>
+                        <span class="pull-right-container">
+                          <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li>
+                            <a href="http://sgpj.tk/es/back/categorias">
+                                <i class="fa fa-circle-o text-white"></i>Categorías
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://sgpj.tk/es/back/sub_categorias">
+                                <i class="fa fa-circle-o text-white"></i>Sub Categorías
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://sgpj.tk/es/back/sub_sub_categorias">
+                                <i class="fa fa-circle-o text-white"></i>Sub-Sub Categorías
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="{% url 'backend:contenido_list' %}">
+                        <i class="fa fa-newspaper-o text-white"></i>
+                        <span>Contenidos</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'backend:dependencia_list' %}">
+                        <i class="fa fa-home text-white"></i>
+                        <span>Dependencias</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'backend:curso_list' %}">
+                        <i class="fa fa-graduation-cap text-white"></i>
+                        <span>Cursos</span>
+                    </a>
+                </li>
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-link text-white"></i>
+                        <span>Enlaces</span>
+                        <span class="pull-right-container">
+                          <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li>
+                            <a href="{% url 'backend:grupoenlace_list' %}">
+                                <i class="fa fa-circle-o text-white"></i>Grupos
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'backend:enlace_list' %}">
+                                <i class="fa fa-circle-o text-white"></i>Listado
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="{% url 'backend:slider_list' %}">
+                        <i class="fa fa-film text-white"></i>
+                        <span>Slider</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'backend:galeria_list' %}">
+                        <i class="fa fa-picture-o text-white"></i>
+                        <span>Galerías</span>
+                    </a>
+                </li>
+
+            </ul>
+        </section>
+    </aside>      <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <section class="content-header">
+            {% block content-header %}
+
+            {% endblock %}
+        </section>
+        <section class="content">
+            {% if messages %}
+                <div class="row">
+                    <div class="col-lg-6">
+                        {% bootstrap_messages %}
+                    </div>
+                </div>
+            {% endif %}
+            <div class="row">
+                <div class="col-md-12">
+                    {% block content %}
+                        <div class="callout callout-info">
+                            <h4>CMS - Secretaría de Género del Poder Judicial</h4>
+                            <p>Bienvenido al Administrador de Contenidos</p>
+                        </div>
+                    {% endblock %}
+                </div>
+            </div>
+        </section><!-- /.content -->
+        <!-- Main content -->
+        <section class="content-header">
+            <h1></h1>
+        </section>
+    </div><!-- /.content-wrapper -->
+
+    <footer class="main-footer">
+        <strong>Copyright &copy; 2017.</strong> All rights reserved.
+    </footer>
+
+</div><!-- ./wrapper -->
+
+<!-- jQuery 2.1.4 -->
+<script src="{% static 'plugins/jQuery/jQuery-2.1.4.min.js' %}"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="{% static 'plugins/jQueryUI/jquery-ui.min.js' %}"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+    $.widget.bridge('uibutton', $.ui.button);
+</script>
+<!-- Bootstrap 3.3.7 -->
+<script src="{% static 'bootstrap/js/bootstrap.min.js' %}" type="text/javascript"></script>
+<!-- JQuery DataTable -->
+<script src="{% static 'plugins/datatables/DataTables/js/jquery.dataTables.min.js' %}" type="text/javascript"></script>
+<script src="{% static 'plugins/datatables/DataTables/js/dataTables.bootstrap.min.js' %}" type="text/javascript"></script>
+<script src="{% static 'plugins/datatables/FixedColumns/js/dataTables.fixedColumns.min.js' %}" type="text/javascript"></script>
+<script src="{% static 'plugins/datatables/Responsive/js/dataTables.responsive.min.js' %}" type="text/javascript"></script>
+<!-- Select2 -->
+<script src="{% static 'plugins/select2/select2.full.min.js' %}"></script>
+<!-- jQuery Knob Chart -->
+{#<script src="http://sgpj.tk/plugins/knob/jquery.knob.js" type="text/javascript"></script>#}
+<!-- MomentJs -->
+{#<script src="http://sgpj.tk/plugins/momentjs/moment.js" type="text/javascript"></script>#}
+<!-- daterangepicker -->
+{#<script src="http://sgpj.tk/plugins/daterangepicker/daterangepicker.js" type="text/javascript"></script>#}
+<!-- datepicker -->
+<script src="{% static 'plugins/datepicker/bootstrap-datepicker.js' %}" type="text/javascript"></script>
+<script src="{% static 'plugins/datepicker/locales/bootstrap-datepicker.es.js' %}" type="text/javascript"></script>
+<!-- CKEditor -->
+{#<script src="http://sgpj.tk/plugins/ckeditor/ckeditor.js" type="text/javascript"></script>#}
+<!-- AdminLTE App -->
+<script src="{% static 'AdminLTE/dist/js/app.min.js' %}" type="text/javascript"></script>
+<!-- InputMask -->
+{#<script src="http://sgpj.tk/plugins/input-mask/jquery.inputmask.js"></script>#}
+{#<script src="http://sgpj.tk/plugins/input-mask/jquery.inputmask.date.extensions.js"></script>#}
+{#<script src="http://sgpj.tk/plugins/input-mask/jquery.inputmask.extensions.js"></script>#}
+{#<script src="http://sgpj.tk/plugins/input-mask/jquery.inputmask.numeric.extensions.js"></script>#}
+<!-- Cropper JS -->
+{#<script src="http://sgpj.tk/plugins/cropper/dist/cropper.js "></script>#}
+<!-- script para usar junto al auxiliar.css -->
+<script src="{% static 'js/auxiliar.js' %}"></script>
+
+
+<script>
+    $(function () {
+        //Initialize Select2 Elements
+        $(".select2").select2();
+
+        $(document).ready(function(){
+
+            $('div.alert').delay(5000).slideUp(300);
+            $('#flash-overlay-modal').modal();
+
+        });
+
+    });
+</script>
+{% block extrascript %} {% endblock %}
+</body>
+</html>

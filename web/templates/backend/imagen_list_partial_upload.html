@@ -1,0 +1,12 @@
+{% for imagen in imagenes %}
+    <tr>
+        <td style="text-align: right">{{ forloop.counter }}.</td>
+        <td><a target="_blank" href="{{ imagen.file.url }}">{{ imagen.filename }}</a></td>
+        <td><img src="{{ imagen.thumb.url }}" width="50"></td>
+        <td><button type="button"
+                    class="btn btn-danger btn-sm js-delete-book"
+                    data-url="{% url 'backend:imagen_delete' imagen.id %}">
+            <span class="fa fa-trash"></span> Eliminar</button>
+        </td>
+    </tr>
+{% endfor %}

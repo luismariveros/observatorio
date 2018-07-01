@@ -1,0 +1,183 @@
+{% extends "basew.html" %}
+
+{% load humanize %}
+{% load django_bootstrap_breadcrumbs %}
+
+{% block facebook %}
+    <meta property="og:title" content="{{ contenido.titulo }}"/>
+    <meta property="og:description" content="{{ contenido.copete }}"/>
+    <meta property="og:image" content="http://{{ request.get_host }}{{ contenido.imagen.url }}"/>
+{% endblock %}
+
+{% block breadcrumbs %}
+    <!-- Breadcrumbs -->
+    {{ block.super }}
+
+    {% breadcrumb "Inicio" "/" %}
+    {% for b in breadcrumbs %}
+        {% breadcrumb b.nombre b.slug %}
+    {% endfor %}
+    {% breadcrumb contenido.titulo contenido.slug %}
+    <!-- End Breadcrumbs -->
+{% endblock breadcrumbs %}
+
+
+
+{% block content %}
+    {% render_breadcrumbs %}
+
+    <div class="container g-pt-10 g-pb-70">
+        <div class="row justify-content-between">
+            <div class="col-lg-9 g-mb-30 text-justify">
+                <!-- Blog Minimal Blocks -->
+                <article class="g-mb-10">
+                    <div class="g-mb-10">
+                        <span class="d-block g-color-gray-dark-v4 g-font-weight-700 g-font-size-12 text-uppercase mb-2">{{ contenido.fecha_publicacion }}</span>
+                        <h2 class="h4 g-color-black g-font-weight-600 mb-3">{{ contenido.titulo }}</h2>
+                        <p class="g-color-black g-line-height-1_8 h5">{{ contenido.copete}}</p>
+
+                        {% if noimage %}
+                            <hr class="u-divider-linear-gradient u-divider-linear-gradient--gray-light-v2 g-my-50">
+                        {% else %}
+                            <figure class="g-pos-rel g-my-50">
+                                <img class="img-fluid w-100 g-mb-20" src="{{ contenido.imagen.url }}" alt="">
+                            </figure>
+                        {% endif %}
+                    </div>
+                    <p>{{ contenido.detalle |safe }}</p>
+
+                    {% if contenido.documento %}
+                        <div class="g-px-30 g-py-20 g-mt-20 alert alert-success">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <h4>Documento relacionado</h4>
+                                    <a href="{{ contenido.documento.url }}" target="_blank">{{ contenido.filename }}</a></p>
+                                </div>
+                                <div class="col-md-4 col-sm-4 text-right align-bottom">
+                                    <a href="{{ contenido.documento.url }}" rel="nofollow" target="_blank" class="btn btn-success btn-lg">Descargar</a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+
+                    <hr class="u-divider-db-dotted g-brd-gray-light-v2 g-my-30">
+
+                    <!-- Social Shares -->
+                    <div class="g-bg-secondary g-px-30 g-py-20">
+                        <div class="row align-items-center">
+                            <div class="g-mb-25 g-mb-0--lg">
+                                <!-- Listing - Share -->
+                                <div class="d-flex align-items-center">
+                                    <h3 class="h6 g-font-weight-600 mr-4 mb-0">Compartir:</h3>
+
+                                    <ul class="list-inline mb-0">
+                                        <li class="list-inline-item g-mx-2">
+                                            <a id="btnShare" class="social-icon u-icon-v3 g-width-45 g-height-45 g-bg-facebook g-color-white g-color-facebook--hover g-bg-white--hover g-font-size-13 g-mr-20 g-mb-20" href="">
+                                                <span class="u-badge-v1--sm g-color-white g-bg-red">4</span>
+                                                <i class="fa fa-facebook"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item g-mx-2">
+                                            <a class="social-icon u-icon-v3 g-width-45 g-height-45 g-bg-twitter g-color-white g-color-twitter--hover g-bg-white--hover g-font-size-13" href="#">
+                                                <span class="u-badge-v1--sm g-color-white g-bg-red">4</span>
+                                                <i class="fa fa-twitter"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- End Listing - Share -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Social Shares -->
+
+                    <div id="shareBtn" class="btn btn-success clearfix">Share</div>
+
+                    <p style="margin-top: 50px">
+                    <hr />
+                    <a class="btn btn-small"  href="https://developers.facebook.com/docs/sharing/reference/share-dialog">Share Dialog Documentation</a>
+                    </p>
+
+                </article>
+                <!-- End Blog Minimal Blocks -->
+            </div>
+
+            <div class="col-lg-3 g-brd-left--lg g-brd-gray-light-v4 g-mb-20">
+                <div class="g-pl-20--lg">
+                    {% if ultimos %}
+                        <div class="mb-0">
+                            <h3 class="h5 g-color-black g-font-weight-600 mb-1">{{ contenido.categoria.get_root }} recientes</h3>
+                        </div>
+                        <ul class="list-unstyled g-font-size-13 mb-0">
+                            {% for u in ultimos %}
+                                <li>
+                                    <a class="d-block u-link-v5 g-color-gray-dark-v4 rounded g-px-20 g-py-8" href="{% url 'www:contenido_detail' u.slug %}"><i class="mr-2 fa fa-angle-right"></i> {{ u.titulo }}</a>
+                                </li>
+                            {% endfor %}
+                            <li class="text-center"><a class="btn u-btn-outline-primary g-font-size-11 g-rounded-10 g-mt-20" href="http://{{ request.get_host }}/{{ contenido.categoria.get_root.slug }}">Ver todas</a></li>
+                        </ul>
+                    {% endif %}
+
+
+                    <hr class="g-brd-gray-light-v4 g-my-30 mb-0">
+
+                    {% include 'enlaces.html' %}
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
+
+{% block extrascript %}
+{#    <script type="text/javascript">#}
+{#        var popupMeta = {#}
+{#            width: 400,#}
+{#            height: 400#}
+{#        }#}
+{#        $(document).on('click', '.social-icon', function (event) {#}
+{#            event.preventDefault();#}
+{##}
+{#            var vPosition = Math.floor(($(window).width() - popupMeta.width) / 2),#}
+{#                    hPosition = Math.floor(($(window).height() - popupMeta.height) / 2);#}
+{##}
+{#            var url = $(this).attr('href');#}
+{#            var popup = window.open(url, 'Compartir',#}
+{#                    'width=' + popupMeta.width + ',height=' + popupMeta.height +#}
+{#                    ',left=' + vPosition + ',top=' + hPosition +#}
+{#                    ',location=0,menubar=0,toolbar=0,status=0,scrollbars=1,resizable=1');#}
+{##}
+{#            if (popup) {#}
+{#                popup.focus();#}
+{#                return false;#}
+{#            }#}
+{#        });#}
+{##}
+{#        thisUrl = window.location.href;#}
+{#        fbUrl = 'https://graph.facebook.com/?ids=' + thisUrl;#}
+{#        twUrl = 'https://public.newsharecounts.com/count.json?url=' + thisUrl;#}
+{##}
+{#        $.get(fbUrl, function (data) {#}
+{#            count = data[thisUrl].share.share_count;#}
+{#            $("#facebook_count").text(count);#}
+{#        });#}
+{##}
+{#        $.get(twUrl, function (data) {#}
+{#            console.log(data);#}
+{#            count = data.count;#}
+{#            $("#twitter_count").text(count);#}
+{#        });#}
+{#    </script>#}
+
+    <script>
+        document.getElementById('shareBtn').onclick = function() {
+            FB.ui({
+                method: 'share',
+                display: 'popup',
+                href: 'https://developers.facebook.com/docs/',
+            }, function(response){});
+        }
+    </script>
+
+
+{% endblock %}

@@ -1,0 +1,76 @@
+{% extends "basew.html" %}
+
+{% load static %}
+{% load humanize %}
+{% load django_bootstrap_breadcrumbs %}
+
+{% block extrastyle %}
+    <link rel="stylesheet" href="{% static 'assets/vendor/slick-carousel/slick/slick.css' %}">
+
+{% endblock %}
+
+{% block breadcrumbs %}
+    <!-- Breadcrumbs -->
+    {{ block.super }}
+
+    {% breadcrumb "Inicio" "/" %}
+    {% breadcrumb "Galerias | Actividades" "/galerias/" %}
+    <!-- End Breadcrumbs -->
+{% endblock breadcrumbs %}
+
+
+
+{% block content %}
+    {% render_breadcrumbs %}
+
+    <div class="container g-pt-10 g-pb-70">
+        <div class="g-mb-40">
+            <h2 class="mb-0">Galerias | Actividades</h2>
+        </div>
+
+        <div class="row justify-content-between">
+            <div class="col-lg-9 g-mb-30 text-justify">
+                <div class="row">
+                    {% for galeria in galerias %}
+                        <div class="col-md-6 text-center g-mb-30">
+                            <div class="js-carousel text-center g-pb-10" data-infinite="true" data-arrows-classes="u-arrow-v1 g-absolute-centered--y g-width-35 g-height-40 g-font-size-18 g-color-gray g-bg-white g-mt-minus-10" data-arrow-left-classes="fa fa-angle-left g-left-0" data-arrow-right-classes="fa fa-angle-right g-right-0">
+                                {% for imagen in galeria.imagenes.all %}
+                                    <div class="js-slide">
+                                        <a href="{% url 'www:galeria_detail' galeria.slug %}">
+                                            <img class="img-fluid g-rounded-6" src="{{ imagen.file.url }}" alt="">
+                                        </a>
+                                    </div>
+                                {% endfor %}
+                            </div>
+
+                            <h3 class="h4 g-color-black">
+                                <a class="u-link-v5 g-color-black g-color-primary--hover g-cursor-pointer" href="{% url 'www:galeria_detail' galeria.slug %}">{{ galeria.titulo }}</a>
+                            </h3>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="col-lg-3 g-brd-left--lg g-brd-gray-light-v4 g-mb-20">
+                <div class="g-pl-20--lg">
+
+                    {% include 'enlaces.html' %}
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
+
+{% block extrascript %}
+    <script src="{% static 'assets/vendor/slick-carousel/slick/slick.js' %}"></script>
+    <script src="{% static 'assets/js/components/hs.carousel.js' %}"></script>
+
+    <script>
+        $(document).on('ready', function () {
+            // initialization of carousel
+            $.HSCore.components.HSCarousel.init('.js-carousel');
+        });
+    </script>
+{% endblock %}

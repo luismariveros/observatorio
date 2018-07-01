@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% load humanize %}
+{% load bootstrap3 %}
+{% load static %}
+
+{% block content-header %}
+    <h3>Nueva Galeria</h3>
+{% endblock %}
+
+{% block content %}
+    <div class="box box-success">
+        <div class="box-header">
+            <h3 class="box-title">Completar todos los datos. <small>Las imáganes se podrán cargar luego de guardar la Galería</small></h3>
+        </div>
+        <div class="box-body pad">
+            <form method="post" class="form" id="contenidoForm" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.media }}
+                {% bootstrap_form form %}
+
+                {% buttons %}
+                    <button type="submit" class="btn btn-info btn-lg">
+                        {% bootstrap_icon "hdd" %} Guardar
+                    </button>
+                {% endbuttons %}
+
+            </form>
+        </div>
+    </div>
+{% endblock %}
+
+{% block extrascript %}
+    {# JQUERY FILE UPLOAD SCRIPTS #}
+    <script src="{% static 'plugins/jquery-file-upload/vendor/jquery.ui.widget.js' %}"></script>
+    <script src="{% static 'plugins/jquery-file-upload/jquery.iframe-transport.js' %}"></script>
+    <script src="{% static 'plugins/jquery-file-upload/jquery.fileupload.js' %}"></script>
+
+    {# PHOTOS PAGE SCRIPTS #}
+    <script src="{% static 'js/upload/progress-bar-upload.js' %}"></script>
+{% endblock extrascript %}

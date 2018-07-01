@@ -1,0 +1,83 @@
+{% extends "basew.html" %}
+
+{% load humanize %}
+{% load django_bootstrap_breadcrumbs %}
+
+{% block breadcrumbs %}
+    <!-- Breadcrumbs -->
+    {{ block.super }}
+    {% breadcrumb "Inicio" "/" %}
+    {% breadcrumb "¿Quienés somos?" "quienes-somos" %}
+    {% breadcrumb "Objetivos" "" %}
+    {% render_breadcrumbs %}
+
+    <!-- End Breadcrumbs -->
+{% endblock breadcrumbs %}
+
+{% block content %}
+    <div class="container g-pt-10 g-pb-70">
+        <div class="g-mb-40">
+            <h2 class="mb-0">Objetivos</h2>
+        </div>
+
+        <div class="row justify-content-between">
+            <div class="col-lg-9 g-mb-30 text-justify">
+                <h3 class="h4">Objetivo General</h3>
+                <p>Comprender la dinámica y evolución del sistema de administración de justicia en el sistema democrático paraguayo, para el fortalecimiento de capacidades institucionales y la generación de aprendizaje entre los/las actores/as involucrados/as, bajo los principios de los derechos humanos de las mujeres y la perspectiva de género.</p>
+
+                <h3 class="h4 g-mt-50">Objetivos Específicos</h3>
+                <p>Ser un espacio de reflexión y de acciones que genere índices e información confiables sobre el sistema de administración de justicia, que incida en el fortalecimiento de las capacidades institucionales y la toma de decisiones para el mejoramiento, reforma y acceso efectivo de las mujeres a la justicia.</p>
+                <ul class="list-unstyled g-font-size-13 mb-0">
+                    <li class="g-px-20 g-py-8">
+                        <i class="mr-2 fa fa-angle-right"></i> Apoyar los procesos de discusión, análisis y toma de decisiones sobre la administración de justicia, con base en una agenda temática dirigida a promover el goce y disfrute del derecho de las mujeres al acceso a la justicia sin discriminación;
+                    </li>
+                    <li class="g-px-20 g-py-8">
+                        <i class="mr-2 fa fa-angle-right"></i> Desarrollar metodologías de trabajo e investigación que permitan la agregación de información en el tiempo, con el fin de ejecutar iniciativas y sustentar políticas para el mejoramiento de la administración de justicia;
+                    </li>
+                    <li class="g-px-20 g-py-8">
+                        <i class="mr-2 fa fa-angle-right"></i> Desarrollar un conjunto de indicadores con perspectiva de género sobre la administración de justicia que visibilice la situación de ésta, facilitando la toma de decisiones para su mejoramiento;
+                    </li>
+                    <li class="g-px-20 g-py-8">
+                        <i class="mr-2 fa fa-angle-right"></i> Propiciar la ejecución de esfuerzos coordinados por parte de las instituciones públicas, el sector privado y organizaciones no gubernamentales, mediante la promoción de relaciones interinstitucionales y alianzas estratégicas sólidas y permanentes en los ámbitos público y privado para el mejoramiento de la administración de justicia;
+                    </li>
+                    <li class="g-px-20 g-py-8">
+                        <i class="mr-2 fa fa-angle-right"></i> Apoyar los procesos de formulación, implementación y valoración de las políticas públicas del sistema de administración de justicia desde la perspectiva de género, a través de la interacción de múltiples agentes clave institucionales;
+                    </li>
+                    <li class="g-px-20 g-py-8">
+                        <i class="mr-2 fa fa-angle-right"></i> Promover espacios de reflexión, con miras a alcanzar un sistema de administración de justicia más justo, equitativo y regido por el principio de igualdad y no discriminación;
+                    </li>
+                    <li class="g-px-20 g-py-8">
+                        <i class="mr-2 fa fa-angle-right"></i> Institucionalizar un mecanismo de rendición de cuentas, seguimiento, monitoreo y evaluación de la administración de justicia, con perspectiva de género, con participación de los sectores público y privado;
+                    </li>
+                    <li class="g-px-20 g-py-8">
+                        <i class="mr-2 fa fa-angle-right"></i> Incluir a la República del Paraguay a la red de Observatorios de Justicia y Género de Iberoamérica, con la coordinación técnica de integrantes de dicha red.
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-lg-3 g-brd-left--lg g-brd-gray-light-v4 g-mb-20">
+                <div class="g-pl-20--lg">
+                    <div class="mb-0">
+                        <h3 class="h5 g-color-black g-font-weight-600 mb-1">¿Quienés somos?</h3>
+                    </div>
+                    <ul class="list-unstyled g-font-size-13 mb-0">
+                        <li><a class="d-block u-link-v5 g-color-gray-dark-v4 rounded g-px-20 g-py-8" href="{% url 'www:observatorio' %}"><i class="mr-2 fa fa-angle-right"></i> ¿Qué es el Observatorio?</a>
+                        </li>
+                        <li><a class="d-block u-link-v5 g-color-gray-dark-v4 rounded g-px-20 g-py-8" href="{% url 'www:mision' %}"><i class="mr-2 fa fa-angle-right"></i> Misión</a>
+                        </li>
+                        <li><a class="d-block u-link-v5 g-color-gray-dark-v4 rounded g-px-20 g-py-8" href="{% url 'www:mision' %}"><i class="mr-2 fa fa-angle-right"></i> Visión</a>
+                        </li>
+                        <li><a class="d-block u-link-v5 g-color-gray-dark-v4 rounded g-px-20 g-py-8" href="{% url 'www:objetivos' %}"><i class="mr-2 fa fa-angle-right"></i> Objetivos</a>
+                        </li>
+                        <li><a class="d-block u-link-v5 g-color-gray-dark-v4 rounded g-px-20 g-py-8" href="http://accesojusticia.csj.gov.py/#/mapa" target="_blank"><i class="mr-2 fa fa-angle-right"></i> Juzgados</a>
+                        </li>
+                    </ul>
+                    <hr class="g-brd-gray-light-v4 g-my-30 mb-0">
+
+                    {% include 'enlaces.html' %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

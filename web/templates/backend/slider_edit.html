@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% load humanize %}
+{% load bootstrap3 %}
+{% load static %}
+
+{% block content-header %}
+    <h3>Editar Slider</h3>
+{% endblock %}
+
+{% block content %}
+    <div class="box box-success">
+        <div class="box-header">
+            <h3 class="box-title">Completar todos los datos.</h3>
+        </div>
+        <div class="box-body pad">
+            <form method="post" class="form" enctype="multipart/form-data">
+                {% csrf_token %}
+                {% bootstrap_form form %}
+
+                {% buttons %}
+                    <button type="submit" class="btn btn-primary">
+                        {% bootstrap_icon "hdd" %} Guardar
+                    </button>
+                {% endbuttons %}
+            </form>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,292 @@
+[
+{
+   "model": "backend.galeria",
+   "pk": 1,
+   "fields": {
+      "titulo": "Atardeceres en el campo",
+      "descripcion": "<p>Un astro, en particular el Sol, est&aacute; en el ocaso cuando, por efecto de la rotaci&oacute;n de la Tierra, atraviesa el plano del horizonte y pasa del hemisferio visible al no visible. Es decir, cuando su altura es cero, pasando de positiva a negativa. En el caso del Sol, ello determina el fin del d&iacute;a. El ant&oacute;nimo de ocaso es orto. El ocaso es llamado tambi&eacute;n atardecer o anochecer.</p>\r\n\r\n<p>Las estrellas circumpolares no tienen ocaso ni orto.</p>\r\n\r\n<p>En el hemisferio norte en primavera y verano el Sol se pone entre el Oeste y el Norte (declinaci&oacute;n positiva); en oto&ntilde;o e invierno su ocaso es entre el Oeste y el Sur (declinaci&oacute;n negativa). Simult&aacute;neamente, en el hemisferio sur en oto&ntilde;o e invierno, el ocaso es entre el Oeste y el Norte, y en primavera y verano entre el Oeste y el Sur.</p>\r\n\r\n<p>La refracci&oacute;n por la atm&oacute;sfera de los rayos luminosos del Sol motiva que veamos luz cuando el Sol ya se ha puesto: crep&uacute;sculo vespertino. Dicha refracci&oacute;n alarga el d&iacute;a y acorta la noche.</p>",
+      "activa": true,
+      "recomendada": true,
+      "creada": "2018-05-26T00:44:57.502Z",
+      "slug": "atardeceres-en-el-campo"
+   }
+},
+{
+   "model": "backend.galeria",
+   "pk": 2,
+   "fields": {
+      "titulo": "Presentaci\u00f3n de los Bosques de la Rep\u00fablica del Paraguay",
+      "descripcion": "<h2 style=\"text-align:justify\">Clasificaci&oacute;n de los Bosques</h2>\r\n\r\n<p>Existen tres tipos de bosques que est&aacute;n clasificados de acuerdo a su latitud. Estos son:</p>\r\n\r\n<ul>\r\n\t<li>Bosque tropical. Est&aacute;n ubicados cerca del ecuador y las temperaturas oscilan entre 20 a 25&deg;C. El suelo es pobre y la descomposici&oacute;n r&aacute;pida. Habitan&nbsp;<a href=\"http://www.bioenciclopedia.com/murcielago/\" target=\"_blank\" title=\"Art\u00edculo del Murci\u00e9lago\">murci&eacute;lagos</a>, una gran variedad de <a href=\"http://www.bioenciclopedia.com/category/animal/ave/\" target=\"_blank\" title=\"Aves\">aves</a> e <a href=\"http://www.bioenciclopedia.com/category/animal/insecto/\" target=\"_blank\" title=\"Insectos\">insectos</a>. Existe una gran diversidad de vegetaci&oacute;n, pues en 1 km<sup>2 </sup>pueden encontrarse hasta 100 tipos de &aacute;rboles de hasta 35 metros de altura. Tambi&eacute;n se encuentran orqu&iacute;deas, helechos y palmas.</li>\r\n\t<li>&nbsp;<em>Bosque</em> Templado. Ubicados en Norteam&eacute;rica, Asia y Europa. Con temperaturas de -30 a 30&deg;C, el suelo es muy f&eacute;rtil y la fauna est&aacute; representada por <a href=\"http://www.bioenciclopedia.com/lince/\" target=\"_blank\" title=\"Art\u00edculo del Lince\">linces</a>, <a href=\"http://www.bioenciclopedia.com/puma/\" target=\"_blank\" title=\"Art\u00edculo del Puma\">pumas</a>, <a href=\"http://www.bioenciclopedia.com/zorro/\" target=\"_blank\" title=\"Art\u00edculo del Zorro\">zorros</a>, <a href=\"http://www.bioenciclopedia.com/osos/\" target=\"_blank\" title=\"Art\u00edculo de los Osos\">osos negros </a>y <a href=\"http://www.bioenciclopedia.com/lobo/\" target=\"_blank\" title=\"Art\u00edculo del Lobo\">lobos</a>, entre otros. La vegetaci&oacute;n se caracteriza por estar formada por tres o cuatro especies de &aacute;rboles por km<sup>2</sup>. Entre ellos el roble, sauce, nogal y abeto.</li>\r\n\t<li>&nbsp;<u>Bosque</u> de Con&iacute;feras. Tambi&eacute;n llamado <a href=\"http://www.bioenciclopedia.com/taiga/\" target=\"_blank\" title=\"Art\u00edculo de la Taiga\">Taiga</a>, se encuentra en el hemisferio norte del planeta y representa el mayor bioma terrestre. Las temperaturas son muy fr&iacute;as y por lo tanto el suelo es muy poco f&eacute;rtil. Los <a href=\"http://www.bioenciclopedia.com/alce/\" target=\"_blank\" title=\"Art\u00edculo del Alce\">alces</a>, musara&ntilde;as, halcones, zorros, lobos, entre muchos otros, forman parte de su fauna. Los pinos y las formaciones boscosas de con&iacute;feras con hojas perennes, representan en gran parte la vegetaci&oacute;n de este lugar.</li>\r\n</ul>\r\n\r\n<p>Exceptuando a las con&iacute;feras, en estos tipos de bosque se puede encontrar gran cantidad de biomasa, es decir, materia org&aacute;nica ideal para ser utilizada como fuente de energ&iacute;a y cuidar nuestro medio ambiente.</p>",
+      "activa": true,
+      "recomendada": true,
+      "creada": "2018-05-26T02:34:42.325Z",
+      "slug": "presentacion-de-los-bosques-en-paraguay"
+   }
+},
+{
+   "model": "backend.galeria",
+   "pk": 3,
+   "fields": {
+      "titulo": "Evento Din\u00e1mica",
+      "descripcion": "<h2>Juegos de afirmaci&oacute;n para ni&ntilde;os</h2>\r\n\r\n<address>Son aquellos juegos en los que tiene un papel prioritario la afirmaci&oacute;n de los/as participantes como personas y del grupo como tal. Ponen en juego los mecanismos en que se basa la seguridad en s&iacute; mismo/a, tanto internos (auto concepto, capacidades,) como en relaci&oacute;n a las presiones exteriores (papel en el grupo, exigencias sociales, ...). Tratan a veces de hacer conscientes las propias limitaciones. Otras de facilitar el reconocimiento de las propias necesidades y poderlas expresar de una forma verbal y no verbal, potenciando la aceptaci&oacute;n de todos/as en el grupo. Otras de favorecer la conciencia de grupo. Estos juegos enmarcan a veces situaciones de un relativo enfrentamiento, cuyo objetivo no es la competici&oacute;n sino favorecer la capacidad de resistencia frente a las presiones exteriores y la manipulaci&oacute;n, y valorar la capacidad de respuesta a una situaci&oacute;n hostil.</address>",
+      "activa": true,
+      "recomendada": true,
+      "creada": "2018-05-26T00:47:51.489Z",
+      "slug": "evento-dinamica"
+   }
+},
+{
+   "model": "backend.galeriaimagen",
+   "pk": 1,
+   "fields": {
+      "file": "galerias/atardeceres-en-el-campo/1521221543.jpg",
+      "galeria": 1,
+      "width": 767,
+      "height": 959,
+      "slug": "galeriasatardeceres-en-el-campo1521221543jpg"
+   }
+},
+{
+   "model": "backend.galeriaimagen",
+   "pk": 2,
+   "fields": {
+      "file": "galerias/atardeceres-en-el-campo/1521221541.jpeg",
+      "galeria": 1,
+      "width": 767,
+      "height": 959,
+      "slug": "galeriasatardeceres-en-el-campo1521221541jpeg"
+   }
+},
+{
+   "model": "backend.galeriaimagen",
+   "pk": 3,
+   "fields": {
+      "file": "galerias/atardeceres-en-el-campo/1521221243.jpg",
+      "galeria": 1,
+      "width": 767,
+      "height": 959,
+      "slug": "galeriasatardeceres-en-el-campo1521221243jpg"
+   }
+},
+{
+   "model": "backend.galeriaimagen",
+   "pk": 4,
+   "fields": {
+      "file": "galerias/presentacion-de-los-bosques-en-paraguay/1520879049.jpg",
+      "galeria": 2,
+      "width": 767,
+      "height": 959,
+      "slug": "galeriaspresentacion-de-los-bosques-en-paraguay152"
+   }
+},
+{
+   "model": "backend.galeriaimagen",
+   "pk": 5,
+   "fields": {
+      "file": "galerias/presentacion-de-los-bosques-en-paraguay/1520879047.jpg",
+      "galeria": 2,
+      "width": 767,
+      "height": 959,
+      "slug": "galeriaspresentacion-de-los-bosques-en-paraguay1-2"
+   }
+},
+{
+   "model": "backend.galeriaimagen",
+   "pk": 6,
+   "fields": {
+      "file": "galerias/presentacion-de-los-bosques-en-paraguay/1520879048.jpeg",
+      "galeria": 2,
+      "width": 767,
+      "height": 959,
+      "slug": "galeriaspresentacion-de-los-bosques-en-paraguay1-3"
+   }
+},
+{
+   "model": "backend.galeriaimagen",
+   "pk": 7,
+   "fields": {
+      "file": "galerias/evento-dinamica/1517226022.jpg",
+      "galeria": 3,
+      "width": 767,
+      "height": 959,
+      "slug": "galeriasevento-dinamica1517226022jpg"
+   }
+},
+{
+   "model": "backend.galeriaimagen",
+   "pk": 8,
+   "fields": {
+      "file": "galerias/evento-dinamica/1517225999.jpg",
+      "galeria": 3,
+      "width": 767,
+      "height": 959,
+      "slug": "galeriasevento-dinamica1517225999jpg"
+   }
+},
+{
+   "model": "backend.contenido",
+   "pk": 1,
+   "fields": {
+      "categoria": 37,
+      "titulo": "Torturaba a esposa e hijo",
+      "slug": "torturaba-a-esposa-e-hijo",
+      "copete": "Efectivos de Investigaci\u00f3n de Hechos Punibles de Alto Paran\u00e1 detuvieron este viernes a un brasile\u00f1o que obligaba a su esposa a practicar sadomasoquismo e intercambios sexuales frente a su hijo menor de edad, todo bajo amenazas de muerte.",
+      "detalle": "<p>El hecho ocurri&oacute; en el Barrio Obrero de Ciudad del Este, donde desde hace un a&ntilde;o, la mujer permanec&iacute;a encerrada para estas pr&aacute;cticas en contra de su voluntad.</p>\r\n\r\n<p>De acuerdo a la denuncia, el acusado, identificado como Marco Antonio de Vasconcellos (49), realizaba sesiones sadomasoquistas torturando y obligando bajo amenazas de muerte a su esposa a realizar intercambios sexuales, frente a su hijo menor de edad, con otros individuos que tambi&eacute;n fueron identificados en las sesiones filmadas, que incluso se difundieron y comercializaron.</p>\r\n\r\n<p>Hace un a&ntilde;o, la esposa logr&oacute; escapar y formul&oacute; denuncia ante el fiscal Alfredo Ramos Manzur, pero posteriormente, este agente fue acusado por obstruir la investigaci&oacute;n ya que, supuestamente, recib&iacute;a coimas del marido acusado.</p>\r\n\r\n<p>Incluso, la mujer denunci&oacute; que era extorsionada por el fiscal, quien le dec&iacute;a que la procesar&iacute;a por &ldquo;simulaci&oacute;n de hecho punible&rdquo;.</p>\r\n\r\n<p>Finalmente, tras mucho peregrinar, la mujer logr&oacute; que este fiscal sea cambiado por el investigador Miguel &Aacute;ngel Alvarenga Acosta, quien orden&oacute; la detenci&oacute;n del brasile&ntilde;o, en el marco de la causa de violencia familiar. Tambi&eacute;n se orden&oacute; la captura de otros individuos que aparecen identificados en los v&iacute;deos.</p>\r\n\r\n<p>Finalmente este viernes, el brasile&ntilde;o, sobre quien pesaba orden de captura, fue detenido sobre la avenida Picuiba, frente al lavadero denominado Watman, del Barrio Obrero de Ciudad del Este.</p>\r\n\r\n<p>El detenido fue trasladado hasta el Hospital Regional local para su inspecci&oacute;n m&eacute;dica. Posteriormente, fue remitido a la Direcci&oacute;n de Polic&iacute;a Departamental, donde qued&oacute; a disposici&oacute;n del agente fiscal de la causa.</p>",
+      "fecha_publicacion": "2018-05-08",
+      "activo": true,
+      "recomendado": true,
+      "imagen": "imagenes/1514463589.jpg"
+   }
+},
+{
+   "model": "backend.contenido",
+   "pk": 2,
+   "fields": {
+      "categoria": 37,
+      "titulo": "C\u00e1tedra Virtual",
+      "slug": "catedra-virtual",
+      "copete": "Prof. Dra. Silvia Beatriz L\u00f3pez Safi, Secretaria Ejecutiva de la Secretar\u00eda de G\u00e9nero del Poder Judicial, dependiente de la Corte Suprema de Justicia , hablando sobre \"El R\u00e9gimen patrimonial en el Derecho de Familia desde una perspectiva de G\u00e9nero\".",
+      "detalle": "<p>El d&igrave;a 25 de enero</p>\r\n\r\n<p>les presentamos el video</p>\r\n\r\n<p><iframe frameborder=\"0\" height=\"315\" src=\"https://www.youtube.com/embed/6l14-A8uSvA\" width=\"560\"></iframe></p>",
+      "fecha_publicacion": "2018-05-08",
+      "activo": true,
+      "recomendado": true,
+      "imagen": "imagenes/no-image_m5otL6D.png"
+   }
+},
+{
+   "model": "backend.contenido",
+   "pk": 3,
+   "fields": {
+      "categoria": 32,
+      "titulo": "En Itaip\u00fa hablan sobre violencia, pero ni se inmutan por denuncias de acoso",
+      "slug": "en-itaipu-hablan-sobre-violencia-pero-ni-se-inmuta",
+      "copete": "Cada d\u00eda surgen nuevas denuncias de acoso a mujeres en Itaip\u00fa. Hasta ahora el principal acusado sigue campante en su cargo. Parad\u00f3jicamente hoy en la entidad se realiza un seminario binacional denominado \u201cVivir en paz es vivir sin miedo\u201d.",
+      "detalle": "<p>Parece un chiste, pero es verdad. Mientras a diario surgen nuevas denuncias de acoso a mujeres trabajadoras de la Itaip&uacute;, y sobre las que apenas se limit&oacute; a emitir un comunicado donde dec&iacute;a que se abrir&aacute; &ldquo;sumario administrativo&rdquo;, la entidad binacional Itaip&uacute; lleva adelante hoy un debate sobre &ldquo;la violencia contra las mujeres&rdquo;.</p>\r\n\r\n<p>El evento est&aacute; organizado por el programa Equidad de G&eacute;nero, que en el lado paraguayo est&aacute; a cargo de la funcionaria M&oacute;nica Tatton.</p>\r\n\r\n<p>Mientras esto ocurre, en una de sus oficinas, una trabajadora, Mariza Yrigoyen, quien denunci&oacute; un caso de acoso que involucra nada menos que al superintendente de Servicios Generales, el pol&iacute;tico colorado Arturo Gim&eacute;nez, sigue aguardando asistencia.</p>\r\n\r\n<p>Yrigoyen decidi&oacute; denunciar cuando escuch&oacute; a trav&eacute;s de radio ABC Cardinal 730 AM que Gim&eacute;nez ped&iacute;a a otra funcionaria buscar un guardia de la entidad para robar su tel&eacute;fono. El objetivo era hacer desaparecer presuntas pruebas de acoso sexual que lo compromet&iacute;an.</p>\r\n\r\n<p>La denunciante hasta ahora no recibi&oacute; apoyo alguno, seg&uacute;n confirm&oacute;. Contrariamente a esto, el pasado viernes fue convocada por la superintendente de Recursos Humanos, Mercedes Vera, y al llegar a su oficina encontr&oacute; que un escribano la estaba esperando para que se ratifique o rectifique en su denuncia contra Gim&eacute;nez.</p>\r\n\r\n<p>El profesional que fue a hacer la intimaci&oacute;n ingres&oacute; a la entidad con carnet de visitante. Dijo que iba a visitar a Carlos Ozuna, superintendente de Relaciones Laborales de la entidad.</p>\r\n\r\n<p>Con la declaraci&oacute;n de Yrigoyen comenzaron a surgir otras denuncias. Al menos tres de las afectadas llegaron a ser despedidas de la entidad supuestamente al no acceder a satisfacer los deseos de Gim&eacute;nez.</p>\r\n\r\n<p>Entre ellas est&aacute;n Letizia Encina -a quien se le lleg&oacute; a robar su celular- y Norma Cardozo. Ambas demandaron a Itaip&uacute; por despido injustificado. Cardozo pide su reintegro.</p>\r\n\r\n<p>Mientras los casos se ventilan por la prensa, el director general James Spalding sigue manteniendo en la instituci&oacute;n y en su cargo al principal acusado Arturo Gim&eacute;nez.</p>\r\n\r\n<p><strong>En esta secci&oacute;n va la descripci&oacute;n del video con el video adjunto</strong></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><iframe frameborder=\"0\" height=\"315\" src=\"https://www.youtube.com/embed/RP4a6DYDIDk\" width=\"560\"></iframe></p>",
+      "fecha_publicacion": "2018-05-08",
+      "activo": true,
+      "recomendado": true,
+      "imagen": "imagenes/Screenshot_from_2018-05-25_182712.png"
+   }
+},
+{
+   "model": "backend.contenido",
+   "pk": 4,
+   "fields": {
+      "categoria": 33,
+      "titulo": "Brutal golpiza: proceso sigue, pese al \u201cperd\u00f3n\u201d",
+      "slug": "brutal-golpiza-proceso-sigue-pese-al-perdon",
+      "copete": "La fiscala Norma Ortiz aclar\u00f3 que el proceso judicial por el caso de agresi\u00f3n que sufri\u00f3 una mujer en Caaguaz\u00fa no termin\u00f3 con el retiro de la denuncia. El agresor sigue imputado y la investigaci\u00f3n contin\u00faa su proceso.",
+      "detalle": "<p><strong>Daisy Carolina Torres</strong> hab&iacute;a denunciado el 5 de agosto de este a&ntilde;o a su pareja, <strong>Carlos Anton C&aacute;ceres Villalba</strong> (24), alias &ldquo;Buscapolo&rdquo;, por haberle propinado una brutal golpiza. El caso conmocion&oacute; a Coronel Oviedo tras la viralizaci&oacute;n de las fotograf&iacute;as que mostraban el estado en que qued&oacute; la mujer.&nbsp;</p>\r\n\r\n<p>Sin embargo, el pasado 9 de noviembre, para sorpresa de muchos, <a href=\"http://www.abc.com.py/edicion-impresa/judiciales-y-policiales/mujer-brutalmente-golpeada-vuelve-con-su-pareja-tras-perdonar-todo-1648793.html\">la v&iacute;ctima rectific&oacute; su versi&oacute;n</a>&nbsp;y retir&oacute; la denuncia en contra del hombre.</p>\r\n\r\n<p><strong>Lea m&aacute;s: <a href=\"http://www.abc.com.py/nacionales/perdon-de-victima-no-es-decision-autonoma-1648897.html\">Perd&oacute;n de v&iacute;ctima &ldquo;no es una decisi&oacute;n aut&oacute;noma&rdquo;</a></strong></p>\r\n\r\n<p>En un principio se expres&oacute; que el caso hab&iacute;a quedado sin efecto, lo que fue desmentido por la fiscala Ortiz. Asegur&oacute; en contacto con ABC Cardinal que se trata de una acci&oacute;n penal p&uacute;blica, por lo que el proceso no puede acabarse con la simple rectificaci&oacute;n de la v&iacute;ctima a favor del victimario.</p>\r\n\r\n<p>El hombre se encuentra imputado por <strong>violencia familiar</strong> y el Ministerio P&uacute;blico contin&uacute;a recolectando elementos para sostener una acusaci&oacute;n en contra de C&aacute;ceres Villalba.&nbsp;</p>\r\n\r\n<p><strong>Lea m&aacute;s: <a href=\"http://www.abc.com.py/nacionales/las-mujeres-pueden-pedir-ayuda-y-denunciar-violencia-1648652.html\">D&oacute;nde pedir ayuda en casos de violencia contra la mujer</a></strong></p>\r\n\r\n<p>Con respecto a Daisy Carolina, la fiscala dijo que le preocup&oacute; su reacci&oacute;n, ya que no esperaba su rectificaci&oacute;n. Adem&aacute;s, se&ntilde;al&oacute; que tampoco termin&oacute; la evaluaci&oacute;n psicol&oacute;gica que se le practic&oacute; luego de presentar la denuncia.</p>",
+      "fecha_publicacion": "2018-05-18",
+      "activo": true,
+      "recomendado": false,
+      "imagen": "imagenes/1514464862.jpg"
+   }
+},
+{
+   "model": "backend.slider",
+   "pk": 1,
+   "fields": {
+      "lista": null,
+      "file": "sliders/IMG_6200.JPG",
+      "texto": "hola",
+      "texto_enlace": "hola",
+      "enlace": "http://www.googl.com",
+      "activa": false,
+      "posicion": 3,
+      "creada": "2018-05-18T19:46:54.883Z"
+   }
+},
+{
+   "model": "backend.slider",
+   "pk": 2,
+   "fields": {
+      "lista": null,
+      "file": "sliders/IMG_6205.JPG",
+      "texto": "hola2",
+      "texto_enlace": "hola",
+      "enlace": "http://www.googl.com",
+      "activa": false,
+      "posicion": 4,
+      "creada": "2018-05-18T19:47:12.228Z"
+   }
+},
+{
+   "model": "backend.slider",
+   "pk": 3,
+   "fields": {
+      "lista": null,
+      "file": "sliders/business-bg-slide3.jpg",
+      "texto": "Our professional services consultants                 <br />                 are here to give you solutions to",
+      "texto_enlace": "hola",
+      "enlace": "http://www.googl.com",
+      "activa": true,
+      "posicion": 2,
+      "creada": "2018-05-18T19:47:37.908Z"
+   }
+},
+{
+   "model": "backend.slider",
+   "pk": 4,
+   "fields": {
+      "lista": null,
+      "file": "sliders/business-bg-slide2.jpg",
+      "texto": "hola4",
+      "texto_enlace": "hola",
+      "enlace": "http://www.googl.com",
+      "activa": false,
+      "posicion": 1,
+      "creada": "2018-05-18T19:48:24.764Z"
+   }
+},
+{
+   "model": "backend.slider",
+   "pk": 5,
+   "fields": {
+      "lista": null,
+      "file": "sliders/business-bg-slide.jpg",
+      "texto": "No a la violencia en el pa\u00eds ni el mundo entero ni en la luna",
+      "texto_enlace": "M\u00e1s informaci\u00f3n",
+      "enlace": "http://www.googl.com",
+      "activa": true,
+      "posicion": 0,
+      "creada": "2018-05-18T19:49:31.593Z"
+   }
+},
+{
+   "model": "backend.estadistica",
+   "pk": 1,
+   "fields": {
+      "icono": "warning",
+      "dato": "49",
+      "descripcion": "Casos de Feminicidios en Paraguay. A\u00f1o 2017."
+   }
+},
+{
+   "model": "backend.estadistica",
+   "pk": 2,
+   "fields": {
+      "icono": "female",
+      "dato": "607",
+      "descripcion": "Casos de Embarazo Precoz en Paraguay. Edad: 10 a 14 a\u00f1os. Datos provisorios. A\u00f1o 2017."
+   }
+},
+{
+   "model": "backend.estadistica",
+   "pk": 3,
+   "fields": {
+      "icono": "line-chart",
+      "dato": "1450,6",
+      "descripcion": "millones cuesta la Violencia contra las mujeres en Paraguay."
+   }
+},
+{
+   "model": "backend.estadistica",
+   "pk": 4,
+   "fields": {
+      "icono": "balance-scale",
+      "dato": "11380",
+      "descripcion": "denuncias sobre Violencia Dom\u00e9stica realizadas en los Juzgados de Paz. A\u00f1o 2016."
+   }
+}
+]

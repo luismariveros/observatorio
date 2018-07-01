@@ -1,0 +1,20 @@
+<!-- Enlaces -->
+<div class="g-mb-30">
+    {% regroup enlaces by grupo as grupoenlace_list %}
+
+    {% for grupo in grupoenlace_list %}
+        <h3 class="h5 g-color-black g-font-weight-600 mb-1">{{ grupo.grouper }}</h3>
+        <ul class="list-unstyled g-font-size-13 mb-0">
+            {% for enlace in grupo.list %}
+                <li>
+                    <a class="d-block u-link-v5 g-color-gray-dark-v4 rounded g-px-20 g-py-8" href="{{ enlace.enlace }}" target="_blank"><i class="mr-2 fa fa-angle-right"></i> {{ enlace.titulo }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+        <div class="g-mt-30"></div>
+    {% endfor %}
+</div>
+<!-- End Enlaces -->
+
+
+

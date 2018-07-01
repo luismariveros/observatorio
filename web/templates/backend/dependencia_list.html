@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+
+{% block content-header %}
+    <a href="{% url 'backend:dependencia_new' %}" class="btn btn-primary btn-lg link" role="button">Nueva Dependencia</a>
+{% endblock %}
+
+{% block content %}
+    <div class="box">
+        <div class="box-header">
+            <h4 class="box-title">Lista de Dependencias</h4>
+        </div>
+
+        <div class="box-body">
+            <table id="Listado" class="table table-bordered table-hover" width="100%">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Departamento</th>
+                        <th>Ciudad</th>
+                        <th>Teléfono 1</th>
+                        <th style="width: 30%;">Opciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for dependencia in dependencias %}
+                        <tr>
+                            <td>{{ dependencia.nombre }}</td>
+                            <td>{{ dependencia.departamento }}</td>
+                            <td>{{ dependencia.ciudad }}</td>
+                            <td>{{ dependencia.telefono1 }}</td>
+                            <td>
+                                <a href="{% url 'backend:dependencia_edit' dependencia.id %}" class="btn btn-default link"><i class="fa fa-pencil fa-fw"></i> Editar</a>
+                                <a href="{% url 'backend:dependencia_delete' dependencia.id %}" class="btn btn-danger link"><i class="fa fa-trash fa-fw"></i> Eliminar</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}
+
+{% block extrascript %}
+    <script>
+        $(document).ready(function(){
+            $('#Listado').DataTable({
+                "responsive": true,
+                "language": {
+                    "decimal": ",",
+                    "thousands": ".",
+                    "lengthMenu": "Mostrar _MENU_ registros",
+                    "zeroRecords": "No hay registros",
+                    "info": "Página _PAGE_ de _PAGES_",
+                    "infoEmpty": "No hay registros disponibles",
+                    "infoFiltered": "(Filtrado de un total de _MAX_ registros)",
+                    "search": "Filtrar registros:",
+                    "paginate": {
+                        "first":      "Primero",
+                        "last":       "Último",
+                        "next":       "Siguiente",
+                        "previous":   "Anterior"
+                    },
+                },
+                "columnDefs": [ {
+                    "targets": 4,
+                    "searchable": false,
+                    "orderable": false
+                }]
+            });
+        });
+    </script>
+{% endblock %}

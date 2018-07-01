@@ -1,0 +1,71 @@
+{% extends "basew.html" %}
+
+{% load humanize %}
+{% load django_bootstrap_breadcrumbs %}
+
+{% block breadcrumbs %}
+    <!-- Breadcrumbs -->
+    {{ block.super }}
+
+    {% breadcrumb "Inicio" "/" %}
+    {% for b in breadcrumbs %}
+        {% breadcrumb b.nombre b.slug %}
+    {% endfor %}
+    <!-- End Breadcrumbs -->
+{% endblock breadcrumbs %}
+
+
+
+{% block content %}
+    {% render_breadcrumbs %}
+
+    <div class="container g-pt-10 g-pb-70">
+        <div class="g-mb-40">
+            <h2 class="mb-0">{{ categoria }}</h2>
+        </div>
+
+        <div class="row justify-content-between">
+            <div class="col-lg-9 g-mb-30 text-justify">
+                {% if categoria.is_leaf_node %}
+                    {% for contenido in contenidos %}
+                        <!-- Blog Minimal Blocks -->
+                        <article class="g-mb-10">
+                            <div class="g-mb-10">
+                                <span class="d-block g-color-gray-dark-v4 g-font-weight-700 g-font-size-12 text-uppercase mb-2">{{ contenido.fecha_publicacion }}</span>
+                                <h2 class="h4 g-color-black g-font-weight-600 mb-3">
+                                    <a class="u-link-v5 g-color-black g-color-primary--hover" href="{% url 'www:contenido_detail' contenido.slug %}">{{ contenido.titulo }}</a>
+                                </h2>
+                                <p class="g-color-gray-dark-v4 g-line-height-1_8">{{ contenido.copete|truncatechars:200 }}</p>
+                                <a id="contenido" class="btn btn-xs u-btn-outline-primary g-brd-2 rounded-0" href="{% url 'www:contenido_detail' contenido.slug %}">Leer más</a>
+                            </div>
+                        </article>
+                        <!-- End Blog Minimal Blocks -->
+                        <hr class="u-divider-db-dotted g-brd-gray-light-v2 g-my-30">
+                    {% empty %}
+                        <h3 class="h4">No hay contenido en la Sección {{ categoria }}</h3>
+                    {% endfor %}
+                {% else %}
+                    <!-- Row -->
+                    <div class="row">
+                        {% for categoria_hijo in categoria.get_children %}
+                            <div class="col-lg-6 g-pr-30--lg g-mb-40">
+                                <span class="d-block g-font-size-30 g-font-weight-300 g-color-primary g-mb-10 text-left">{{ forloop.counter }}. <span class="g-color-gray-dark-v4"> {{ categoria_hijo }}</span></span>
+                                <span class="mb-0 text-center"><a href="{{ categoria_hijo.slug }}" class="btn u-btn-outline-primary g-font-size-11 g-rounded-10">Ir a la Sección</a></span>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <!-- End Row -->
+                {% endif %}
+            </div>
+
+            <div class="col-lg-3 g-brd-left--lg g-brd-gray-light-v4 g-mb-20">
+                <div class="g-pl-20--lg">
+
+                    {% include 'enlaces.html' %}
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

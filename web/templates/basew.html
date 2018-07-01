@@ -1,0 +1,948 @@
+{% load static %}
+{% load humanize %}
+{% load django_bootstrap_breadcrumbs %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Required Meta Tags Always Come First -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <meta property="og:url" content="{{ request.build_absolute_uri|urlencode }}"/>
+    <meta property="og:type" content="website"/>
+    {% block facebook %}
+        <meta property="og:title" content="Secretaría de Género - Poder Judicial"/>
+        <meta property="og:description" content="Observatorio de Género de la Secretaría de Género del Poder Judicial."/>
+        <meta property="og:image" content="http://{{ request.get_host }}{% static 'img/logo-secretaria.png' %}"/>
+    {% endblock %}
+
+    <!-- Title -->
+    <title>Secretaría de Género - Poder Judicial</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{% static 'img/favicon.png'%} ">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <!-- CSS Global Icons -->
+    <link rel="stylesheet" href="{% static 'assets/vendor/icon-awesome/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/icon-hs/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/hs-megamenu/src/hs.megamenu.css' %}">
+
+
+
+    <link rel="stylesheet" href="{% static 'assets/vendor/icon-line/css/simple-line-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/icon-etlinefont/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/icon-line-pro/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/dzsparallaxer/dzsparallaxer.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/dzsparallaxer/dzsscroller/scroller.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/dzsparallaxer/advancedscroller/plugin.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/hs-bg-video/hs-bg-video.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/hamburgers/hamburgers.min.css' %}">
+
+    <!-- CSS Global Compulsory -->
+    <link rel="stylesheet" href="{% static 'assets/vendor/bootstrap/bootstrap.min.css' %}">
+    <!-- CSS Unify -->
+    <link rel="stylesheet" href="{% static 'assets/css/unify-core.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/unify-components.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/unify-globals.css' %}">
+    <!-- Master Slider -->
+    <link rel="stylesheet" href="{% static 'assets/vendor/master-slider/source/assets/css/masterslider.main.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/master-slider/style.css' %}">
+    <!-- CSS Customization -->
+    <link rel="stylesheet" href="{% static 'assets/css/custom.css' %}">
+
+    {% block extrastyle %}
+
+    {% endblock %}
+</head>
+
+<body>
+<main>
+    <!-- Header -->
+    <header id="js-header" class="u-header">
+        <div class="u-header__section u-header__section--light g-bg-white g-transition-0_3 g-py-10">
+            <nav class="js-mega-menu navbar navbar-expand-lg hs-menu-initialized hs-menu-horizontal">
+                <div class="container-fluid">
+                    <!-- Responsive Toggle Button -->
+                    <button class="navbar-toggler navbar-toggler-right btn g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-top-3 g-right-0" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navBar" data-toggle="collapse" data-target="#navBar">
+                        <span class="hamburger hamburger--slider">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                        </span>
+                    </button>
+                    <!-- End Responsive Toggle Button -->
+
+                    <!-- Logo1 -->
+                    <a href="{% url 'www:index' %}" class="navbar-brand">
+                        <img src="{% static 'img/logo-csj-sg2.png' %}" alt="">
+                    </a>
+                    <!-- End Logo1 -->
+
+                    <!-- Navigation -->
+                    <div class="navbar-collapse align-items-center align-items-lg-start flex-sm-row g-pt-10 g-pt-5--lg g-mr-20--lg collapse " id="navBar">
+                        <ul class="navbar-nav g-pos-rel g-font-weight-400 m-auto">
+                            <!-- ¿Quiénes somos? -->
+                            <li class="hs-has-sub-menu nav-item  g-mx-10--lg g-mx-10--xl active" data-animation-in="fadeIn" data-animation-out="fadeOut">
+                                <a id="nav-link-pages" class="nav-link g-py-7 g-px-0" href="#!" aria-haspopup="true" aria-expanded="false" aria-controls="nav-submenu-pages">¿Quiénes somos?</a>
+
+                                <ul class="hs-sub-menu list-unstyled u-shadow-v11 g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-mt-18 g-mt-8--lg--scrolling" id="nav-submenu-pages" aria-labelledby="nav-link-pages">
+                                    <!-- ¿Quiénes somos? - ¿Qué es el Observatorio? -->
+                                    <li class="dropdown-item ">
+                                        <a class="nav-link" href="{% url 'www:observatorio' %}">¿Qué es el Observatorio?</a>
+                                    </li>
+                                    <!-- End ¿Quiénes somos? - ¿Qué es el Observatorio? -->
+
+                                    <!-- ¿Quiénes somos? - Misión -->
+                                    <li class="dropdown-item ">
+                                        <a class="nav-link" href="{% url 'www:mision' %}">Misión</a>
+                                    </li>
+                                    <!-- End ¿Quiénes somos? - Misión -->
+
+                                    <!-- ¿Quiénes somos? - Visión -->
+                                    <li class="dropdown-item ">
+                                        <a class="nav-link" href="{% url 'www:mision' %}">Visión</a>
+                                    </li>
+                                    <!-- End ¿Quiénes somos? - Visión -->
+
+                                    <!-- ¿Quiénes somos? - Objetivos -->
+                                    <li class="dropdown-item ">
+                                        <a class="nav-link" href="{% url 'www:objetivos' %}">Objetivos</a>
+                                    </li>
+                                    <!-- End ¿Quiénes somos? - Objetivos -->
+
+                                    <!-- ¿Quiénes somos? - Listado de Dependencias -->
+                                    <li class="dropdown-item ">
+                                        <a class="nav-link" href="{% url 'www:dependencia_list' %}">Listado de Dependencias</a>
+                                    </li>
+                                    <!-- End ¿Quiénes somos? - Listado de Dependencias -->
+
+                                    <!-- ¿Quiénes somos? - Listado de Juzgados -->
+                                    <li class="dropdown-item ">
+                                        <a class="nav-link" href="http://accesojusticia.csj.gov.py/#/mapa" target="_blank">Listado de Juzgados</a>
+                                    </li>
+                                    <!-- End ¿Quiénes somos? - Listado de Juzgados -->
+                                </ul>
+                            </li>
+
+                            <!-- End ¿Quiénes somos? -->
+
+                            <!-- Marco Normativo -->
+                            <li class="nav-item hs-has-sub-menu  g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn" data-animation-out="fadeOut">
+                                <a id="nav-link--features" class="nav-link g-py-7 g-px-0" href="#!" aria-haspopup="true" aria-expanded="false" aria-controls="nav-submenu--features">Marco Normativo</a>
+
+                                <ul class="hs-sub-menu list-unstyled u-shadow-v11 g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-mt-18 g-mt-8--lg--scrolling" id="nav-submenu--features" aria-labelledby="nav-link--features">
+                                    <!-- Marco Normativo - Internacional -->
+                                    <li class="dropdown-item hs-has-sub-menu ">
+                                        <a id="nav-link--features--sliders" class="nav-link" href="#!" aria-haspopup="true" aria-expanded="false" aria-controls="nav-submenu--features--sliders">Internacional</a>
+
+                                        <ul class="hs-sub-menu list-unstyled u-shadow-v11 g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-mt-minus-2" id="nav-submenu--features--sliders" aria-labelledby="nav-link--features--sliders">
+                                            <li class="dropdown-item ">
+                                                <a class="nav-link" href="/marco-normativo/internacional/tratados">Tratados</a>
+                                            </li>
+                                            <li class="dropdown-item ">
+                                                <a class="nav-link" href="/marco-normativo/internacional/protocolos-facultativos">Protocolos Facultativos</a>
+                                            </li>
+                                            <li class="dropdown-item ">
+                                                <a class="nav-link" href="/marco-normativo/internacional/recomendaciones-generales-de-los-organos-de-tratad">Recomendaciones Generales de los Órganos de Tratados</a>
+                                            </li>
+                                            <li class="dropdown-item ">
+                                                <a class="nav-link" href="/marco-normativo/internacional/recomendaciones-al-estado-paraguayo">Recomendaciones al Estado Paraguayo</a>
+                                            </li>
+                                            <li class="dropdown-item ">
+                                                <a class="nav-link" href="/marco-normativo/internacional/opiniones-consultivas-de-la-corte-interamericana-d">Opiniones consultivas de la Corte Interamericana de Derechos Humanos</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <!-- End Marco Normativo - Internacional -->
+
+                                    <!-- Marco Normativo - Nacional -->
+                                    <li class="dropdown-item hs-has-sub-menu ">
+                                        <a id="nav-link--features--sliders" class="nav-link" href="#!" aria-haspopup="true" aria-expanded="false" aria-controls="nav-submenu--features--sliders">Nacional</a>
+
+                                        <ul class="hs-sub-menu list-unstyled u-shadow-v11 g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-mt-minus-2" id="nav-submenu--features--sliders" aria-labelledby="nav-link--features--sliders">
+                                            <li class="dropdown-item ">
+                                                <a class="nav-link" href="{% url 'www:constitucion_nacional' %}">Constitución Nacional de la República del Paraguay</a>
+                                            </li>
+                                            <li class="dropdown-item ">
+                                                <a class="nav-link" href="/marco-normativo/nacional/leyes">Leyes</a>
+                                            </li>
+                                            <li class="dropdown-item ">
+                                                <a class="nav-link" href="/marco-normativo/nacional/decretos">Decretos</a>
+                                            </li>
+                                            <li class="dropdown-item ">
+                                                <a class="nav-link" href="/marco-normativo/nacional/resoluciones-nacional">Resoluciones</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <!-- End Marco Normativo - Nacional -->
+
+                                    <!-- Marco Normativo - Institucional -->
+                                    <li class="dropdown-item hs-has-sub-menu ">
+                                        <a id="nav-link--features--sliders" class="nav-link" href="#!" aria-haspopup="true" aria-expanded="false" aria-controls="nav-submenu--features--sliders">Institucional</a>
+
+                                        <ul class="hs-sub-menu list-unstyled u-shadow-v11 g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-mt-minus-2" id="nav-submenu--features--sliders" aria-labelledby="nav-link--features--sliders">
+                                            <li class="dropdown-item ">
+                                                <a class="nav-link" href="/marco-normativo/institucional/ley">Ley</a>
+                                            </li>
+                                            <li class="dropdown-item ">
+                                                <a class="nav-link" href="/marco-normativo/institucional/acordadas">Acordadas</a>
+                                            </li>
+                                            <li class="dropdown-item ">
+                                                <a class="nav-link" href="/marco-normativo/institucional/resoluciones-institucional">Resoluciones</a>
+                                            </li>
+                                            <li class="dropdown-item ">
+                                                <a class="nav-link" href="/marco-normativo/institucional/circulares">Circulares</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <!-- End Marco Normativo - Institucional -->
+                                </ul>
+                            </li>
+                            <!-- End Marco Normativo -->
+
+                            <!-- Jurisprudencias -->
+                            <li class="nav-item hs-has-sub-menu  g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn" data-animation-out="fadeOut">
+                                <a id="nav-link--features" class="nav-link g-py-7 g-px-0" href="#!" aria-haspopup="true" aria-expanded="false" aria-controls="nav-submenu--features">Jurisprudencias</a>
+
+                                <ul class="hs-sub-menu list-unstyled u-shadow-v11 g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-mt-18 g-mt-8--lg--scrolling" id="nav-submenu--features" aria-labelledby="nav-link--features">
+                                    <!-- Jurisprudencias - Internacionales -->
+                                    <li class="dropdown-item ">
+                                        <a class="nav-link" href="/jurisprudencias/internacionales-jurisprudencias">Internacionales</a>
+                                    </li>
+                                    <!-- End Jurisprudencias - Internacionales -->
+
+                                    <!-- Jurisprudencias - Nacionales -->
+                                    <li class="dropdown-item hs-has-sub-menu ">
+                                        <a id="nav-link--features--sliders" class="nav-link" href="#!" aria-haspopup="true" aria-expanded="false" aria-controls="nav-submenu--features--sliders">Nacionales</a>
+
+                                        <ul class="hs-sub-menu list-unstyled u-shadow-v11 g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-mt-minus-2" id="nav-submenu--features--sliders" aria-labelledby="nav-link--features--sliders">
+                                            <li class="dropdown-item ">
+                                                <a class="nav-link" href="/jurisprudencias/civil">Civil</a>
+                                            </li>
+                                            <li class="dropdown-item ">
+                                                <a class="nav-link" href="/jurisprudencias/penal">Penal</a>
+                                            </li>
+                                            <li class="dropdown-item ">
+                                                <a class="nav-link" href="/jurisprudencias/laboral">Laboral</a>
+                                            </li>
+                                            <li class="dropdown-item ">
+                                                <a class="nav-link" href="/jurisprudencias/ninez-y-adolescencia">Niñez y Adolescencia</a>
+                                            </li>
+                                            <li class="dropdown-item ">
+                                                <a class="nav-link" href="/jurisprudencias/administrativa">Administrativa</a>
+                                            </li>
+
+                                        </ul>
+                                    </li>
+                                    <!-- End Jurisprudencias - Nacionales -->
+                                </ul>
+                            </li>
+                            <!-- End Jurisprudencias -->
+
+                            <!-- Estadísticas -->
+                            <li class="nav-item hs-has-sub-menu  g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn" data-animation-out="fadeOut">
+                                <a id="nav-link--features" class="nav-link g-py-7 g-px-0" href="#!" aria-haspopup="true" aria-expanded="false" aria-controls="nav-submenu--features">Estadísticas</a>
+
+                                <ul class="hs-sub-menu list-unstyled u-shadow-v11 g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-mt-18 g-mt-8--lg--scrolling" id="nav-submenu--features" aria-labelledby="nav-link--features">
+                                    <li class="dropdown-item ">
+                                        <a class="nav-link" href="/estadisticas/violencia-contra-las-mujeres-basada-en-asimetrias-">Violencia contra las Mujeres basada en asimetrías de Género</a>
+                                    </li>
+                                    <li class="dropdown-item ">
+                                        <a class="nav-link" href="/estadisticas/indicadores-de-genero">Indicadores de Género</a>
+                                    </li>
+                                    <li class="dropdown-item ">
+                                        <a class="nav-link" href="/estadisticas/monitoreo-de-resoluciones-judiciales">Monitoreo de Resoluciones Judiciales</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- End Estadísticas -->
+
+                            <!-- Materiales -->
+                            <li class="nav-item hs-has-sub-menu  g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn" data-animation-out="fadeOut">
+                                <a id="nav-link--features" class="nav-link g-py-7 g-px-0" href="#!" aria-haspopup="true" aria-expanded="false" aria-controls="nav-submenu--features">Materiales</a>
+
+                                <ul class="hs-sub-menu list-unstyled u-shadow-v11 g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-mt-18 g-mt-8--lg--scrolling" id="nav-submenu--features" aria-labelledby="nav-link--features">
+                                    <li class="dropdown-item ">
+                                        <a class="nav-link" href="/materiales/biblioteca">Biblioteca</a>
+                                    </li>
+                                    <li class="dropdown-item ">
+                                        <a class="nav-link" href="/materiales/videoteca">Videoteca</a>
+                                    </li>
+                                    <li class="dropdown-item ">
+                                        <a class="nav-link" href="/materiales/hemeroteca">Hemeroteca</a>
+                                    </li>
+                                    <li class="dropdown-item ">
+                                        <a class="nav-link" href="/materiales/otros-materiales">Otros Materiales</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- End Materiales -->
+
+                            <!-- Noticias -->
+                            <li class="nav-item hs-has-sub-menu  g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn" data-animation-out="fadeOut">
+                                <a id="nav-link--features" class="nav-link g-py-7 g-px-0" href="#!" aria-haspopup="true" aria-expanded="false" aria-controls="nav-submenu--features">Noticias</a>
+
+                                <ul class="hs-sub-menu list-unstyled u-shadow-v11 g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-mt-18 g-mt-8--lg--scrolling" id="nav-submenu--features" aria-labelledby="nav-link--features">
+                                    <li class="dropdown-item ">
+                                        <a class="nav-link" href="/noticias/institucionales">Institucionales</a>
+                                    </li>
+                                    <li class="dropdown-item ">
+                                        <a class="nav-link" href="/noticias/nacionales-noticias">Nacionales</a>
+                                    </li>
+                                    <li class="dropdown-item ">
+                                        <a class="nav-link" href="/noticias/internacionales-noticias">Internacionales</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- End Noticias -->
+                        </ul>
+                    </div>
+                    <!-- End Navigation -->
+
+                    <a class="d-inline-block g-hidden-xs-down g-pos-rel g-valign-middle g-pl-30 g-pl-0--lg" href="http://sgpj.tk/es">
+                        <img src="{% static 'img/logo-compromiso2.png' %}" alt="" />
+                    </a>
+{#                    <div class="d-inline-block g-hidden-xs-down g-pos-rel g-valign-middle g-pl-30 g-pl-0--lg">#}
+{#                        <a class="btn u-btn-outline-primary g-font-size-13 text-uppercase g-py-10 g-px-15" href="https://wrapbootstrap.com/theme/unify-responsive-website-template-WB0412697?ref=htmlstream" target="_blank">Purchase now</a>#}
+{#                    </div>#}
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- End Header -->
+
+    {% block breadcrumbs %}{% endblock %}
+
+    {% block content %}
+        <!-- MasterSlider Main -->
+        <div id="masterslider" class="master-slider ms-skin-default">
+            {% for slider in sliders %}
+                <div class="ms-slide" data-delay="5.6" data-fill-mode="fill">
+                    <img src="{% static 'img/master-slider/blank.gif' %}" alt="" data-src="{{ slider.file.url }}" />
+                    <div class="ms-layer msp-cn-163-3"
+                         style="width:626px;"
+                         data-effect="t(true,n,100,n,n,n,n,n,n,n,n,n,n,n,n)"
+                         data-duration="2600"
+                         data-delay="600"
+                         data-ease="easeOutQuint"
+                         data-offset-x="360"
+                         data-offset-y="302"
+                         data-origin="tl"
+                         data-position="normal"
+                         data-masked="true"
+                         data-mask-width="646">{{ slider.texto | safe }}
+                    </div>
+                    <a href="{{ slider.enlace }}"
+                       target="_self"
+                       class="ms-layer sp-preset-btn-192 btn btn-lg btn-primary g-rounded-10"
+                       data-effect="t(true,n,n,-400,n,n,n,n,n,n,n,n,n,n,n)"
+                       data-duration="2200"
+                       data-delay="2000"
+                       data-ease="easeOutQuint"
+                       data-type="button"
+                       data-action="next"
+                       data-offset-x="600"
+                       data-offset-y="500"
+                       data-origin="tl"
+                       data-position="normal">{{ slider.texto_enlace }}
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+        <!-- END MasterSlider Main -->
+
+        <!-- Section Contacta  -->
+        <section class="g-bg-indigo">
+            <div class="container g-pos-rel g-z-index-1 g-pt-50 g-pb-30">
+                <div class="row text-center">
+                    <div class="col-lg-12 g-mb-20">
+                        <h4 class="g-color-white  mb-0">El acceso a la <strong>Justicia</strong> debe ser <strong>inclusivo, libre de discriminación</strong> para que sea <strong>real y efectivo.</strong></h4>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+        <!-- End Section Contacta  -->
+
+        <!-- Section ¿Quienes somos? -->
+        <section class="g-pos-rel g-overflow-hidden">
+            <div class="container g-pt-50 g-pb-50">
+                <div class="row justify-content-between align-items-center">
+                    <div class="col-lg-4 g-mb-50">
+                        <div class="g-pos-rel">
+                            <img class="img-fluid w-100" src="{% static 'img/logo-secretaria.png' %}">
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <p class="lead g-pl-20 text-justify">
+                            <span class="u-dropcap g-color-primary g-mr-15 g-mb-5">L</span>
+                            a Secretaría de Género del Poder Judicial, dependiente de la Corte Suprema de Justicia, creada por Acordada N.º 609/2010, es una oficina técnica encargada de transversalizar la perspectiva de género en el marco de una “Política Institucional de Transversalidad de Género del Poder Judicial” (Acordada N.º 657/2010) y su Plan Estratégico.
+                        </p>
+                        <p class="lead g-pl-20 text-justify">Esta dependencia cuenta con un equipo de trabajo multidisciplinario encargado de ejecutar las acciones previstas en los documentos mencionados, entre ellas el diseño y provisión de información relacionada con los derechos humanos de las mujeres y el acceso a la justicia.</p>
+                        <p class="lead g-pl-20 text-justify">Las disciplinas que hoy día convergen en la Secretaría de Género son: Derecho, Estadística, Psicología, Sociología, Comunicación e Informática; en miras a constituirlas en áreas de trabajo, lo que implicaría que la Secretaría de Género se eleve a rango de Dirección</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Section ¿Quienes somos? -->
+
+
+        <!-- Section Ley 5777 -->
+        <section class="g-bg-gray-light-v5 g-py-50 g-px-30">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9 align-self-center">
+                        <h2>Ley N° 5.777/16</h2>
+                        <p class="lead g-mb-20 g-mb-0--md">Ley N° 5.777/16 de “Protección Integral a las Mujeres contra toda forma de violencia”</p>
+                    </div>
+
+                    <div class="col-md-3 align-self-center text-md-right">
+                        <a class="btn btn-md u-btn-outline-primary g-brd-2 rounded-0" href="/contenido/ley-n-577716">Más información</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Section Ley 5777 -->
+
+        <!-- Noticias y Enlaces -->
+        <div class="container g-pt-30 g-pb-20">
+            <div class="row justify-content-between">
+                <!-- Noticias  -->
+                <div class="col-lg-9 g-mb-80">
+                    <div class="g-pr-20--lg">
+                        <div class="masonry-grid row">
+                            <div class="masonry-grid-sizer col-sm-1"></div>
+
+                            {% for noticia in noticias %}
+                                <!-- Articulo de Noticias -->
+                                <div class="masonry-grid-item col-sm-6 col-lg-6 g-mb-20">
+
+                                    <article class="u-shadow-v11">
+                                        <img class="img-fluid w-100" src="{{ noticia.imagen.url }}" alt="">
+                                        <div class="g-bg-white g-pa-20">
+                                            <span class="d-block g-color-gray-dark-v4 g-font-weight-600 g-font-size-12 text-uppercase mb-2">{{ noticia.fecha_publicacion }}</span>
+                                            <h2 class="h5 g-color-black g-font-weight-600 mb-3">
+                                                <a class="u-link-v5 g-color-black g-color-primary--hover g-cursor-pointer" href="{% url 'www:contenido_detail' noticia.slug %}">{{ noticia.titulo }}</a>
+                                            </h2>
+                                            <p class="g-color-gray-dark-v4 g-line-height-1_6 text-justify">{{ noticia.copete|truncatechars:150 }}</p>
+                                            <a class="btn btn-xs u-btn-outline-primary g-brd-2 rounded-0" href="{% url 'www:contenido_detail' noticia.slug %}">Leer más</a>
+                                        </div>
+                                    </article>
+                                </div>
+                                <!-- End Articulo de Noticias -->
+                            {% endfor %}
+                        </div>
+                        <div class="text-center g-mb-20">
+                            <a class="btn btn-primary g-rounded-10 g-pl-25 g-pr-25 g-py-15 p-px-25" href="/noticias/">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Noticias -->
+
+
+                <div class="col-lg-3 g-brd-left--lg g-brd-gray-light-v4 g-mb-80">
+                    <div class="g-pl-20--lg">
+                        <!-- Enlaces -->
+                        <div class="g-mb-30">
+                            {% regroup enlaces by grupo as grupoenlace_list %}
+
+                            {% for grupo in grupoenlace_list %}
+                                <h3 class="h5 g-color-black g-font-weight-600 mb-1">{{ grupo.grouper }}</h3>
+                                <ul class="list-unstyled g-font-size-13 mb-0">
+                                    {% for enlace in grupo.list %}
+                                        <li>
+                                            <a class="d-block u-link-v5 g-color-gray-dark-v4 rounded g-px-20 g-py-8" href="{{ enlace.enlace }}" target="_blank"><i class="mr-2 fa fa-angle-right"></i> {{ enlace.titulo }}</a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                                <div class="g-mt-30"></div>
+                            {% endfor %}
+                        </div>
+                        <!-- End Enlaces -->
+
+                        <hr class="g-brd-gray-light-v4 g-mt-30 mb-0">
+
+                        <!-- Cursos -->
+                        {% if cursos %}
+                            <div class="g-my-30">
+                                <h3 class="h5 g-color-black g-font-weight-600 mb-1">Cursos</h3>
+                                <ul class="list-unstyled g-font-size-13 mb-0">
+                                    {% for curso in cursos %}
+                                        <li>
+                                            <a class="d-block u-link-v5 g-color-gray-dark-v4 rounded g-px-20 g-py-8" href="{{ curso.enlace }}" target="_blank"><i class="mr-2 fa fa-graduation-cap"></i> {{ curso.titulo }}</a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                                <div class="g-mt-30"></div>
+                            </div>
+                        {% endif %}
+                        <!-- End Cursos -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Noticias y Enlaces -->
+
+        <!-- Services -->
+        <section class="g-bg-gray-light-v5 g-py-50 g-px-30">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-lg-4 g-mb-30">
+                        <!-- Mapa -->
+                        <article class="u-block-hover rounded g-pa-35">
+                            <div class="d-flex align-items-center g-brd-bottom g-brd-2 g-brd-primary g-pb-20 g-mb-20">
+                                <span class="align-middle u-icon-v3 u-icon-size--xs g-color-white g-bg-primary rounded-circle mr-2">
+                                  <i class="fa fa-calendar"></i>
+                                </span>
+                                <h4 class="d-inline-block g-font-weight-500 mb-0"><a class="u-link-v5" href="{% url 'www:agenda' %}">Agenda</a></h4>
+                            </div>
+                            <span class="d-block g-font-weight-600 g-font-size-12 mb-2 text-justify">Agenda institucional de la Secretaría de Género.</span>
+                        </article>
+                        <!-- End Mapa -->
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 g-mb-30">
+                        <!-- Mapa -->
+                        <article class="u-block-hover rounded g-pa-35">
+                            <div class="d-flex align-items-center g-brd-bottom g-brd-2 g-brd-primary g-pb-20 g-mb-20">
+                                <span class="align-middle u-icon-v3 u-icon-size--xs g-color-white g-bg-primary rounded-circle mr-2">
+                                  <i class="fa fa-location-arrow"></i>
+                                </span>
+                                <h4 class="d-inline-block g-font-weight-500 mb-0"><a class="u-link-v5" href="{% url 'www:mapa_iberoamerica' %}">Mapa de Iberoamérica</a></h4>
+                            </div>
+                            <span class="d-block g-font-weight-600 g-font-size-12 mb-2 text-justify">Secretarías, Unidades u Oficinas de Género en Iberoamérica.</span>
+                        </article>
+                        <!-- End Mapa -->
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 g-mb-30">
+                        <!-- Mapa -->
+                        <article class="u-block-hover rounded g-pa-35">
+                            <div class="d-flex align-items-center g-brd-bottom g-brd-2 g-brd-primary g-pb-20 g-mb-20">
+                                <span class="align-middle u-icon-v3 u-icon-size--xs g-color-white g-bg-primary rounded-circle mr-2">
+                                  <i class="fa fa-book"></i>
+                                </span>
+                                <h4 class="d-inline-block g-font-weight-500 mb-0"><a class="u-link-v5" href="{% url 'www:mapa_iberoamerica' %}">Protocolos</a></h4>
+                            </div>
+                            <span class="d-block g-font-weight-600 g-font-size-12 mb-2 text-justify">Conocer los protocolos a seguir en casos de Acoso Laboral o Casos de Violencia.</span>
+                        </article>
+                        <!-- End Mapa -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Services -->
+
+        <!-- Galerias -->
+        <section class="container g-py-20">
+            <div class="text-center g-mb-30">
+                <h2 class="h2">Actividades | Galerías Fotográficas</h2>
+            </div>
+            <div class="row">
+                {% for galeria in galerias %}
+                    <div class="col-md-4 g-mb-10 text-center">
+                        <a href="{% url 'www:galeria_detail' galeria.slug %}"><img class="img-fluid" src="{{ galeria.imagenes.all.0.file.url }}" alt="" width="400" height="270"></a>
+                        <div class="g-py-20">
+                            <h4 class="h5 g-font-weight-600">{{ galeria.titulo }}</h4>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="text-center g-mb-20">
+                <a class="btn btn-primary g-rounded-10 g-pl-25 g-pr-25 g-py-15 p-px-25" href="{% url 'www:galeria_list' %}">Ver más</a>
+            </div>
+        </section>
+        <!-- End Galerias -->
+
+
+        <!-- Titulo Estadisticas -->
+        <section class="g-bg-black g-py-50">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="order-1 w-100 u-ns-bg-v1-bottom">
+                        <h3 class="g-color-white g-font-weight-400 g-mb-5">La Violencia en cifras...</h3>
+                        <p class="mb-0">Algunos datos estadísticos relacionados</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Titulo Estadisticas -->
+
+        <!-- Estadisticas -->
+        <div class="container-fluid">
+            <div class="row text-center g-color-white">
+                <div class="col-md-3 col-4 g-bg-primary g-pa-20">
+                    <i class="fa fa-{{ estadisticas.0.icono }} display-5 g-mb-10  g-mt-20"></i>
+                    <div class="js-counter display-5 g-mb-20">{{ estadisticas.0.dato }}</div>
+                    <h4 class="h6">{{ estadisticas.0.descripcion }}</h4>
+                </div>
+
+                <div class="col-md-3 col-4 g-bg-primary-dark-v1 g-pa-20">
+                    <i class="fa fa-{{ estadisticas.1.icono }} display-5  g-mb-10 g-mt-20"></i>
+                    <div class="js-counter display-5 g-mb-20">{{ estadisticas.1.dato }}</div>
+                    <h4 class="h6">{{ estadisticas.1.descripcion }}</h4>
+                </div>
+
+                <div class="col-md-3 col-4 g-bg-primary-dark-v2 g-pa-20">
+                    <i class="fa fa-{{ estadisticas.2.icono }} display-5 g-mb-10 g-mt-20"></i>
+                    <div class="g-mb-20">
+                        <div class="js-counter display-5">{{ estadisticas.2.dato }}</div>US$
+                    </div>
+                    <h4 class="h6">{{ estadisticas.2.descripcion }}</h4>
+                </div>
+
+                <div class="col-md-3 col-4 g-bg-primary-dark-v3 g-pa-20">
+                    <i class="fa fa-{{ estadisticas.3.icono }} display-5 g-mb-10 g-mt-20"></i>
+                    <div class="js-counter display-5 g-mb-20">{{ estadisticas.3.dato }}</div>
+                    <h4 class="h6">{{ estadisticas.3.descripcion }}</h4>
+                </div>
+            </div>
+        </div>
+        <!-- End Estadisticas -->
+
+        <!-- Datos Extras -->
+        <div class="container g-py-20">
+            <div class="row">
+                <div class="col-md-3 col-sm-4 g-mb-10">
+                    <div class="card rounded-0">
+                        <h3 class="card-header h5 rounded-0">
+                            <i class="fa fa-tasks g-font-size-default g-mr-5"></i>
+                            Informaciones
+                        </h3>
+
+                        <div class="card-block">
+                            <ul class="list-unstyled g-font-size-13 mb-0">
+                                <li><a class="d-block u-link-v5 g-color-gray-dark-v4 rounded g-px-20 g-py-8" href="{% url 'www:glosario' %}"><i class="mr-2 fa fa-angle-right"></i> Glosario</a></li>
+                                <li><a class="d-block u-link-v5 g-color-gray-dark-v4 rounded g-px-20 g-py-8" href="{% url 'www:agenda' %}"><i class="mr-2 fa fa-angle-right"></i> Agenda de la Secretaría</a></li>
+                                <li><a class="d-block u-link-v5 g-color-gray-dark-v4 rounded g-px-20 g-py-8" href="{% url 'www:dependencia_list' %}"><i class="mr-2 fa fa-angle-right"></i> Dependencias a nivel país</a></li>
+                                <li><a class="d-block u-link-v5 g-color-gray-dark-v4 rounded g-px-20 g-py-8" href="http://accesojusticia.csj.gov.py/#/mapa" target="_blank"><i class="mr-2 fa fa-angle-right"></i> Juzgados en Paraguay</a></li>
+                                <li><a class="d-block u-link-v5 g-color-gray-dark-v4 rounded g-px-20 g-py-8" href="{% url 'www:mapa_iberoamerica' %}"><i class="mr-2 fa fa-angle-right"></i> Poderes Judiciales en Iberoamérica</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5 col-sm-4 g-mb-10 text-center">
+                    <div class="card rounded-0">
+                        <h3 class="card-header h5 rounded-0">
+                            <i class="fa fa-tasks g-font-size-default g-mr-5"></i>
+                            Distribución de cargos del Poder Judicial
+                        </h3>
+                        <div class="card-block">
+                            {% for d in distribuciones %}
+                                <h3 class="h5 text-left">
+                                    {{ d.titulo }}
+                                </h3>
+                                <div class="progress g-mb-25">
+                                    <div class="progress-bar g-bg-green" role="progressbar" style="width: {{ d.mujer }}%" aria-valuenow="{{ d.mujer }}" aria-valuemin="0" aria-valuemax="100">
+                                        Mujeres {{ d.mujer }}%
+                                    </div>
+                                    <div class="progress-bar g-bg-orange" role="progressbar" style="width: {{ d.hombre }}%" aria-valuenow="{{ d.hombre }}" aria-valuemin="0" aria-valuemax="100">
+                                        Hombres {{ d.hombre }}%
+                                    </div>
+                                </div>
+                            {% endfor %}
+
+                            <ul class="list-unstyled g-font-size-13 mb-0">
+                                <li><a class="d-block u-link-v5 g-color-gray-dark-v4 rounded g-px-20 g-py-8" href="http://www.pj.gov.py/descargas/nomina-de-magistrados-y-funcionarios.pdf" target="_blank"><i class="mr-2 fa fa-angle-right"></i> Nómina de Magistratura y Funcionariado del Poder Judicial</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-4 g-mb-10">
+                    <div class="card rounded-0">
+                        <h3 class="card-header h5 rounded-0">
+                            <i class="fa fa-tasks g-font-size-default g-mr-5"></i>
+                            Últimas estadisticas
+                        </h3>
+
+                        <div class="card-block">
+                            <ul class="list-unstyled g-font-size-13 mb-0">
+                                {% if contenido_estadisticas %}
+                                    {% for e in contenido_estadisticas %}
+                                        <li><a class="d-block u-link-v5 g-color-gray-dark-v4 rounded g-px-20 g-py-8" href="#!"><i class="mr-2 fa fa-angle-right"></i> {{ e.titulo }}</a></li>
+                                    {% endfor %}
+                                    <li class="text-center"><a class="btn u-btn-outline-primary g-font-size-11 g-rounded-10 g-mt-20" href="/estadisticas/">Ver todas</a></li>
+                                {% else %}
+                                    <h4 class="h6">No hay estadísticas recientes</h4>
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Datos Extras -->
+
+    {% endblock %}
+
+    <!-- Go To Top -->
+    <a class="js-go-to u-go-to-v1" href="#!"
+       data-type="fixed"
+       data-position='{
+           "bottom": 15,
+           "right": 15
+         }'
+       data-offset-top="400"
+       data-compensation="#js-header"
+       data-show-effect="zoomIn">
+        <i class="hs-icon hs-icon-arrow-top"></i>
+    </a>
+    <!-- End Go To Top -->
+
+    <!-- Footer -->
+    <div class="g-bg-primary-gradient-opacity-v1 g-color-white g-py-60">
+        <div class="container">
+            <div class="row">
+                <!-- Footer Content -->
+                <div class="col-lg-6 g-mb-60 g-mb-0--lg">
+                    <a class="d-block g-mb-20" href="{% url 'www:index' %}">
+                        <img class="img-fluid" src="{% static 'img/logo-secretaria-blanco.jpg' %}" alt="Logo">
+                    </a>
+
+                    <address class="g-line-height-2 g-mt-minus-4">
+                        <!-- Location -->
+                        <div class="d-flex g-mb-20">
+                            <div class="g-mr-10">
+                                <span class="u-icon-v3 u-icon-size--xs g-bg-white-opacity-0_1 g-color-white-opacity-0_6">
+                                    <i class="fa fa-map-marker"></i>
+                                </span>
+                            </div>
+                            <a href="https://goo.gl/maps/Wzbj2m6Mjy32" class="g-color-white g-color-white--hover g-text-underline--none--hover" target="_blank">
+                                Dirección: <br>
+                                Alonso y Testanova,<br>
+                                Palacio de Justicia, 7mo piso – Torre Sur <br>
+                            </a>
+                        </div>
+                        <!-- End Location -->
+
+                        <!-- Phone -->
+                        <div class="d-flex g-mb-20">
+                            <div class="g-mr-10">
+                                <span class="u-icon-v3 u-icon-size--xs g-bg-white-opacity-0_1 g-color-white-opacity-0_6">
+                                    <i class="fa fa-phone"></i>
+                                </span>
+                            </div>
+                            <p class="mb-0">
+                                <a href="tel:+59521424142" class="g-color-white g-color-white--hover g-text-underline--none--hover">Teléfono: (021) 424142 int 2709</a> <br>
+                                <a href="tel:+59521423001" class="g-color-white g-color-white--hover g-text-underline--none--hover">Telefax: (021) 423001</a> <br>
+                            </p>
+                        </div>
+                        <!-- End Phone -->
+
+                        <!-- Email -->
+                        <div class="d-flex align-items-center g-mb-20">
+                            <div class="g-mr-10">
+                                <span class="u-icon-v3 u-icon-size--xs g-bg-white-opacity-0_1 g-color-white-opacity-0_6">
+                                    <i class="fa fa-envelope"></i>
+                                </span>
+                            </div>
+                            <p class="mb-0">
+                                <a href="mailto:segcsj@gmail.com" class="g-color-white g-color-white--hover g-text-underline--none--hover">segcsj@gmail.com</a>
+                            </p>
+                        </div>
+                        <!-- End Email -->
+
+                    </address>
+                </div>
+                <!-- End Footer Content -->
+
+                <!-- Footer Content -->
+                <div class="col-lg-4 col-sm-4">
+                    <h2 class="h6 text-uppercase g-font-weight-800 g-mb-15">Comunicate con nosotros</h2>
+                    <p class="text-justify">Nuestros profesionales están esperando tu llamada, estamos para darte el apoyo que necesitas</p>
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item g-mr-10">
+                            <a class="u-icon-v3 u-icon-size--xs g-bg-white-opacity-0_1 g-bg-white-opacity-0_2--hover g-color-white-opacity-0_6" href="https://www.facebook.com/Secretar%C3%ADa-de-G%C3%A9nero-del-Poder-Judicial-566237640090349/" data-toggle="tooltip" data-placement="top" title="" target="_blank" data-original-title="Facebook">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item g-mr-10">
+                            <a class="u-icon-v3 u-icon-size--xs g-bg-white-opacity-0_1 g-bg-white-opacity-0_2--hover g-color-white-opacity-0_6" href="https://www.youtube.com/channel/UC12NEtTEOai8SDfvVXtzqmQ" data-toggle="tooltip" data-placement="top" title="" target="_blank" data-original-title="Youtube">
+                                <i class="fa fa-youtube"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item g-mr-10">
+                            <a class="u-icon-v3 u-icon-size--xs g-bg-white-opacity-0_1 g-bg-white-opacity-0_2--hover g-color-white-opacity-0_6" href="mailto:segcsj@gmail.com" data-toggle="tooltip" data-placement="top" title="" target="_blank" data-original-title="Email">
+                                <i class="fa fa-envelope"></i>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <h2 class="h6 text-uppercase g-font-weight-800 g-mt-40 g-mb-10">Accesos</h2>
+                    <ul class="list-unstyled g-mb-35">
+                        <li class="g-mb-5">
+                            <a class="g-color-white-opacity-0_8" href="/noticias"><i class="mr-2 fa fa-angle-double-right"></i> Noticias</a>
+                        </li>
+                        <li class="g-mb-5">
+                            <a class="g-color-white-opacity-0_8" href="{% url 'www:galeria_list' %}"><i class="mr-2 fa fa-angle-double-right"></i> Actividades y Galerias</a>
+                        </li>
+                        <li class="g-mb-5">
+                            <a class="g-color-white-opacity-0_8" href="{% url 'www:agenda' %}"><i class="mr-2 fa fa-angle-double-right"></i> Agenda Institucional</a>
+                        </li>
+                        <li class="g-mb-5">
+                            <a class="g-color-white-opacity-0_8" href="{% url 'www:dependencia_list' %}"><i class="mr-2 fa fa-angle-double-right"></i> Dependencias a nivel país</a>
+                        </li>
+                        <li class="g-mb-5">
+                            <a class="g-color-white-opacity-0_8" href="{% url 'www:mapa_iberoamerica' %}"><i class="mr-2 fa fa-angle-double-right"></i> Mapa Iberoamérica</a>
+                        </li>
+                        <li class="g-mb-5">
+                            <a class="g-color-white-opacity-0_8" href="/quienes-somos"><i class="mr-2 fa fa-angle-double-right"></i> ¿Quiénes somos?</a>
+                        </li>
+                        <li class="g-mb-5">
+                            <a class="g-color-white-opacity-0_8" href="/glosario"><i class="mr-2 fa fa-angle-double-right"></i> Glosario</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- End Footer Content -->
+
+
+            </div>
+        </div>
+    </div>
+    <!-- End Footer -->
+
+</main>
+
+    <!-- JS Global Compulsory -->
+    <script src="{% static 'assets/vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/jquery-migrate/jquery-migrate.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/popper.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/bootstrap/bootstrap.min.js' %}"></script>
+    <!-- JS Implementing Plugins -->
+    <script src="{% static 'assets/vendor/appear.js' %}"></script>
+    <script src="{% static 'assets/vendor/hs-megamenu/src/hs.megamenu.js' %}"></script>
+    <script src="{% static 'assets/vendor/dzsparallaxer/dzsparallaxer.js' %}"></script>
+    <script src="{% static 'assets/vendor/dzsparallaxer/dzsscroller/scroller.js' %}"></script>
+    <script src="{% static 'assets/vendor/dzsparallaxer/advancedscroller/plugin.js' %}"></script>
+    <script src="{% static 'assets/vendor/hs-bg-video/hs-bg-video.js' %}"></script>
+    <script src="{% static 'assets/vendor/hs-bg-video/vendor/player.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/masonry/dist/masonry.pkgd.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
+
+    <!-- JS Unify -->
+    <script src="{% static 'assets/js/hs.core.js' %}"></script>
+    <script src="{% static 'assets/js/components/hs.header.js' %}"></script>
+    <script src="{% static 'assets/js/helpers/hs.hamburgers.js' %}"></script>
+    <script src="{% static 'assets/js/components/hs.tabs.js' %}"></script>
+    <script src="{% static 'assets/js/helpers/hs.height-calc.js' %}"></script>
+    <script src="{% static 'assets/js/components/hs.onscroll-animation.js' %}"></script>
+    <script src="{% static 'assets/js/helpers/hs.bg-video.js' %}"></script>
+
+
+    <script src="{% static 'assets/js/components/hs.go-to.js' %}"></script>
+    <script src="{% static 'assets/js/components/hs.counter.js' %}"></script>
+
+    <!-- JS Master Slider -->
+    <script src="{% static 'assets/vendor/master-slider/source/assets/js/masterslider.min.js' %}"></script>
+
+    <!-- JS Custom -->
+    <script src="{% static 'assets/js/custom.js' %}"></script>
+
+    <!-- JS Plugins Init. -->
+    <script>
+        $(document).on('ready', function () {
+            // initialization of tabs
+            $.HSCore.components.HSTabs.init('[role="tablist"]');
+
+            // initialization of header's height equal offset
+            $.HSCore.helpers.HSHeightCalc.init();
+
+            // initialization of scroll animation
+            $.HSCore.components.HSOnScrollAnimation.init('[data-animation]');
+
+            // initialization of video on background
+            $.HSCore.helpers.HSBgVideo.init('.js-bg-video');
+
+            // initialization of counters
+            var counters = $.HSCore.components.HSCounter.init('[class*="js-counter"]');
+
+            // initialization of go to
+            $.HSCore.components.HSGoTo.init('.js-go-to');
+        });
+
+        $(window).on('load', function () {
+            // initialization of header
+            $.HSCore.components.HSHeader.init($('#js-header'));
+            $.HSCore.helpers.HSHamburgers.init('.hamburger');
+
+            // initialization of HSMegaMenu component
+            $('.js-mega-menu').HSMegaMenu({
+                event: 'hover',
+                pageContainer: $('.container'),
+                breakpoint: 991
+            });
+
+            // initialization of masonry
+            $('.masonry-grid').imagesLoaded().then(function () {
+                $('.masonry-grid').masonry({
+                    columnWidth: '.masonry-grid-sizer',
+                    itemSelector: '.masonry-grid-item',
+                    percentPosition: true
+                });
+            });
+        });
+
+        $(window).on('resize', function () {
+            setTimeout(function () {
+                $.HSCore.components.HSTabs.init('[role="tablist"]');
+            }, 200);
+        });
+
+        var slider = new MasterSlider();
+
+        slider.control('arrows', {
+            autohide: true,
+            overVideo: true
+        });
+        slider.control('bullets', {
+            autohide: true,
+            overVideo: true,
+            dir: 'h',
+            align: 'bottom',
+            space: 6,
+            margin: 15
+        });
+        slider.setup("masterslider", {
+            width: 1366,
+            height: 768,
+            minHeight: 0,
+            space: 0,
+            start: 1,
+            grabCursor: true,
+            swipe: true,
+            mouse: true,
+            keyboard: false,
+            layout: "fullwidth",
+            wheel: false,
+            autoplay: true,
+            instantStartLayers: true,
+            loop: true,
+            shuffle: false,
+            preload: 0,
+            heightLimit: true,
+            autoHeight: false,
+            smoothHeight: true,
+            endPause: false,
+            overPause: true,
+            fillMode: "fill",
+            centerControls: false,
+            startOnAppear: false,
+            layersMode: "center",
+            autofillTarget: "",
+            hideLayers: false,
+            fullscreenMargin: 0,
+            speed: 20,
+            dir: "h",
+            parallaxMode: 'swipe',
+            view: "stack"
+        });
+    </script>
+
+    {% block extrascript %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,289 @@
+{% extends "basew.html" %}
+
+{% load static %}
+{% load humanize %}
+{% load django_bootstrap_breadcrumbs %}
+
+{% block breadcrumbs %}
+    <!-- Breadcrumbs -->
+    {{ block.super }}
+    {% breadcrumb "Inicio" "/" %}
+    {% breadcrumb "Mapa de Iberoamérica" "" %}
+    {% render_breadcrumbs %}
+
+    <!-- End Breadcrumbs -->
+{% endblock breadcrumbs %}
+
+{% block content %}
+    <div class="container g-pt-10 g-pb-70">
+        <div class="g-mb-40">
+            <h2 class="mb-0">Poderes Judiciales de Iberoamérica</h2>
+        </div>
+
+        <div class="row justify-content-between ">
+            <div class="col-lg-9 g-mb-30 text-justify">
+                <h4 class="h5 g-mb-30">Poderes Judiciales que cuentan con Secretarías, Unidades u Oficinas de Género en Iberoamérica</h4>
+                <p class="text-center">Clic en el país y será redirigido al sitio web con información de Género.
+                    <iframe frameborder="0" height="660" name="Mapa Interactivo de paises de Iberoamérica" scrolling="no" src="{% static 'img/mapa-latino-america.svg' %}" title="Mapa Interactivo de paises de Iberoamérica" width="65%"></iframe>
+                </p>
+
+
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>País</th>
+                            <th>Título</th>
+                            <th>Enlace</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Argentina</td>
+                        <td>Oficina de la Mujer</td>
+                        <td><a class="btn u-btn-outline-primary g-font-size-11 g-rounded-10" href="http://www.csjn.gov.ar/om/index.jsp" target="_blank">Ver Sitio Web</a></td>
+                    </tr>
+                    <tr>
+                        <td>Bolivia</td>
+                        <td>Comité de Género</td>
+                        <td><a class="btn u-btn-outline-primary g-font-size-11 g-rounded-10" href="http://tsj.bo/comite-de-genero/" target="_blank">Ver Sitio Web</a></td>
+                    </tr>
+                    <tr>
+                        <td>Brasil</td>
+                        <td>
+                            Supremo Tribunal Federal
+                        </td>
+                        <td>
+                            <a class="btn u-btn-outline-primary g-font-size-11 g-rounded-10" href="http://www.stf.jus.br/portal/principal/principal.asp" target="_blank">Ver Sitio Web</a>
+                        </td>
+                    </tr>
+                    <tr   >
+                        <td  >
+                               Chile 
+                        </td>
+                        <td>
+                            Poder Judicial República de Chile
+                        </td>
+                        <td>
+                            <a class="btn u-btn-outline-primary g-font-size-11 g-rounded-10" href="http://www.pjud.cl/" target="_blank">Ver Sitio Web</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td  >
+                               Colombia 
+                        </td>
+                        <td>
+                            Comisión Nacional de Género
+                        </td>
+                        <td>
+                            <a class="btn u-btn-outline-primary g-font-size-11 g-rounded-10" href="https://www.ramajudicial.gov.co/web/comision-nacional-de-genero" target="_blank">Ver Sitio Web</a>
+                        </td>
+                    </tr>
+                    <tr   >
+                        <td  >
+                               Costa Rica 
+                        </td>
+                        <td>
+                            Comisión de Género y Secretaría Técnica de Género
+                        </td>
+                        <td>
+                            <a class="btn u-btn-outline-primary g-font-size-11 g-rounded-10" href="http://www.poder-judicial.go.cr/genero/" target="_blank">Ver Sitio Web</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td  >
+                               Ecuador 
+                        </td>
+                        <td>
+                            Unidades Judiciales especializadas contra la violencia a la mujer y miembros del núcleo familiar
+                        </td>
+                        <td>
+                            <a class="btn u-btn-outline-primary g-font-size-11 g-rounded-10" href="http://www.igualdadgenero.gob.ec/" target="_blank">Ver Sitio Web</a>
+                        </td>
+                    </tr>
+                    <tr   >
+                        <td  >
+                               El Salvador 
+                        </td>
+                        <td>
+                            Unidad de Género
+                        </td>
+                        <td>
+                            <a class="btn u-btn-outline-primary g-font-size-11 g-rounded-10" href="http://www.pgr.gob.sv/genero/inicio.html" target="_blank">Ver Sitio Web</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td  >
+                               Guatemala 
+                        </td>
+                        <td>
+                            Secretaría de la Mujer y Análisis de Género
+                        </td>
+                        <td>
+                            <a class="btn u-btn-outline-primary g-font-size-11 g-rounded-10" href="http://www.oj.gob.gt/secretariadelamujer/" target="_blank">Ver Sitio Web</a>
+                        </td>
+                    </tr>
+                    <tr   >
+                        <td  >
+                               Honduras 
+                        </td>
+                        <td>
+                            Unidad de Género
+                        </td>
+                        <td>
+                            <a class="btn u-btn-outline-primary g-font-size-11 g-rounded-10" href="http://www.poderjudicial.gob.hn/institucional/organizacion/dependencias/unidad_genero/Paginas/default.aspx" target="_blank">Ver Sitio Web</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td  >
+                               México 
+                        </td>
+                        <td>
+                            Unidad de Equidad de Género
+                        </td>
+                        <td>
+                            <a class="btn u-btn-outline-primary g-font-size-11 g-rounded-10" href="http://equidad.scjn.gob.mx/" target="_blank">Ver Sitio Web</a>
+                        </td>
+                    </tr>
+                    <tr   >
+                        <td  >
+                               Nicaragua 
+                        </td>
+                        <td>
+                            Secretaría Técnica de Género
+                        </td>
+                        <td>
+                            <a class="btn u-btn-outline-primary g-font-size-11 g-rounded-10" href="http://www.poderjudicial.gob.ni/genero/" target="_blank">Ver Sitio Web</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td  >
+                               Panamá 
+                        </td>
+                        <td>
+                            Unidad de Acceso a la Justicia y Género
+                        </td>
+                        <td>
+                            <a class="btn u-btn-outline-primary g-font-size-11 g-rounded-10" href="http://www.organojudicial.gob.pa/administrativos/unidad-de-acceso-a-la-justicia-y-gro/" target="_blank">Ver Sitio Web</a>
+                        </td>
+                    </tr>
+                    <tr   >
+                        <td  >
+                               Paraguay 
+                        </td>
+                        <td>
+                            Secretaría de Género del Poder Judicial
+                        </td>
+                        <td>
+                            <a class="btn u-btn-outline-primary g-font-size-11 g-rounded-10" href="http://www.pj.gov.py/contenido/136-secretaria-de-genero/136" target="_blank">Ver Sitio Web</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td  >
+                               Perú 
+                        </td>
+                        <td>
+                            Poder Judicial del Perú
+                        </td>
+                        <td>
+                            <a class="btn u-btn-outline-primary g-font-size-11 g-rounded-10" href="http://www.pj.gob.pe/wps/wcm/connect/CorteSuprema/s_cortes_suprema_home/as_Inicio/" target="_blank">Ver Sitio Web</a>
+                        </td>
+                    </tr>
+                    <tr   >
+                        <td  >
+                               Puerto Rico 
+                        </td>
+                        <td>
+                            Unidad Ejecutora del Poder Judicial para el Programa
+                        </td>
+                        <td>
+                            <a class="btn u-btn-outline-primary g-font-size-11 g-rounded-10" href="http://www.ramajudicial.pr/" target="_blank">Ver Sitio Web</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td  >
+                               República Dominicana 
+                        </td>
+                        <td>
+                            Dirección de Familia, Niñez, Adolescencia y Género (DIFNAG)
+                        </td>
+                        <td>
+                            <a class="btn u-btn-outline-primary g-font-size-11 g-rounded-10" href="http://poderjudicial.gob.do/scj_mobile/Servicios/detalles_oficinas_servicios?ID=8" target="_blank">Ver Sitio Web</a>
+                        </td>
+                    </tr>
+                    <tr   >
+                        <td  >
+                               Uruguay 
+                        </td>
+                        <td>
+                            Unidad Ejecutora del Poder Judicial para el Programa Integral de Lucha contra la Violencia de Género (PILCVG)
+                        </td>
+                        <td>
+                            <a class="btn u-btn-outline-primary g-font-size-11 g-rounded-10" href="http://www.poderjudicial.gub.uy/violencia-de-genero-pilcvg.html" target="_blank">Ver Sitio Web</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td  >
+                               Venezuela 
+                        </td>
+                        <td>
+                            Comisión Nacional De Justicia De Género Del Poder Judicial De La República Bolivariana De Venezuela
+                        </td>
+                        <td>
+                            <a class="btn u-btn-outline-primary g-font-size-11 g-rounded-10" href="http://www.tsj.gob.ve/-/comision-nacional-de-justicia-de-genero" target="_blank">Ver Sitio Web</a>
+                        </td>
+                    </tr>
+                    <tr   >
+                        <td  >
+                               España 
+                        </td>
+                        <td>
+                            Comisión de Igualdad del Consejo General del Poder Judicial
+                        </td>
+                        <td>
+                            <a class="btn u-btn-outline-primary g-font-size-11 g-rounded-10" href="http://www.poderjudicial.es/cgpj/es/Poder-Judicial/Consejo-General-del-Poder-Judicial/Informacion-Institucional/Como-funciona-el-CGPJ/Otras-Comisiones/La-Comision-de-Igualdad" target="_blank">Ver Sitio Web</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td  >
+                               Portugal 
+                        </td>
+                        <td>
+                            Supremo Tribunal de Justica
+                        </td>
+                        <td>
+                            <a class="btn u-btn-outline-primary g-font-size-11 g-rounded-10" href="http://www.stj.pt/" target="_blank">Ver Sitio Web</a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                </div>
+            </div>
+
+            <div class="col-lg-3 g-brd-left--lg g-brd-gray-light-v4 g-mb-20">
+                <div class="g-pl-20--lg">
+                    <div class="mb-0">
+                        <h3 class="h5 g-color-black g-font-weight-600 mb-1">¿Quienés somos?</h3>
+                    </div>
+                    <ul class="list-unstyled g-font-size-13 mb-0">
+                        <li><a class="d-block u-link-v5 g-color-gray-dark-v4 rounded g-px-20 g-py-8" href="{% url 'www:observatorio' %}"><i class="mr-2 fa fa-angle-right"></i> ¿Qué es el Observatorio?</a>
+                        </li>
+                        <li><a class="d-block u-link-v5 g-color-gray-dark-v4 rounded g-px-20 g-py-8" href="{% url 'www:mision' %}"><i class="mr-2 fa fa-angle-right"></i> Misión</a>
+                        </li>
+                        <li><a class="d-block u-link-v5 g-color-gray-dark-v4 rounded g-px-20 g-py-8" href="{% url 'www:mision' %}"><i class="mr-2 fa fa-angle-right"></i> Visión</a>
+                        </li>
+                        <li><a class="d-block u-link-v5 g-color-gray-dark-v4 rounded g-px-20 g-py-8" href="{% url 'www:objetivos' %}"><i class="mr-2 fa fa-angle-right"></i> Objetivos</a>
+                        </li>
+                        <li><a class="d-block u-link-v5 g-color-gray-dark-v4 rounded g-px-20 g-py-8" href="http://accesojusticia.csj.gov.py/#/mapa" target="_blank"><i class="mr-2 fa fa-angle-right"></i> Juzgados</a>
+                        </li>
+                    </ul>
+                    <hr class="g-brd-gray-light-v4 g-my-30 mb-0">
+
+                    {% include 'enlaces.html' %}
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}

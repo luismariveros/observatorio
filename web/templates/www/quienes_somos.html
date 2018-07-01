@@ -1,0 +1,63 @@
+{% extends "basew.html" %}
+
+{% load static %}
+{% load humanize %}
+{% load django_bootstrap_breadcrumbs %}
+
+{% block breadcrumbs %}
+    <!-- Breadcrumbs -->
+    {{ block.super }}
+    {% breadcrumb "Inicio" "/" %}
+    {% breadcrumb "¿Quienés somos?" "" %}
+    {% render_breadcrumbs %}
+
+    <!-- End Breadcrumbs -->
+{% endblock breadcrumbs %}
+
+{% block content %}
+    <div class="container g-pt-10 g-pb-70">
+        <div class="g-mb-40">
+            <h2 class="mb-0">¿Quienés somos?</h2>
+        </div>
+
+        <div class="row justify-content-between">
+            <div class="col-lg-9 g-mb-30 ">
+                <div class="g-mb-50 text-center">
+                    <img class="img-fluid" src="{% static 'img/logo-secretaria.png' %}">
+                </div>
+                <div class="g-mb-50 text-justify">
+                    <p class="lead g-pl-20">
+                        <span class="u-dropcap g-color-primary g-mr-15 g-mb-5">L</span>
+                        a Secretaría de Género del Poder Judicial, dependiente de la Corte Suprema de Justicia, creada por Acordada N.º 609/2010, es una oficina técnica encargada de transversalizar la perspectiva de género en el marco de una “Política Institucional de Transversalidad de Género del Poder Judicial” (Acordada N.º 657/2010) y su Plan Estratégico.
+                    </p>
+                    <p class="lead g-pl-20">Esta dependencia cuenta con un equipo de trabajo multidisciplinario encargado de ejecutar las acciones previstas en los documentos mencionados, entre ellas el diseño y provisión de información relacionada con los derechos humanos de las mujeres y el acceso a la justicia.</p>
+                    <p class="lead g-pl-20">Las disciplinas que hoy día convergen en la Secretaría de Género son: Derecho, Estadística, Psicología, Sociología, Comunicación e Informática; en miras a constituirlas en áreas de trabajo, lo que implicaría que la Secretaría de Género se eleve a rango de Dirección</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 g-brd-left--lg g-brd-gray-light-v4 g-mb-20">
+                <div class="g-pl-20--lg">
+                    <div class="mb-0">
+                        <h3 class="h5 g-color-black g-font-weight-600 mb-1">¿Quienés somos?</h3>
+                    </div>
+                    <ul class="list-unstyled g-font-size-13 mb-0">
+                        <li><a class="d-block u-link-v5 g-color-gray-dark-v4 rounded g-px-20 g-py-8" href="{% url 'www:observatorio' %}"><i class="mr-2 fa fa-angle-right"></i> ¿Qué es el Observatorio?</a>
+                        </li>
+                        <li><a class="d-block u-link-v5 g-color-gray-dark-v4 rounded g-px-20 g-py-8" href="{% url 'www:mision' %}"><i class="mr-2 fa fa-angle-right"></i> Misión</a>
+                        </li>
+                        <li><a class="d-block u-link-v5 g-color-gray-dark-v4 rounded g-px-20 g-py-8" href="{% url 'www:mision' %}"><i class="mr-2 fa fa-angle-right"></i> Visión</a>
+                        </li>
+                        <li><a class="d-block u-link-v5 g-color-gray-dark-v4 rounded g-px-20 g-py-8" href="{% url 'www:objetivos' %}"><i class="mr-2 fa fa-angle-right"></i> Objetivos</a>
+                        </li>
+                        <li><a class="d-block u-link-v5 g-color-gray-dark-v4 rounded g-px-20 g-py-8" href="http://accesojusticia.csj.gov.py/#/mapa" target="_blank"><i class="mr-2 fa fa-angle-right"></i> Juzgados</a>
+                        </li>
+                    </ul>
+                    <hr class="g-brd-gray-light-v4 g-my-30 mb-0">
+
+                    {% include 'enlaces.html' %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

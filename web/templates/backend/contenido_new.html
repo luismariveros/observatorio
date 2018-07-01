@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% load humanize %}
+{% load bootstrap3 %}
+
+{% block content-header %}
+    <h3>Nuevo Contenido</h3>
+{% endblock %}
+
+{% block content %}
+    <div class="box box-info">
+        <div class="box-header">
+            <h3 class="box-title">Ingresar datos</h3>
+        </div>
+        <form method="post" class="form" id="contenidoForm" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="box-body">
+                {{ form.media }}
+                {% bootstrap_form form %}
+                {% buttons %}
+                    <a href="{% url 'backend:contenido_list' %}" class="btn btn-lg btn-default link"><i class="fa fa-ban"></i> Cancelar</a>
+                    <button type="submit" class="btn btn-info btn-lg">
+                        {% bootstrap_icon "hdd" %} Guardar
+                    </button>
+                {% endbuttons %}
+            </div>
+        </form>
+    </div>
+{% endblock %}
+
+{% block extrascript %}
+    <script>
+        $('#id_fecha_publicacion').datepicker({
+            format: 'dd/mm/yyyy',
+            startDate: '-3d'
+        });
+
+    </script>
+{% endblock %}
+

@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+
+{% load humanize %}
+{% load bootstrap3 %}
+{% load static %}
+
+{% block content-header %}
+    <h3>Editar Galeria</h3>
+{% endblock %}
+
+{% block content %}
+    {# 0. MODAL FOR PROGRESS BAR #}
+    <div class="modal fade" id="modal-progress" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Cargando...</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 0%;">0%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {# 0. MODAL FOR DELETE IMAGE #}
+    <div class="modal fade" id="modal-imagen">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="box box-success">
+        <div class="box-header">
+            <h3 class="box-title">Editar datos y/o agregar las imágenes a la Galeria.</h3>
+        </div>
+        <div class="box-body">
+            <div class="col-md-6">
+                <form method="post" class="form"  enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form.media }}
+                    {% bootstrap_form form %}
+
+                    {% buttons %}
+                        <button type="submit" class="btn btn-primary">
+                            {% bootstrap_icon "hdd" %} Guardar
+                        </button>
+                    {% endbuttons %}
+                </form>
+            </div>
+            <div class="col-md-6">
+                <div class="box box-info">
+                    <div class="box-header with-border">
+                        <input id="fileupload" type="file" name="file" multiple
+                               style="display: none;"
+                               data-url="{% url 'backend:foto_upload' galeria.id  %}"
+                               data-form-data='{"csrfmiddlewaretoken": "{{ csrf_token }}"}'>
+                        <button type="button" class="btn btn-primary js-upload-photos">
+                            <span class="glyphicon glyphicon-cloud-upload"></span> Cargar Imágenes
+                        </button>
+                    </div>
+                    <div class="box-body">
+                        <table id="gallery" class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th style="width: 10px">#</th>
+                                <th>Imagen</th>
+                                <th>Thumb</th>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                {% include 'backend/imagen_list_partial_upload.html' %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box-footer">
+            <a href="{% url 'backend:galeria_delete' galeria.id %}" class="btn btn-lg btn-danger link"><i class="fa fa-trash fa-fw"></i> Eliminar Galería</a>
+        </div>
+    </div>
+{% endblock %}
+
+{% block extrascript %}
+    {# JQUERY FILE UPLOAD SCRIPTS #}
+    <script src="{% static 'plugins/jquery-file-upload/vendor/jquery.ui.widget.js' %}"></script>
+    <script src="{% static 'plugins/jquery-file-upload/jquery.iframe-transport.js' %}"></script>
+    <script src="{% static 'plugins/jquery-file-upload/jquery.fileupload.js' %}"></script>
+    {# PHOTOS PAGE SCRIPTS #}
+    <script src="{% static 'js/upload/progress-bar-upload.js' %}"></script>
+    {# IMAGE DELETE SCRIPT #}
+    <script src="{% static 'js/imagen.js' %}"></script>
+{% endblock extrascript %}

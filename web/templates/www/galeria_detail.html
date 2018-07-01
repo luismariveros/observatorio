@@ -1,0 +1,82 @@
+{% extends "basew.html" %}
+
+{% load static %}
+{% load humanize %}
+{% load django_bootstrap_breadcrumbs %}
+
+{% block extrastyle %}
+    <link  rel="stylesheet" href="{% static '/assets/vendor/fancybox/jquery.fancybox.min.css' %}">
+{% endblock %}
+
+{% block breadcrumbs %}
+    <!-- Breadcrumbs -->
+    {{ block.super }}
+
+    {% breadcrumb "Inicio" "/" %}
+    {% breadcrumb "Galerias | Actividades" "galeria" %}
+    {% breadcrumb object.titulo "" %}
+    <!-- End Breadcrumbs -->
+{% endblock breadcrumbs %}
+
+
+
+{% block content %}
+    {% render_breadcrumbs %}
+
+    <div class="container g-pt-10 g-pb-70">
+        <div class="g-mb-40">
+            <h2 class="mb-0">{{ object.titulo }}</h2>
+        </div>
+
+        <div class="row justify-content-between">
+            <div class="col-lg-9 g-mb-30 text-justify">
+                <div class="row">
+                    {% for imagen in object.imagenes.all %}
+                        <div class="col-md-4 g-mb-30">
+                            <a class="js-fancybox" href="javascript:;" data-fancybox="lightbox-gallery--col3" data-src="{{ imagen.file.url }}" data-caption="Galeria {{ object.titulo }}">
+                                <img class="img-fluid" src="{{ imagen.file.url }}" alt="">
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="col-lg-3 g-brd-left--lg g-brd-gray-light-v4 g-mb-20">
+                <div class="g-pl-20--lg">
+                    {% if galerias %}
+                        <div class="mb-0">
+                            <h3 class="h5 g-color-black g-font-weight-600 mb-1">Últimas Galerias</h3>
+                        </div>
+                        <ul class="list-unstyled g-font-size-13 mb-0">
+                            {% for g in galerias %}
+                                <li>
+                                    <a class="d-block u-link-v5 g-color-gray-dark-v4 rounded g-px-20 g-py-8" href="{% url 'www:galeria_detail' g.slug %}"><i class="mr-2 fa fa-angle-right"></i> {{ g.titulo }}</a>
+                                </li>
+                            {% endfor %}
+                            <li class="text-center"><a class="btn u-btn-outline-primary g-font-size-11 g-rounded-10 g-mt-20" href="{% url 'www:galeria_list' %}">Ver todas</a></li>
+                        </ul>
+                    {% endif %}
+
+                    <hr class="g-brd-gray-light-v4 g-my-30 mb-0">
+
+                    {% include 'enlaces.html' %}
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
+
+{% block extrascript %}
+    <script src="{% static 'assets/vendor/fancybox/jquery.fancybox.min.js' %}"></script>
+    <script src="{% static 'assets/js/components/hs.popup.js' %}"></script>
+
+    <script>
+        $(document).on('ready', function () {
+            // initialization of popups
+            $.HSCore.components.HSPopup.init('.js-fancybox', {
+                transitionEffect: false
+            });
+        });
+    </script>
+{% endblock %}

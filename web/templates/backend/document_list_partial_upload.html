@@ -1,0 +1,12 @@
+{% for doc in documentos %}
+    <tr>
+        <td style="text-align: right">{{ forloop.counter }}.</td>
+        <td><a target="_blank" href="{{ doc.file.url }}">{{ doc.filename }}</a></td>
+        <td><img src="{{ doc.thumb.url }}" width="50"></td>
+        <td><button type="button"
+                    class="btn btn-danger btn-sm js-delete-book"
+                    data-url="{% url 'backend:imagen_delete' doc.id %}">
+            <span class="fa fa-trash"></span> Eliminar</button>
+        </td>
+    </tr>
+{% endfor %}
