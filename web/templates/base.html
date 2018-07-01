@@ -11,8 +11,7 @@
     <!-- Bootstrap 3.3.5 -->
     <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" />
     <!-- Font Awesome -->
-    <link href="{% static 'fontawesome/css/font-awesome.min.css' %}" rel="stylesheet" />
-
+    <link href="{% static 'AdminLTE/bower_components/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" />
     <!-- DataTables -->
     <link href="{% static 'plugins/datatables/DataTables/css/dataTables.bootstrap.css' %}" rel="stylesheet" >
     <!-- DataTables Responsive -->
@@ -107,6 +106,12 @@
                     </a>
                 </li>
                 <li>
+                    <a href="{% url 'backend:distribucion_list' %}">
+                        <i class="fa fa-balance-scale text-white"></i>
+                        <span>Distribución de Cargos</span>
+                    </a>
+                </li>
+                <li>
                     <a href="{% url 'backend:curso_list' %}">
                         <i class="fa fa-graduation-cap text-white"></i>
                         <span>Cursos</span>
@@ -144,6 +149,12 @@
                     <a href="{% url 'backend:galeria_list' %}">
                         <i class="fa fa-picture-o text-white"></i>
                         <span>Galerías</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'backend:estadistica_list' %}">
+                        <i class="fa fa-bar-chart text-white"></i>
+                        <span>Estadísticas</span>
                     </a>
                 </li>
 

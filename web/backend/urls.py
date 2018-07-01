@@ -12,7 +12,8 @@ urlpatterns = [
     url(r'^contenido/$', login_required(views.ContenidoListView.as_view()), name='contenido_list'),
     url(r'^contenido/new/$', views.contenido_new, name='contenido_new'),
     url(r'^contenido/(?P<pk>\d+)/edit/$', views.ContenidoEditView.as_view(), name='contenido_edit'),
-    url(r'^contenido/(?P<pk>\d+)/delete/$', login_required(views.ContenidoDeleteView.as_view()), name='contenido_delete'),
+    url(r'^contenido/(?P<pk>\d+)/delete/$', login_required(views.ContenidoDeleteView.as_view()),
+        name='contenido_delete'),
 
     url(r'^galeria/$', login_required(views.GaleriaListView.as_view()), name='galeria_list'),
     url(r'^galeria/new/$', login_required(views.GaleriaCreateView.as_view()), name='galeria_new'),
@@ -35,18 +36,33 @@ urlpatterns = [
 
     url(r'^grupoenlace/$', login_required(views.GrupoEnlaceListView.as_view()), name='grupoenlace_list'),
     url(r'^grupoenlace/new/$', login_required(views.GrupoEnlaceCreateView.as_view()), name='grupoenlace_new'),
-    url(r'^grupoenlace/(?P<pk>\d+)/edit/$', login_required(views.GrupoEnlaceEditView.as_view()), name='grupoenlace_edit'),
-    url(r'^grupoenlace/(?P<pk>\d+)/delete/$', login_required(views.GrupoEnlaceDeleteView.as_view()), name='grupoenlace_delete'),
+    url(r'^grupoenlace/(?P<pk>\d+)/edit/$', login_required(views.GrupoEnlaceEditView.as_view()),
+        name='grupoenlace_edit'),
+    url(r'^grupoenlace/(?P<pk>\d+)/delete/$', login_required(views.GrupoEnlaceDeleteView.as_view()),
+        name='grupoenlace_delete'),
 
     url(r'^curso/$', login_required(views.CursoListView.as_view()), name='curso_list'),
     url(r'^curso/new/$', login_required(views.CursoCreateView.as_view()), name='curso_new'),
     url(r'^curso/(?P<pk>\d+)/edit/$', login_required(views.CursoEditView.as_view()), name='curso_edit'),
     url(r'^curso/(?P<pk>\d+)/delete/$', login_required(views.CursoDeleteView.as_view()), name='curso_delete'),
 
+    url(r'^distribucion/$', login_required(views.DistribucionListView.as_view()), name='distribucion_list'),
+    url(r'^distribucion/new/$', login_required(views.DistribucionCreateView.as_view()), name='distribucion_new'),
+    url(r'^distribucion/(?P<pk>\d+)/edit/$', login_required(views.DistribucionEditView.as_view()),
+        name='distribucion_edit'),
+    url(r'^distribucion/(?P<pk>\d+)/delete/$', login_required(views.DistribucionDeleteView.as_view()),
+        name='distribucion_delete'),
+
     url(r'^dependencia/$', login_required(views.DependenciaListView.as_view()), name='dependencia_list'),
     url(r'^dependencia/new/$', login_required(views.DependenciaCreateView.as_view()), name='dependencia_new'),
-    url(r'^dependencia/(?P<pk>\d+)/edit/$', login_required(views.DependenciaEditView.as_view()), name='dependencia_edit'),
-    url(r'^dependencia/(?P<pk>\d+)/delete/$', login_required(views.DependenciaDeleteView.as_view()), name='dependencia_delete'),
+    url(r'^dependencia/(?P<pk>\d+)/edit/$', login_required(views.DependenciaEditView.as_view()),
+        name='dependencia_edit'),
+    url(r'^dependencia/(?P<pk>\d+)/delete/$', login_required(views.DependenciaDeleteView.as_view()),
+        name='dependencia_delete'),
+
+    url(r'^estadistica/$', login_required(views.EstadisticaListView.as_view()), name='estadistica_list'),
+    url(r'^estadistica/(?P<pk>\d+)/edit/$', login_required(views.EstadisticaEditView.as_view()),
+        name='estadistica_edit'),
 
     #url(r'^curso/$', login_required(views.CursoListView.as_view()), name='curso_list'),
     #url(r'^logout/$', 'django.contrib.auth.views.logout_then_login', )

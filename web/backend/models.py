@@ -143,6 +143,9 @@ class Estadistica(models.Model):
     dato = models.CharField(max_length=50)
     descripcion = models.CharField(max_length=100)
 
+    class Meta:
+        ordering = ['id']
+
 
 class ListDistribucion(models.Model):
     def get_aleatorio(self):

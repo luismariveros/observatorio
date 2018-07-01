@@ -7,7 +7,7 @@ from backend.models import *
 
 
 def index(request):
-    estadisticas = Estadistica.objects.all()
+    estadisticas = Estadistica.objects.all().order_by('id')
     galerias = Galeria.objects.filter(activa=True, recomendada=True)
     sliders = Slider.objects.filter(activa=True)
     categoria_noticia = Categoria.objects.get(slug__exact='noticias').get_descendants(include_self=True)

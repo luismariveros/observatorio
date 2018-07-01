@@ -349,6 +349,42 @@ class CursoDeleteView(DeleteView):
 
 
 #
+# Distribucion
+#
+class DistribucionListView(ListView):
+    model = Distribucion
+    context_object_name = 'distribuciones'
+    template_name = 'backend/distribucion_list.html'
+
+
+class DistribucionCreateView(SuccessMessageMixin, CreateView):
+    model = Distribucion
+    fields = ['titulo', 'mujer', 'hombre', 'posicion']
+    template_name = 'backend/distribucion_new.html'
+    success_message = 'Distribución creada correctamente.'
+    success_url = reverse_lazy('backend:distribucion_list')
+
+
+class DistribucionEditView(SuccessMessageMixin, UpdateView):
+    model = Distribucion
+    fields = ['titulo', 'mujer', 'hombre', 'posicion']
+    template_name = 'backend/distribucion_edit.html'
+    success_message = 'Distribución editada correctamente.'
+    success_url = reverse_lazy('backend:distribucion_list')
+
+
+class DistribucionDeleteView(DeleteView):
+    model = Distribucion
+    pk_url_kwarg = 'pk'
+    success_message = 'Distribución eliminada correctamente.'
+    success_url = reverse_lazy('backend:distribucion_list')
+
+    def delete(self, request, *args, **kwargs):
+        messages.success(self.request, self.success_message)
+        return super(DistribucionDeleteView, self).delete(request, *args, **kwargs)
+
+
+#
 # Dependencia
 #
 class DependenciaListView(ListView):
@@ -382,6 +418,24 @@ class DependenciaDeleteView(DeleteView):
     def delete(self, request, *args, **kwargs):
         messages.success(self.request, self.success_message)
         return super(DependenciaDeleteView, self).delete(request, *args, **kwargs)
+
+
+#
+# Estadistica
+#
+class EstadisticaListView(ListView):
+    model = Estadistica
+    context_object_name = 'estadisticas'
+    template_name = 'backend/estadistica_list.html'
+    ordering = ['-id']
+
+
+class EstadisticaEditView(SuccessMessageMixin, UpdateView):
+    model = Estadistica
+    fields = ['descripcion', 'dato', 'icono']
+    template_name = 'backend/estadistica_edit.html'
+    success_message = 'Estadística editada correctamente.'
+    success_url = reverse_lazy('backend:estadistica_list')
 
 
 
