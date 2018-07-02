@@ -73,13 +73,13 @@
                                     <ul class="list-inline mb-0">
                                         <li class="list-inline-item g-mx-2">
                                             <a id="btnShare" class="social-icon u-icon-v3 g-width-45 g-height-45 g-bg-facebook g-color-white g-color-facebook--hover g-bg-white--hover g-font-size-13 g-mr-20 g-mb-20" href="">
-                                                <span class="u-badge-v1--sm g-color-white g-bg-red">4</span>
+{#                                                <span class="u-badge-v1--sm g-color-white g-bg-red">4</span>#}
                                                 <i class="fa fa-facebook"></i>
                                             </a>
                                         </li>
                                         <li class="list-inline-item g-mx-2">
                                             <a class="social-icon u-icon-v3 g-width-45 g-height-45 g-bg-twitter g-color-white g-color-twitter--hover g-bg-white--hover g-font-size-13" href="#">
-                                                <span class="u-badge-v1--sm g-color-white g-bg-red">4</span>
+{#                                                <span class="u-badge-v1--sm g-color-white g-bg-red">4</span>#}
                                                 <i class="fa fa-twitter"></i>
                                             </a>
                                         </li>
@@ -91,12 +91,12 @@
                     </div>
                     <!-- End Social Shares -->
 
-                    <div id="shareBtn" class="btn btn-success clearfix">Share</div>
-
-                    <p style="margin-top: 50px">
-                    <hr />
-                    <a class="btn btn-small"  href="https://developers.facebook.com/docs/sharing/reference/share-dialog">Share Dialog Documentation</a>
-                    </p>
+{#                    <div id="shareBtn" class="btn btn-success clearfix">Share</div>#}
+{##}
+{#                    <p style="margin-top: 50px">#}
+{#                    <hr />#}
+{#                    <a class="btn btn-small"  href="https://developers.facebook.com/docs/sharing/reference/share-dialog">Share Dialog Documentation</a>#}
+{#                    </p>#}
 
                 </article>
                 <!-- End Blog Minimal Blocks -->
@@ -169,15 +169,15 @@
 {#        });#}
 {#    </script>#}
 
-    <script>
-        document.getElementById('shareBtn').onclick = function() {
-            FB.ui({
-                method: 'share',
-                display: 'popup',
-                href: 'https://developers.facebook.com/docs/',
-            }, function(response){});
-        }
-    </script>
+{#    <script>#}
+{#        document.getElementById('shareBtn').onclick = function() {#}
+{#            FB.ui({#}
+{#                method: 'share',#}
+{#                display: 'popup',#}
+{#                href: 'https://developers.facebook.com/docs/',#}
+{#            }, function(response){});#}
+{#        }#}
+{#    </script>#}
 
 
 {% endblock %}
