@@ -14,7 +14,7 @@ from django.views.generic import UpdateView, ListView, DetailView, CreateView, D
 from django.template.loader import render_to_string
 from PIL import Image
 
-
+from django.contrib.auth.models import User
 from .models import *
 from .forms import *
 
