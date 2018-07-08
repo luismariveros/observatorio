@@ -451,6 +451,9 @@
                             {% regroup enlaces by grupo as grupoenlace_list %}
 
                             {% for grupo in grupoenlace_list %}
+                                {% if forloop.counter > 1 %}
+                                    <hr class="g-brd-gray-light-v4 g-my-15 mb-0">
+                                {% endif %}
                                 <h3 class="h5 g-color-black g-font-weight-600 mb-1">{{ grupo.grouper }}</h3>
                                 <ul class="list-unstyled g-font-size-13 mb-0">
                                     {% for enlace in grupo.list %}
@@ -459,15 +462,15 @@
                                         </li>
                                     {% endfor %}
                                 </ul>
-                                <div class="g-mt-30"></div>
+
                             {% endfor %}
                         </div>
                         <!-- End Enlaces -->
 
-                        <hr class="g-brd-gray-light-v4 g-mt-30 mb-0">
-
                         <!-- Cursos -->
                         {% if cursos %}
+                            <hr class="g-brd-gray-light-v4 g-mt-30 mb-0">
+
                             <div class="g-my-30">
                                 <h3 class="h5 g-color-black g-font-weight-600 mb-1">Cursos</h3>
                                 <ul class="list-unstyled g-font-size-13 mb-0">

@@ -35,7 +35,7 @@
                             <td>{{ c.fecha_publicacion|date:"d/m/Y" }}</td>
                             <td>{% if c.activo %}Activo{% else %}Inactivo{% endif %}</td>
                             <td>{{ c.categoria.get_ancestors|tree_path:" > " }} > {{ c.categoria |truncatechars:25 }}</td>
-                            <td>Andrea Arriola</td>
+                            <td>{{ c.user }}</td>
                         </tr>
                     {% endfor %}
                 </tbody>
@@ -65,14 +65,7 @@
                         "next": "Siguiente",
                         "previous": "Anterior"
                     },
-                },
-                "columnDefs": [
-                    {
-                        "targets": 5,
-                        "searchable": false,
-                        "orderable": false
-                    }
-                ]
+                }
             });
         });
     </script>

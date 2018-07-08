@@ -8,6 +8,10 @@ from . import views
 app_name = 'backend'
 urlpatterns = [
     url(r'^$', login_required(TemplateView.as_view(template_name="backend/index.html")), name='index'),
+    url(r'^usuario/$', login_required(views.UsuarioListView.as_view()), name='usuario_list'),
+    url(r'^usuario/new/$', views.register, name='usuario_new'),
+    url(r'^usuario/(?P<user_id>\d+)/edit/$', views.change_password, name='usuario_edit'),
+
 
     url(r'^contenido/$', login_required(views.ContenidoListView.as_view()), name='contenido_list'),
     url(r'^contenido/new/$', views.contenido_new, name='contenido_new'),

@@ -1,6 +1,7 @@
 import os
 import uuid
 from django.conf import settings
+from django.contrib.auth.models import User
 from django.db import models
 from django.core.validators import FileExtensionValidator, validate_image_file_extension
 from django.urls import reverse
@@ -41,6 +42,7 @@ class Contenido(models.Model):
         return 'uploadfiles/{0}/{1}'.format(self.slug, filename)
 
     categoria = models.ForeignKey('Categoria')
+    user = models.ForeignKey(User)
     titulo = models.CharField(max_length=255)
     slug = AutoSlugField(populate_from='titulo', unique=True)
     copete = models.CharField(max_length=255)

@@ -1,5 +1,7 @@
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import UserCreationForm, SetPasswordForm
+from django.contrib.auth import update_session_auth_hash
 from django.contrib.messages.views import SuccessMessageMixin
 from django.shortcuts import render, HttpResponseRedirect, get_object_or_404
 from django.core.files.base import ContentFile
@@ -12,9 +14,48 @@ from django.views.generic import UpdateView, ListView, DetailView, CreateView, D
 from django.template.loader import render_to_string
 from PIL import Image
 
+
 from .models import *
 from .forms import *
 
+
+class UsuarioListView(ListView):
+    model = User
+    context_object_name = 'usuarios'
+    template_name = 'backend/usuario_list.html'
+
+
+def register(request):
+    if request.method == 'POST':
+        f = UserCreationForm(request.POST)
+        if f.is_valid():
+            f.save()
+            messages.success(request, 'Usuario creado correctamente.')
+            return HttpResponseRedirect(reverse('backend:index'))
+
+    else:
+        f = UserCreationForm()
+
+    return render(request, 'registration/register.html', {'form': f})
+
+
+def change_password(request, user_id):
+    user = get_object_or_404(User, id=user_id)
+
+    if request.method == 'POST':
+        form = SetPasswordForm(user, request.POST)
+        if form.is_valid():
+            user = form.save()
+            update_session_auth_hash(request, user)  # Important!
+            messages.success(request, 'La contraseña del usuario fue actualizada.')
+            return HttpResponseRedirect(reverse('backend:usuario_list'))
+        else:
+            messages.error(request, 'Favor corregir el problema.')
+    else:
+        form = SetPasswordForm(user)
+    return render(request, 'registration/password_change_form.html', {
+        'form': form
+    })
 
 #
 # Contenido
@@ -31,7 +72,7 @@ def contenido_new(request):
         form = ContenidoNewForm(request.POST, request.FILES)
         if form.is_valid():
             contenido = form.save(commit=False)
-            #contenido.categoria = categoria
+            contenido.user = request.user
             contenido.save()
             #topic = form.save(commit=False)
             #topic.board = board

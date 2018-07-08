@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% load bootstrap3 %}
+
+{% block content-header %}
+    <h3>Creación de Usuario de Sistema</h3>
+{% endblock %}
+
+{% block content %}
+    <div class="box">
+        <div class="box-body">
+            <form action="" method="post" class="form">
+                {% csrf_token %}
+
+                {% bootstrap_form form %}
+
+                {% buttons %}
+                    <a href="{% url 'backend:index' %}" class="btn btn-lg btn-default link"><i class="fa fa-ban"></i> Cancelar</a>
+                    <button type="submit" class="btn btn-lg btn-info">
+                        {% bootstrap_icon "hdd" %} Guardar
+                    </button>
+                {% endbuttons %}
+            </form>
+        </div>
+    </div>
+{% endblock content %}
