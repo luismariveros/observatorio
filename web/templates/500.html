@@ -1,5 +1,23 @@
-{% if user.is_authenticated %}
-    {% extends 'base.html' %}
-{% else %}
-    {% extends 'basew.html' %}
-{% endif %}
+{% extends "basew.html" %}
+
+
+{% block content %}
+    <div class="container g-pt-10 g-pb-70">
+        <div class="g-mb-40">
+            <h2 class="mb-0">Error 500 - Error del servidor</h2>
+        </div>
+
+        <div class="row justify-content-between ">
+            <div class="col-lg-9 g-mb-30 text-justify">
+            </div>
+
+            <div class="col-lg-3 g-brd-left--lg g-brd-gray-light-v4 g-mb-20">
+                <div class="g-pl-20--lg">
+
+                    {% include 'enlaces.html' %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
