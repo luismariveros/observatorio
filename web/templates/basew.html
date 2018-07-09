@@ -335,20 +335,22 @@
                          data-masked="true"
                          data-mask-width="646">{{ slider.texto | safe }}
                     </div>
-                    <a href="{{ slider.enlace }}"
-                       target="_self"
-                       class="ms-layer sp-preset-btn-192 btn btn-lg btn-primary g-rounded-10"
-                       data-effect="t(true,n,n,-400,n,n,n,n,n,n,n,n,n,n,n)"
-                       data-duration="2200"
-                       data-delay="2000"
-                       data-ease="easeOutQuint"
-                       data-type="button"
-                       data-action="next"
-                       data-offset-x="600"
-                       data-offset-y="500"
-                       data-origin="tl"
-                       data-position="normal">{{ slider.texto_enlace }}
-                    </a>
+                    {% if slider.enlce %}
+                        <a href="{{ slider.enlace }}"
+                           target="_self"
+                           class="ms-layer sp-preset-btn-192 btn btn-lg btn-primary g-rounded-10"
+                           data-effect="t(true,n,n,-400,n,n,n,n,n,n,n,n,n,n,n)"
+                           data-duration="2200"
+                           data-delay="2000"
+                           data-ease="easeOutQuint"
+                           data-type="button"
+                           data-action="next"
+                           data-offset-x="600"
+                           data-offset-y="500"
+                           data-origin="tl"
+                           data-position="normal">{{ slider.texto_enlace }}
+                        </a>
+                    {% endif %}
                 </div>
             {% endfor %}
         </div>
