@@ -28,7 +28,7 @@
                         <tr>
                             <td>{{ usuario }}</td>
                             <td>{{ usuario.date_joined }}</td>
-                            <td>{{ usuario.last_login }}</td>
+                            <td>{{ usuario.last_login|default_if_none:"Sin acceso" }}</td>
                             <td>
                                 <a href="{% url 'backend:usuario_edit' usuario.id %}" class="btn btn-default link"><i class="fa fa-pencil fa-fw"></i> Cambiar Contraseña</a>
                             </td>

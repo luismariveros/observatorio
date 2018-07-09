@@ -146,7 +146,7 @@ class Estadistica(models.Model):
     descripcion = models.CharField(max_length=100)
 
     class Meta:
-        ordering = ['id']
+        ordering = ['-id']
 
 
 class ListDistribucion(models.Model):

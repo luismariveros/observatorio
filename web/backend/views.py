@@ -19,6 +19,9 @@ from .models import *
 from .forms import *
 
 
+#
+# Usuario
+#
 class UsuarioListView(ListView):
     model = User
     context_object_name = 'usuarios'
@@ -31,7 +34,7 @@ def register(request):
         if f.is_valid():
             f.save()
             messages.success(request, 'Usuario creado correctamente.')
-            return HttpResponseRedirect(reverse('backend:index'))
+            return HttpResponseRedirect(reverse('backend:usuario_list'))
 
     else:
         f = UserCreationForm()
@@ -57,6 +60,7 @@ def change_password(request, user_id):
         'form': form
     })
 
+
 #
 # Contenido
 #
@@ -74,15 +78,6 @@ def contenido_new(request):
             contenido = form.save(commit=False)
             contenido.user = request.user
             contenido.save()
-            #topic = form.save(commit=False)
-            #topic.board = board
-            #topic.starter = request.user
-            # topic.save()
-            # Post.objects.create(
-            #     message=form.cleaned_data.get('message'),
-            #     topic=topic,
-            #     created_by=request.user
-            # )
             return HttpResponseRedirect(reverse('backend:contenido_list'))
         else:
             form = ContenidoNewForm(request.POST)

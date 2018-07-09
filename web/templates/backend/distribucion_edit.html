@@ -19,6 +19,7 @@
                 {% bootstrap_form form %}
 
                 {% buttons %}
+                    <a href="{% url 'backend:distribucion_list' %}" class="btn btn-lg btn-default link"><i class="fa fa-ban"></i> Cancelar</a>
                     <button type="submit" class="btn btn-primary">
                         {% bootstrap_icon "hdd" %} Guardar
                     </button>
