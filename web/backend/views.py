@@ -175,7 +175,7 @@ class GaleriaDeleteView(DeleteView):
     success_url = reverse_lazy('backend:galeria_list')
 
     def get_object(self, queryset=None):
-        galeria_id = self.kwargs['id']
+        galeria_id = self.kwargs['pk']
         queryset = Galeria.objects.get(id=galeria_id)
 
         if not queryset:
@@ -185,7 +185,7 @@ class GaleriaDeleteView(DeleteView):
         return ctx
 
     def delete(self, request, *args, **kwargs):
-        galeria_id = self.kwargs['id']
+        galeria_id = self.kwargs['pk']
         galeria = Galeria.objects.get(id=galeria_id)
 
         for imagen in galeria.imagenes.all():
