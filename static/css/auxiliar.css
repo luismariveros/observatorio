@@ -1,0 +1,256 @@
+/*--
+Autor: Elías Yambay
+Descripción: CSS auxiliar para elementos no contemplados en el AdminLTE.
+--*/
+/* 
+ *   Tabla colapsable 
+ *
+ */
+td.details-control {
+    background: url('../../dist/img/details_open.png') no-repeat center center;
+    cursor: pointer;
+}
+tr.shown td.details-control {
+    background: url('../../dist/img/details_close.png') no-repeat center center;
+}
+
+
+table.pretty {
+    width: 100%;
+    clear: both;
+}
+
+/* Header cells */
+
+table.pretty thead th {
+    text-align: left;
+    background: #66a9bd;
+}
+
+/* Header first column */
+
+table.pretty thead th:first-child {
+    text-align: left;
+    background: #66a9bd;
+}
+
+
+/* Header second column */
+
+table.pretty thead th:nth-child(2) {
+    text-align: left;
+    background: #66a9bd;
+}
+
+
+/* Body cells */
+table.pretty tbody td:first-child {
+    text-align: left;
+
+}
+
+
+table.pretty tbody td {
+    text-align: left;
+    background: #d5eaf0;
+}
+
+
+
+
+table.pretty tbody tr:hover {
+    background-color: #3C8DBC;
+}
+
+/*
+ *  cell standout
+ *
+ */
+
+.standout {
+  border-radius: 3px;
+  margin: 0;
+  padding: 10px 10px 10px 10px;
+  border-left: 5px solid #eee;
+  color: #fff !important;
+}
+
+.flat{
+    padding: 0 !important;
+}
+.standout a {
+  color: #fff;
+  text-decoration: underline;
+}
+.standout a:hover {
+  color: #eee;
+}
+.standout h4 {
+  margin-top: 0;
+  font-weight: 600;
+}
+.standout p:last-child {
+  margin-bottom: 0;
+}
+.standout code,
+.standout .highlight {
+  background-color: #fff;
+}
+.standout.standout-danger {
+  border-color: #c23321;
+  background-color: #dd4b39 !important;
+}
+.standout.standout-warning {
+  border-color: #c87f0a;
+  background-color: #f39c12 !important;
+}
+.standout.standout-info {
+  border-color: #0097bc;
+  background-color: #00c0ef !important;
+  
+}
+.standout.standout-success {
+  border-color: #00733e;
+  background-color: #00a65a !important;
+}
+
+/*
+ * header standout
+ *
+ */
+
+.standout-header {
+  border-radius: 3px;
+  margin: 0;
+  padding: 10px 10px 10px 10px;
+  border-top: 5px solid #eee;
+  color: #fff !important;
+}
+
+.standout-header a {
+  color: #fff;
+  text-decoration: underline;
+}
+.standout-header a:hover {
+  color: #eee;
+}
+.standout-header h4 {
+  margin-top: 0;
+  font-weight: 600;
+}
+.standout-header p:last-child {
+  margin-bottom: 0;
+}
+.standout-header code,
+.standout-header .highlight {
+  background-color: #fff;
+}
+.standout-header.standout-danger {
+  border-color: #c23321;
+  background-color: #dd4b39 !important;
+}
+.standout-header.standout-warning {
+  border-color: #c87f0a;
+  background-color: #f39c12 !important;
+}
+.standout-header.standout-info {
+  border-color: #0097bc;
+  background-color: #00c0ef !important;
+  
+}
+.standout-header.standout-success {
+  border-color: #00733e;
+  background-color: #00a65a !important;
+}
+
+/*
+ *   file box
+ *
+ */
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+
+.inputfile-4 + label {
+    color: #367FA9;
+    text-align: center;
+}
+
+.inputfile-4:focus + label,
+.inputfile-4.has-focus + label,
+.inputfile-4 + label:hover {
+    color: #FFFFFF;
+}
+
+.inputfile-4 + label figure {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #367FA9;
+    display: block;
+    padding: 20px;
+    margin: 0 auto 10px;
+}
+
+/* hover action */
+.inputfile-4:focus + label figure,
+.inputfile-4.has-focus + label figure,
+.inputfile-4 + label:hover figure {
+    background-color: #4F8AFF;
+
+}
+
+.inputfile-4 + label i {
+    width: 100%;
+    height: 100%;
+    fill: #f1e5e6;
+    font-size: 400%;
+    color:#FFFFFF;
+    text-align: center;
+}
+
+/* background box */
+.filebox {
+	background-color: #86D3FF;
+	padding: 1.25rem 1.25rem;
+	text-align: center;
+}
+
+.filebox-container{
+	text-align: center;
+	width: 20%;
+	margin: 0 auto;
+
+}
+
+.filesubmit{
+	margin-top: 0.1em;
+	padding-top: 0.5em;
+	float: right;
+}
+
+/* Ensure that the demo table scrolls */
+    th, td { 
+		white-space: nowrap;
+		background: #FFFFFF;
+	}
+/* grouping format */
+tr.group td,
+tr.group:hover  td{ 
+    background: #ddd !important;
+}
+
+@media screen and (max-width: 970px){
+    .filebox-container{
+        text-align: center;
+        width: 60%;
+        margin: 0 auto;
+
+}    
+}
