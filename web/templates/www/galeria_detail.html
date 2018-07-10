@@ -24,12 +24,15 @@
     {% render_breadcrumbs %}
 
     <div class="container g-pt-10 g-pb-70">
-        <div class="g-mb-40">
+        <div class="g-mb-20">
             <h2 class="mb-0">{{ object.titulo }}</h2>
         </div>
 
         <div class="row justify-content-between">
-            <div class="col-lg-9 g-mb-30 text-justify">
+            <div class="col-lg-9 g-mb-30">
+                <div class="row">
+                    <div class="g-mr-10 g-mb-15">{{ object.descripcion |safe}}</div>
+                </div>
                 <div class="row">
                     {% for imagen in object.imagenes.all %}
                         <div class="col-md-4 g-mb-30">
