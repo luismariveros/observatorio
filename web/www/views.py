@@ -1,6 +1,6 @@
 from django.views.generic import ListView, DetailView
 from django.shortcuts import render, get_object_or_404
-from django.contrib.auth.forms import UserCreationForm
+from datetime import datetime
 
 
 from backend.models import *
@@ -11,7 +11,10 @@ def index(request):
     galerias = Galeria.objects.filter(activa=True, recomendada=True)
     sliders = Slider.objects.filter(activa=True)
     categoria_noticia = Categoria.objects.get(slug__exact='noticias').get_descendants(include_self=True)
-    noticias = Contenido.objects.filter(categoria__in=categoria_noticia, activo=True, recomendado=True).order_by('id')
+    noticias = Contenido.objects.filter(categoria__in=categoria_noticia,
+                                        activo=True,
+                                        recomendado=True,
+                                        fecha_publicacion__lte=datetime.now()).order_by('id')
     categoria_estadistica = Categoria.objects.get(slug__exact='estadisticas').get_descendants(include_self=True)
     contenido_estadisticas = Contenido.objects.filter(categoria__in=categoria_estadistica).order_by('id')[:4]
     distribuciones = Distribucion.objects.all()
