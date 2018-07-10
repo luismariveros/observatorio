@@ -5,6 +5,9 @@ env35/
 media/
 migrations/
 
+#Archivo .ini donde seteo configuraciones
+.ini
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
