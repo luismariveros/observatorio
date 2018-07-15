@@ -59,9 +59,7 @@ def contenido_list(request, slug, slug2=None, slug3=None):
 def contenido_detail(request, slug):
     contenido = get_object_or_404(Contenido, slug=slug)
     categorias = contenido.categoria.get_ancestors(ascending=False, include_self=True)
-
     ultimos = Contenido.objects.filter(categoria__in=categorias).exclude(id=contenido.id)[:5]
-    print(ultimos)
 
     ctx = {
            'breadcrumbs': categorias,
@@ -86,9 +84,7 @@ class GaleriaDetailView(DetailView):
 
 def galeria_detail(request, slug):
     object = get_object_or_404(Galeria, slug=slug)
-    #categoria = contenido.categoria
     galerias = Galeria.objects.all()[:5]
-    print(object)
 
     ctx = {'galerias': galerias,
            'object': object
@@ -102,5 +98,4 @@ class DependenciaListView(ListView):
     context_object_name = 'dependencias'
     template_name = 'www/dependencia_list.html'
     queryset = Dependencia.objects.all()
-
 

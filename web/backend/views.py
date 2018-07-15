@@ -127,8 +127,6 @@ class BasicUploadView(View):
         form = DocumentoNewForm(self.request.POST, self.request.FILES)
         if form.is_valid():
             documento = form.save()
-            print(documento.file.name.split('/'))
-            print(documento.file.url)
             data = {'is_valid': True, 'documento': documento.file.name.split('/')[1], 'url': documento.file.url}
         else:
             data = {'is_valid': False}
@@ -201,7 +199,7 @@ def imagen_delete(request, pk):
     imagen = get_object_or_404(GaleriaImagen, id=pk)
     galeria_id = imagen.galeria.id
     data = dict()
-    print(imagen.id)
+
     if request.method == 'POST':
         imagen.delete()
         data['form_is_valid'] = True  # This is just to play along with the existing code
