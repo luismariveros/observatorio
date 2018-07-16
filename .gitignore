@@ -4,6 +4,7 @@ datos/
 env35/
 media/
 migrations/
+/static/
 
 #Archivo .ini donde seteo configuraciones
 .ini
