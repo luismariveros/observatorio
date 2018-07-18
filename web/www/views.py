@@ -16,7 +16,7 @@ def index(request):
                                         recomendado=True,
                                         fecha_publicacion__lte=datetime.now()).order_by('id')
     categoria_estadistica = Categoria.objects.get(slug__exact='estadisticas').get_descendants(include_self=True)
-    contenido_estadisticas = Contenido.objects.filter(categoria__in=categoria_estadistica).order_by('id')[:4]
+    contenido_estadisticas = Contenido.objects.filter(categoria__in=categoria_estadistica).order_by('-id')[:4]
     distribuciones = Distribucion.objects.all()
     cursos = Curso.objects.all()
 
@@ -26,7 +26,8 @@ def index(request):
            'noticias': noticias,
            'contenido_estadisticas': contenido_estadisticas,
            'distribuciones': distribuciones,
-           'cursos': cursos }
+           'cursos': cursos
+           }
     return render(request, 'basew.html', ctx)
 
 
@@ -88,7 +89,6 @@ def galeria_detail(request, slug):
 
     ctx = {'galerias': galerias,
            'object': object
-
            }
     return render(request, 'www/galeria_detail.html', ctx)
 
