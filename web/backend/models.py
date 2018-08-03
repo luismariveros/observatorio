@@ -62,6 +62,9 @@ class Contenido(models.Model):
     def filename(self):
         return self.documento.name.rsplit('/', 1)[1]
 
+    class Meta:
+        ordering = ['-id']
+
 
 class Galeria(models.Model):
     titulo = models.CharField(max_length=255)

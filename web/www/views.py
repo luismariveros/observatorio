@@ -1,5 +1,6 @@
 from django.views.generic import ListView, DetailView
 from django.shortcuts import render, get_object_or_404
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from datetime import datetime
 
 
@@ -20,25 +21,16 @@ def index(request):
     distribuciones = Distribucion.objects.all()
     cursos = Curso.objects.all()
 
-    ctx = {'estadisticas': estadisticas,
-           'galerias': galerias,
-           'sliders':sliders,
-           'noticias': noticias,
-           'contenido_estadisticas': contenido_estadisticas,
-           'distribuciones': distribuciones,
-           'cursos': cursos
-           }
+    ctx = {
+        'estadisticas': estadisticas,
+        'galerias': galerias,
+        'sliders': sliders,
+        'noticias': noticias,
+        'contenido_estadisticas': contenido_estadisticas,
+        'distribuciones': distribuciones,
+        'cursos': cursos
+    }
     return render(request, 'basew.html', ctx)
-
-
-class ContenidoListView(ListView):
-    model = Contenido
-    context_object_name = 'contenidos'
-    template_name = 'www/contenido_list.html'
-
-    def get_queryset(self):
-        self.categoria = get_object_or_404(Categoria, slug=self.kwargs['slug'])
-        return Contenido.objects.filter(categoria=self.categoria)
 
 
 def contenido_list(request, slug, slug2=None, slug3=None):
@@ -49,11 +41,22 @@ def contenido_list(request, slug, slug2=None, slug3=None):
     elif slug:
         categoria = get_object_or_404(Categoria, slug=slug)
 
-    contenidos = Contenido.objects.filter(categoria__exact=categoria)
-    ctx = {'categoria': categoria,
-           'breadcrumbs': categoria.get_ancestors(ascending=False, include_self=True),
-           'contenidos': contenidos,
-           }
+    contenidos_list = Contenido.objects.filter(categoria__exact=categoria)
+
+    page = request.GET.get('page', 1)
+    paginator = Paginator(contenidos_list, 5)
+    try:
+        contenidos = paginator.page(page)
+    except PageNotAnInteger:
+        contenidos = paginator.page(1)
+    except EmptyPage:
+        contenidos = paginator.page(paginator.num_pages)
+
+    ctx = {
+        'categoria': categoria,
+        'breadcrumbs': categoria.get_ancestors(ascending=False, include_self=True),
+        'contenidos': contenidos,
+    }
     return render(request, 'www/contenido_list.html', ctx)
 
 
@@ -63,11 +66,11 @@ def contenido_detail(request, slug):
     ultimos = Contenido.objects.filter(categoria__in=categorias).exclude(id=contenido.id)[:5]
 
     ctx = {
-           'breadcrumbs': categorias,
-           'contenido': contenido,
-           'noimage': "/media/imagenes/no-image" in contenido.imagen.url,
-           'ultimos': ultimos
-           }
+        'breadcrumbs': categorias,
+        'contenido': contenido,
+        'noimage': "/media/imagenes/no-image" in contenido.imagen.url,
+        'ultimos': ultimos
+    }
     return render(request, 'www/contenido_detail.html', ctx)
 
 
@@ -76,20 +79,17 @@ class GaleriaListView(ListView):
     context_object_name = 'galerias'
     template_name = 'www/galeria_list.html'
     queryset = Galeria.objects.all().order_by('-creada')
-
-
-class GaleriaDetailView(DetailView):
-    model = Galeria
-    template_name = 'www/galeria_detail.html'
+    paginate_by = 3
 
 
 def galeria_detail(request, slug):
-    object = get_object_or_404(Galeria, slug=slug)
+    galeria = get_object_or_404(Galeria, slug=slug)
     galerias = Galeria.objects.all()[:5]
 
-    ctx = {'galerias': galerias,
-           'object': object
-           }
+    ctx = {
+        'galerias': galerias,
+        'object': galeria
+    }
     return render(request, 'www/galeria_detail.html', ctx)
 
 
