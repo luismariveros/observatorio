@@ -41,7 +41,7 @@ def contenido_list(request, slug, slug2=None, slug3=None):
     elif slug:
         categoria = get_object_or_404(Categoria, slug=slug)
 
-    contenidos_list = Contenido.objects.filter(categoria__exact=categoria)
+    contenidos_list = Contenido.objects.filter(categoria__exact=categoria, activo=True)
 
     page = request.GET.get('page', 1)
     paginator = Paginator(contenidos_list, 5)

@@ -15,7 +15,7 @@
         </div>
 
         <div class="box-body">
-            <table id="Listado" class="table table-bordered table-hover" width="100%">
+            <table id="Listado" class="table table-bordered table-hover table-responsive" width="100%">
                 <thead>
                     <tr>
                         <th>Grupo</th>
@@ -29,8 +29,8 @@
                         <tr>
 
                             <td>{{ enlace.grupo }}</td>
-                            <td>{{ enlace.titulo }}</td>
-                            <td>{{ enlace.enlace |truncatechars:120 }}</td>
+                            <td>{{ enlace.titulo |truncatechars:50}}</td>
+                            <td>{{ enlace.enlace |truncatechars:50 }}</td>
                             <td>
                                 <a href="{% url 'backend:enlace_edit' enlace.id %}" class="btn btn-default link"><i class="fa fa-pencil fa-fw"></i> Editar</a>
                                 <a href="{% url 'backend:enlace_delete' enlace.id %}" class="btn btn-danger link"><i class="fa fa-trash fa-fw"></i> Eliminar</a>
@@ -41,4 +41,31 @@
             </table>
         </div>
     </div>
+{% endblock %}
+
+{% block extrascript %}
+    <script>
+        $(document).ready(function(){
+            $('#Listado').DataTable({
+                "scrollX": true,
+                "autoWidth": false,
+                "language": {
+                    "decimal": ",",
+                    "thousands": ".",
+                    "lengthMenu": "Mostrar _MENU_ registros",
+                    "zeroRecords": "No hay registros",
+                    "info": "Página _PAGE_ de _PAGES_",
+                    "infoEmpty": "No hay registros disponibles",
+                    "infoFiltered": "(Filtrado de un total de _MAX_ registros)",
+                    "search": "Filtrar registros:",
+                    "paginate": {
+                        "first": "Primero",
+                        "last": "Último",
+                        "next": "Siguiente",
+                        "previous": "Anterior"
+                    },
+                }
+            });
+        });
+    </script>
 {% endblock %}
